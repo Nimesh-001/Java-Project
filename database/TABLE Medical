@@ -11,7 +11,10 @@ CREATE TABLE Medical
 	End_Date DATE,
 	Reason VARCHAR(100),
 	Department_id CHAR(9),
+
 	PRIMARY KEY(Medical_id,course_code),
+
+
 	FOREIGN KEY (Course_Code) REFERENCES CourseUnit(course_code),
 	FOREIGN KEY (student_id) REFERENCES Student(Student_id),
 	FOREIGN KEY(Department_id) REFERENCES Department(Department_id)
