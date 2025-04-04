@@ -5,5 +5,7 @@ CREATE TABLE Technical_officer (
     TO_mobile VARCHAR(11),
     Responsibility VARCHAR(100),  
     Department_id CHAR(9), 
+
+
     FOREIGN KEY (Department_id) REFERENCES Department(Department_id)
 );
