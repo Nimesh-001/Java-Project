@@ -17,6 +17,7 @@ CREATE TABLE Lecturer (
     Email VARCHAR(50) UNIQUE NOT NULL,
     Department_id CHAR(7),
     Lecturer_mobile VARCHAR(11),
+
     PRIMARY KEY (Lecturer_id),
     FOREIGN KEY (Department_id) REFERENCES Department(Department_id)
 );
