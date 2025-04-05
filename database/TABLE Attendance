@@ -1,5 +1,6 @@
 CREATE TABLE Attendance
 (
+	Attendence_id CHAR(12),
 	Student_id CHAR(12),
 	Course_code CHAR(7),
 	Session_Type CHAR(4),
@@ -7,7 +8,7 @@ CREATE TABLE Attendance
 	Session_Date DATE,
 	Department_id CHAR(9),
 
-
+	PRIMARY KEY(Attendence_id),
 	//PRIMARY KEY(Student_id,course_code,Session_Type,Session_Date),
 
 
