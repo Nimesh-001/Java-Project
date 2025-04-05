@@ -1,4 +1,5 @@
 CREATE TABLE User(
+
 	NIC VARCHAR(30),
 	Name VARCHAR(100),
 	Roll VARCHAR(30),
