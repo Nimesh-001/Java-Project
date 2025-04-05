@@ -8,7 +8,7 @@ CREATE TABLE Attendance
 	Department_id CHAR(9),
 
 
-	PRIMARY KEY(Student_id,course_code,Session_Type,Session_Date),
+	//PRIMARY KEY(Student_id,course_code,Session_Type,Session_Date),
 
 
 	FOREIGN KEY (Course_Code) REFERENCES CourseUnit(course_code),
