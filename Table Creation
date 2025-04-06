@@ -9,7 +9,6 @@ CREATE TABLE Student (
     Address VARCHAR(100), 
     Email VARCHAR(50) UNIQUE NOT NULL,
     Department_id CHAR(9), 
-
     PRIMARY KEY(Student_id),
     FOREIGN KEY (Department_id) REFERENCES Department(Department_id)
 );
