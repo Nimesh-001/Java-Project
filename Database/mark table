@@ -1,7 +1,6 @@
 CREATE DATABASE Lms;
 
 CREATE TABLE Mark (
-
     Student_id CHAR(12),
     Course_code CHAR(7), 
     Department_id CHAR(9), 
