@@ -13,3 +13,14 @@ CREATE TABLE USER (
     Password VARCHAR(255),
     PRIMARY KEY (NIC)
 );
+
+//////////////////////////////////////////////////////////
+
+
+CREATE TABLE Admin (
+    NIC VARCHAR(20),
+    Admin_id CHAR(10),
+    PRIMARY KEY (Admin_id)
+);
+
+//////////////////////////////////////////////////////////
