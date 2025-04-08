@@ -1,1 +1,15 @@
 CREATE DATABASE Tecmis;
+
+//////////////////////////////////////////////////////////
+
+
+CREATE TABLE USER (
+    NIC VARCHAR(20),
+    First_Name VARCHAR(50),
+    Last_Name VARCHAR(50),
+    Designation VARCHAR(50),
+    Phone_Number VARCHAR(15),
+    Email VARCHAR(100),
+    Password VARCHAR(255),
+    PRIMARY KEY (NIC)
+);
