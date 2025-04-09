@@ -9,18 +9,6 @@ CREATE TABLE Department (
 );
 
 
-CREATE TABLE Lecturer (
-    Lecturer_id CHAR(7),
-    Lecturer_Name VARCHAR(50) NOT NULL,
-    DOB DATE,
-    Gender VARCHAR(10),
-    Email VARCHAR(50) UNIQUE NOT NULL,
-    Department_id CHAR(7),
-    Lecturer_mobile VARCHAR(11),
-
-    PRIMARY KEY (Lecturer_id),
-    FOREIGN KEY (Department_id) REFERENCES Department(Department_id)
-);
 
 
 
