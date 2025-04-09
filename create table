@@ -1,12 +1,3 @@
-CREATE TABLE Department (
-    Department_id CHAR(9),
-    HOD VARCHAR(100) NOT NULL,  
-    Department_name VARCHAR(50) NOT NULL,
-    Telephone_number VARCHAR(15) UNIQUE,
-    Email VARCHAR(50) UNIQUE NOT NULL,
-
-	PRIMARY KEY (Department_id)
-);
 
 
 
