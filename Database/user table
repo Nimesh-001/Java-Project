@@ -4,3 +4,8 @@ CREATE TABLE User(
 	Roll VARCHAR(30),
 	PRIMARY KEY (NIC)
 );
+
+INSERT INTO TABLE User
+()
+VALUES
+();
