@@ -23,10 +23,4 @@ CREATE TABLE Lecturer (
 );
 
 
-CREATE TABLE Lecturer_phone(
-	 Lecturer_id CHAR(7),
-	 Phone_number VARCHAR(11),
 
-	 FOREIGN KEY (Lecturer_id) REFERENCES Lecturer(Lecturer_id)
-	
-);
