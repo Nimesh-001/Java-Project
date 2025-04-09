@@ -3,33 +3,17 @@ CREATE DATABASE Tecmis;
 //////////////////////////////////////////////////////////
 
 
-CREATE TABLE USER (
-    NIC VARCHAR(20),
-    First_Name VARCHAR(50),
-    Last_Name VARCHAR(50),
-    Designation VARCHAR(50),
-    Phone_Number VARCHAR(15),
-    Email VARCHAR(100),
-    Password VARCHAR(255),
-    PRIMARY KEY (NIC)
-);
+
+
 
 //////////////////////////////////////////////////////////
 
 
-CREATE TABLE Admin (
-    NIC VARCHAR(20),
-    Admin_id CHAR(10),
-    PRIMARY KEY (Admin_id)
-);
+
 
 //////////////////////////////////////////////////////////
 
-CREATE TABLE Lecturer (
-    NIC VARCHAR(20),
-    Lecturer_id CHAR(10),
-    PRIMARY KEY (Lecturer_id)
-);
+
 
 /////////////////////////////////////////////////////////
 
