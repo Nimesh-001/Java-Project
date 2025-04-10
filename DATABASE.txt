@@ -1,1 +1,23 @@
 CREATE DATABASE Tecmis;
+
+
+//user table//
+
+
+
+
+//admin table//
+
+
+
+
+//lecture table//
+
+
+
+
+//technical_officer table//
+
+
+
+
