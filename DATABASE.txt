@@ -43,3 +43,67 @@ CREATE DATABASE Tecmis;
 
 
 
+//medical table//
+
+
+
+
+
+//attendance table//
+
+
+
+
+
+//lecture-attendance table//
+
+
+
+
+
+
+
+//marks table//
+
+
+
+
+
+//lecture-medical table//
+
+
+
+
+
+//timetable-technical officer table//
+
+
+
+
+
+//notice table//
+
+
+
+
+
+//notice-lecture table//
+
+
+
+
+
+
+//notice-student table//
+
+
+
+
+
+//notice-technicaloffier table//
+
+
+
+
+
+
