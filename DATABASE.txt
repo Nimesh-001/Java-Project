@@ -21,3 +21,25 @@ CREATE DATABASE Tecmis;
 
 
 
+//timetable table//
+
+
+
+
+//student table//
+
+
+
+
+//course unit table//
+
+
+
+
+
+//student-courseunit table//
+
+
+
+
+
