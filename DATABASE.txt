@@ -1,0 +1,109 @@
+CREATE DATABASE Tecmis;
+
+
+//user table//
+
+
+
+
+//admin table//
+
+
+
+
+//lecture table//
+
+
+
+
+//technical_officer table//
+
+
+
+
+//timetable table//
+
+
+
+
+//student table//
+
+
+
+
+//course unit table//
+
+
+
+
+
+//student-courseunit table//
+
+
+
+
+
+//medical table//
+
+
+
+
+
+//attendance table//
+
+
+
+
+
+//lecture-attendance table//
+
+
+
+
+
+
+
+//marks table//
+
+
+
+
+
+//lecture-medical table//
+
+
+
+
+
+//timetable-technical officer table//
+
+
+
+
+
+//notice table//
+
+
+
+
+
+//notice-lecture table//
+
+
+
+
+
+
+//notice-student table//
+
+
+
+
+
+//notice-technicaloffier table//
+
+
+
+
+
+
