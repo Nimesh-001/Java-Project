@@ -7,16 +7,4 @@ CREATE TABLE Student_course(
     FOREIGN KEY(Course_code) REFERENCES CourseUnit(Course_Code)
 );
 
-CREATE TABLE CourseUnit (
-    Course_Code CHAR(7) PRIMARY KEY,
-    Course_Name VARCHAR(50) NOT NULL,
-    Credit INT CHECK (Credit BETWEEN 1 AND 10),
-    Lecturer_Incharge VARCHAR(100),
-    Course_type VARCHAR(20) NOT NULL, 
-    Theory_Hours INT CHECK (Theory_Hours >= 0),
-    Practical_Hours INT CHECK (Practical_Hours >= 0),
-    Department_id CHAR(7),
-    Lecturer_id CHAR(7),
-    FOREIGN KEY (Lecturer_id) REFERENCES Lecturer(Lecturer_id),
-    FOREIGN KEY (Department_id) REFERENCES Department(Department_id)
-);
+
