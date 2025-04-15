@@ -13,7 +13,22 @@ CREATE DATABASE Tecmis;
 
 //lecture table//
 
+CREATE TABLE Lecturer (
+    NIC VARCHAR(20),
+    Lecturer_id CHAR(10),
+    PRIMARY KEY (Lecturer_id)
+);
 
+ALTER TABLE Lecturer
+ADD FOREIGN KEY (NIC) REFERENCES USER(NIC);
+
+INSERT INTO Lecturer (NIC, Lecturer_id)
+VALUES
+('9900123456', 'LEC001'),
+('9902345558', 'LEC002'),
+('9903895890', 'LEC003'),
+('9904510100', 'LEC004'),
+('9905678801', 'LEC005');
 
 
 //technical_officer table//
