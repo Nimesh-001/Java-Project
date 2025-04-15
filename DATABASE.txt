@@ -112,6 +112,17 @@ CREATE TABLE Marks (
 );
 
 
+ALTER TABLE Marks
+ADD FOREIGN KEY (Student_id) REFERENCES Student(Student_id);
+
+ALTER TABLE Marks
+ADD FOREIGN KEY (Lecturer_id) REFERENCES Lecturer(Lecturer_id);
+
+ALTER TABLE Marks
+ADD FOREIGN KEY (Course_code) REFERENCES Course_unit(Course_code);
+
+ALTER TABLE Marks
+ADD FOREIGN KEY (Medical_id) REFERENCES Medical(Medical_id);
 
 
 
