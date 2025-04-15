@@ -28,7 +28,12 @@ CREATE DATABASE Tecmis;
 
 //student table//
 
-
+CREATE TABLE Student (
+    NIC VARCHAR(20),
+    Student_id CHAR(10),
+    Timetable_id CHAR(10),
+    PRIMARY KEY (Student_id)
+);
 
 
 //course unit table//
