@@ -65,6 +65,23 @@ CREATE DATABASE Tecmis;
 
 //marks table//
 
+CREATE TABLE Marks (
+    Student_id CHAR(20),
+    Lecturer_id CHAR(10),
+    Course_code CHAR(10),
+    Medical_id CHAR(10),
+    Quiz1 FLOAT,
+    Quiz2 FLOAT,
+    Quiz3 FLOAT,
+    Quiz4 FLOAT,
+    Assessment_Mark FLOAT,
+    Mid_Practical FLOAT,
+    Mid_Theory FLOAT,
+    End_Practical FLOAT,
+    End_Theory FLOAT,
+    PRIMARY KEY (Student_id, Course_code)
+);
+
 
 
 
