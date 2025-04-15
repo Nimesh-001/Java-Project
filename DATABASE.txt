@@ -80,6 +80,20 @@ CREATE TABLE Attendance (
 );
 
 
+ALTER TABLE Attendance
+ADD FOREIGN KEY (Course_code) REFERENCES Course_unit(Course_code);
+
+ALTER TABLE Attendance
+ADD FOREIGN KEY (Student_id) REFERENCES Student(Student_id);
+
+ALTER TABLE Attendance
+ADD FOREIGN KEY (TO_id) REFERENCES Technical_officer(TO_id);
+
+ALTER TABLE Attendance
+ADD FOREIGN KEY (Medical_id) REFERENCES Medical(Medical_id);
+
+
+
 
 
 
