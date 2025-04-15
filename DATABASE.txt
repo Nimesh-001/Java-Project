@@ -45,8 +45,37 @@ CREATE DATABASE Tecmis;
 
 //medical table//
 
+CREATE TABLE Medical (
+    Medical_id CHAR(10),
+    Submission_date VARCHAR(15),
+    Status VARCHAR(15),
+    Start_date VARCHAR(15),
+    End_date VARCHAR(15),
+    Reason VARCHAR(100),
+    Course_code CHAR(10),
+    Student_id CHAR(20),
+    TO_id CHAR(10),
+    PRIMARY KEY (Medical_id)
+);
 
 
+ALTER TABLE Medical
+ADD FOREIGN KEY (Course_code) REFERENCES Course_unit(Course_code);
+
+ALTER TABLE Medical
+ADD FOREIGN KEY (Student_id) REFERENCES Student(Student_id);
+
+ALTER TABLE Medical
+ADD FOREIGN KEY (TO_id) REFERENCES Technical_officer(TO_id);
+
+
+INSERT INTO Medical (Medical_id, Submission_date, Status, Start_date, End_date, Reason, Course_code, Student_id, TO_id)
+VALUES
+('MED001', '2025-01-19', 'Approved', '2025-01-15', '2025-04-15', 'Diabetes', 'ICT2152', 'TG_2022_1405', 'TO001'),
+('MED002', '2025-03-14', 'Pending', '2025-03-10', '2025-03-11', 'Gastritis', 'ICT2113', 'TG_2022_1403', 'TO002'),
+('MED003', '2025-03-14', 'Pending', '2025-03-10', '2025-03-11', 'Gastritis', 'ICT2133', 'TG_2022_1403', 'TO001'),
+('MED004', '2025-04-28', 'Approved', '2025-04-23', '2025-04-23', 'Bone Fracture', 'ICT2152', 'TG_2022_1401', 'TO003'),
+('MED005', '2025-04-30', 'Approved', '2025-04-22', '2025-04-22', 'High Blood Pressure', 'ICT2133', 'TG_2022_1419', 'TO004');
 
 
 //attendance table//
