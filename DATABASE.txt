@@ -39,7 +39,17 @@ CREATE TABLE Student (
 //course unit table//
 
 
-
+CREATE TABLE Course_unit (
+    Course_code CHAR(10),
+    CourseName VARCHAR(100),
+    Course_type VARCHAR(20),
+    Theory_hours INT,
+    Practical_hours INT,
+    Credits INT,
+    Lecturer_id CHAR(10),
+    Admin_id CHAR(10),
+    PRIMARY KEY (Course_code)
+);
 
 
 //student-courseunit table//
