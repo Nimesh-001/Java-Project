@@ -142,6 +142,31 @@ ALTER TABLE Attendance
 ADD FOREIGN KEY (Medical_id) REFERENCES Medical(Medical_id);
 
 
+INSERT INTO Attendance (Course_code, Student_id, Session_Type, Session_date, Status, TO_id, Medical_id)
+VALUES
+('ICT2113', 'TG_2022_1400', 'P', '2025-01-06', 'Present', 'TO001', 'LEC003'),
+('ICT2113', 'TG_2022_1401', 'P', '2025-01-06', 'Present', 'TO001', 'LEC003'),
+('ICT2113', 'TG_2022_1402', 'P', '2025-01-06', 'Present', 'TO001', 'LEC003'),
+('ICT2113', 'TG_2022_1403', 'P', '2025-01-06', 'Present', 'TO001', 'LEC003'),
+('ICT2113', 'TG_2022_1404', 'P', '2025-01-06', 'Present', 'TO001', 'LEC003'),
+('ICT2113', 'TG_2022_1405', 'P', '2025-01-06', 'Present', 'TO001', 'LEC003'),
+('ICT2113', 'TG_2022_1406', 'P', '2025-01-06', 'Present', 'TO001', 'LEC003'),
+('ICT2113', 'TG_2022_1407', 'P', '2025-01-06', 'Present', 'TO001', 'LEC003'),
+('ICT2113', 'TG_2022_1408', 'P', '2025-01-06', 'Present', 'TO001', 'LEC003'),
+('ICT2113', 'TG_2022_1409', 'P', '2025-01-06', 'Present', 'TO001', 'LEC003'),
+('ICT2113', 'TG_2022_1410', 'P', '2025-01-06', 'Present', 'TO001', 'LEC003'),
+('ICT2113', 'TG_2022_1411', 'P', '2025-01-06', 'Present', 'TO001', 'LEC003'),
+('ICT2113', 'TG_2022_1412', 'P', '2025-01-06', 'Present', 'TO001', 'LEC003'),
+('ICT2113', 'TG_2022_1413', 'P', '2025-01-06', 'Present', 'TO001', 'LEC003'),
+('ICT2113', 'TG_2022_1414', 'P', '2025-01-06', 'Present', 'TO001', 'LEC003'),
+('ICT2113', 'TG_2022_1415', 'P', '2025-01-06', 'Present', 'TO001', 'LEC003'),
+('ICT2113', 'TG_2022_1416', 'P', '2025-01-06', 'Present', 'TO001', 'LEC003'),
+('ICT2113', 'TG_2022_1417', 'P', '2025-01-06', 'Present', 'TO001', 'LEC003'),
+('ICT2113', 'TG_2022_1418', 'P', '2025-01-06', 'Present', 'TO001', 'LEC003'),
+('ICT2113', 'TG_2022_1419', 'P', '2025-01-06', 'Present', 'TO001', 'LEC003');
+
+
+
 
 
 
