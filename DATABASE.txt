@@ -15,6 +15,48 @@ CREATE TABLE USER (
 );
 
 
+INSERT INTO USER (NIC, First_Name, Last_Name, Designation, Phone_Number, Email, Password)
+VALUES
+
+('9900123456', 'P.H.P.Nuwan', 'Laksiri', 'Lecture', '0711234567', 'phpnuwan@gmail.com', 'NuL@ks123'),
+('9902345558', 'S.A.Akila', 'Brahmana', 'Lecture', '0722345558', 'bakila@gmail.com', 'Brhm@Ak234'),
+('9903895890', 'N.A.Shasitha', 'Lakal', 'Lecture', '077389589', 'shashithalakal@gmail.com', 'L@kSh567'),
+('9904510100', 'G.A.Chanduni', 'Gamage', 'Lecture', '0774510100', 'chanduniGg@gmail.com', 'ChGm@0100'),
+('9905678801', 'P.M.Chathuranga', 'Adhikari', 'Lecture', '0765678801', 'chathurangaadhi@gmail.com', 'Ch@Adh890'),
+
+
+
+('9905964783', 'Kasun', 'Jayasingha', 'Technical Officer', '071-5964783', 'kasun@gmail.com', 'K@Jay4783'),
+('9905821467', 'Malik', 'Kumara', 'Technical Officer', '076-5821467', 'malik@gmail.com', 'M@Kum1467'),
+('9904598627', 'Nihal', 'Perera', 'Technical Officer', '071-4598627', 'nihal@gmail.com', 'N@Per8627'),
+('9908264739', 'Anushka', 'Bandara', 'Technical Officer', '076-8264739', 'anushka@gmail.com', 'A@Ban4739'),
+('9909267300', 'Ranil', 'Kumarathunga', 'Technical Officer', '071-9267300', 'ranil@gmail.com', 'R@Kum7300'),
+
+
+('2002123456', 'Chathura', 'Wickramasingha', 'Student', '0757654890', 'chathura@gmail.com', 'C@Wick123'),
+('20028934265', 'Ruwan', 'Fernando', 'Student', '0758934265', 'ruwan@gmail.com', 'R@Fern123'),
+('20029754362', 'Nimesh', 'Lakshan', 'Student', '0759754362', 'nimesh@gmail.com', 'N@Laks123'),
+('20018908465', 'Asanka', 'Gunasekara', 'Student', '0768908465', 'asanka@gmail.com', 'A@Guna123'),
+('20025678434', 'Shanika', 'Fernando', 'Student', '0725678434', 'shanika@gmail.com', 'S@Fern123'),
+('20020987432', 'Pavithra', 'Gunawardana', 'Student', '0750987432', 'pavithra@gmail.com', 'P@Guna123'),
+('20027642315', 'Chamara', 'De Silva', 'Student', '0757642315', 'chamara@gmail.com', 'C@DeSi123'),
+('20026783452', 'Lakshan', 'Ariyadasa', 'Student', '0756783452', 'lakshan@gmail.com', 'L@Aria123'),
+('20035673453', 'Harish', 'Prasath', 'Student', '0725673453', 'harish@gmail.com', 'H@Pras123'),
+('20038908765', 'Saman', 'Jayasingha', 'Student', '0789087654', 'saman@gmail.com', 'S@Jaya123'),
+('20027689043', 'Prasad', 'Fernando', 'Student', '0768904356', 'prasad@gmail.com', 'P@Fern123'),
+('20017236789', 'Chamara', 'Gunawardana', 'Student', '0723678905', 'cg@gmail.com', 'C@Guna123'),
+('20027098754', 'Tharushi', 'Dasanayaka', 'Student', '0709875467', 'tharushi@gmail.com', 'T@Dasa123'),
+('20027894321', 'Sanjaya', 'Jayasingha', 'Student', '0789432109', 'sanjaya@gmail.com', 'S@Jaya123'),
+('20037234579', 'Chameli', 'Mendis', 'Student', '0723457908', 'chameli@gmail.com', 'C@Mend123'),
+('20027035516', 'Lalithya', 'Rasingolla', 'Student', '0703551672', 'lalithya@gmail.com', 'L@Rasi123'),
+('20027012344', 'Nuwan', 'Herath', 'Student', '0701234456', 'nuwan@gmail.com', 'N@Hera123'),
+('20027667843', 'Isuru', 'Perera', 'Student', '0766784321', 'isuru@gmail.com', 'I@Pere123'),
+('20037156783', 'Dilini', 'Madushani', 'Student', '0715678345', 'dilini@gmail.com', 'D@Madu123'),
+('20037043219', 'Kasun', 'Rathnayake', 'Student', '0704321987', 'kasun@gmail.com', 'K@Rath123'),
+
+
+('9901123456', 'K.M.Sachini', 'Perera', 'Admin', '0711123456', 'sachi@gmail.com', 'Sa@Per123');
+
 
 
 //admin table//
