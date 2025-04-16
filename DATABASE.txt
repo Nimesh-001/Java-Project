@@ -115,8 +115,19 @@ VALUES
 
 //lecture-medical table//
 
+CREATE TABLE Lecturer_Medical (
+    Lecturer_id CHAR(10),
+    Medical_id CHAR(10),
+    PRIMARY KEY (Lecturer_id, Medical_id)
+);
 
-
+INSERT INTO Lecturer_Medical (Lecturer_id, Medical_id)
+VALUES
+('LEC001', 'MED001'),
+('LEC002', 'MED002'),
+('LEC003', 'MED003'),
+('LEC004', 'MED004'),
+('LEC005', 'MED005');
 
 
 //timetable-technical officer table//
