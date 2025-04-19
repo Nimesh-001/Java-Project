@@ -24,6 +24,9 @@ CREATE TABLE Technical_officer (
     PRIMARY KEY(TO_id)
 );
 
+ALTER TABLE Technical_officer
+ADD FOREIGN KEY (NIC) REFERENCES USER(NIC);
+
 
 
 //timetable table//
