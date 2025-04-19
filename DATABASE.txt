@@ -18,6 +18,13 @@ CREATE DATABASE Tecmis;
 
 //technical_officer table//
 
+CREATE TABLE Technical_officer (
+    NIC VARCHAR(20),
+    TO_id CHAR(10),
+    PRIMARY KEY(TO_id)
+);
+
+
 
 //timetable table//
 
