@@ -27,7 +27,13 @@ CREATE TABLE Technical_officer (
 ALTER TABLE Technical_officer
 ADD FOREIGN KEY (NIC) REFERENCES USER(NIC);
 
-
+INSERT INTO Technical_officer (NIC, TO_id)
+VALUES
+('9905964783', 'TO001'),
+('9905821467', 'TO002'),
+('9904598627', 'TO003'),
+('9908264739', 'TO004'),
+('9909267300', 'TO005');
 
 //timetable table//
 
