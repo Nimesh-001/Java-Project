@@ -44,6 +44,11 @@ CREATE TABLE Timetable (
     PRIMARY KEY (Timetable_id)
 );
 
+ALTER TABLE Timetable
+ADD FOREIGN KEY (Admin_id) REFERENCES Admin(Admin_id);
+
+
+
 
 //student table//
 
