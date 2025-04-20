@@ -37,6 +37,12 @@ VALUES
 
 //timetable table//
 
+CREATE TABLE Timetable (
+    Timetable_id CHAR(10),
+    Admin_id CHAR(10),
+    Content LONGTEXT,
+    PRIMARY KEY (Timetable_id)
+);
 
 
 //student table//
