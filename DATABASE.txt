@@ -3,6 +3,9 @@ CREATE DATABASE Tecmis;
 
 //user table//
 
+
+
+
 CREATE TABLE USER (
     NIC VARCHAR(20),
     First_Name VARCHAR(50),
