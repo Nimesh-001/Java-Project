@@ -117,6 +117,8 @@ CREATE TABLE Timetable_TO_Officer (
     PRIMARY KEY (Timetable_id, TO_id)
 );
 
+ALTER TABLE Timetable_TO_Officer
+ADD FOREIGN KEY (TO_id) REFERENCES Technical_officer(TO_id);
 
 
 
