@@ -177,6 +177,13 @@ CREATE TABLE Notice_TO_Officer (
     PRIMARY KEY (Notice_id, TO_id)
 );
 
+ALTER TABLE Timetable_TO_Officer
+ADD FOREIGN KEY (TO_id) REFERENCES Technical_officer(TO_id);
+
+ALTER TABLE Timetable_TO_Officer
+ADD FOREIGN KEY (Notice_id) REFERENCES Notice(Notice_id);
+
+
 
 
 
