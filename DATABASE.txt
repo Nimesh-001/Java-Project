@@ -47,6 +47,16 @@ CREATE TABLE Timetable (
 ALTER TABLE Timetable
 ADD FOREIGN KEY (Admin_id) REFERENCES Admin(Admin_id);
 
+INSERT INTO Timetable (Timetable_id, Admin_id, Content)
+VALUES
+('T001', 'A001', '08:00:00 - 10:00:00 | Data Structures and Algorithms (T) | LAB 11 | Monday'),
+('T002', 'A001', '11:00:00 - 12:00:00 | Data Structures and Algorithms (P) | LAB 11 | Monday'),
+('T003', 'A001', '09:00:00 - 11:00:00 | Object Oriented Analysis and Design (T) | LAB 12 | Tuesday'),
+('T004', 'A001', '11:00:00 - 12:00:00 | Object Oriented Analysis and Design (P) | LAB 12 | Tuesday'),
+('T005', 'A001', '10:00:00 - 12:00:00 | Ecommerce Implementation Management and Security | LAB 11 | Wednesday'),
+('T006', 'A001', '09:00:00 - 11:00:00 | Object Oriented Programming (T) | LAB 12 | Thursday'),
+('T007', 'A001', '12:00:00 - 14:00:00 | Object Oriented Programming (P) | LAB 12 | Thursday');
+
 
 
 
