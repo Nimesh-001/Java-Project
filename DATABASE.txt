@@ -120,6 +120,16 @@ CREATE TABLE Timetable_TO_Officer (
 ALTER TABLE Timetable_TO_Officer
 ADD FOREIGN KEY (TO_id) REFERENCES Technical_officer(TO_id);
 
+INSERT INTO Timetable_TO_Officer (Timetable_id, TO_id)
+VALUES
+('TT001', 'TO001'),
+('TT002', 'TO002'),
+('TT003', 'TO003'),
+('TT004', 'TO004'),
+('TT005', 'TO005'),
+('TT006', 'TO004'),
+('TT007', 'TO002');
+
 
 
 
