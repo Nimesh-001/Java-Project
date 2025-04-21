@@ -171,6 +171,12 @@ VALUES
 
 //notice-technicaloffier table//
 
+CREATE TABLE Notice_TO_Officer (
+    Notice_id CHAR(10),
+    TO_id CHAR(10),
+    PRIMARY KEY (Notice_id, TO_id)
+);
+
 
 
 
