@@ -111,6 +111,13 @@ VALUES
 
 //timetable-technical officer table//
 
+CREATE TABLE Timetable_TO_Officer (
+    Timetable_id CHAR(10),
+    TO_id CHAR(10),
+    PRIMARY KEY (Timetable_id, TO_id)
+);
+
+
 
 
 
