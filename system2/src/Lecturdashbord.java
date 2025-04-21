@@ -21,8 +21,8 @@ public class Lecturdashbord {
         frame.pack();
         frame.setVisible(true);
         frame.setSize(1000,500);
-        //frame.setResizable(false);
-       // frame.setLocationRelativeTo(null);
+        frame.setResizable(false);
+        frame.setLocationRelativeTo(null);
 
     }
 }
