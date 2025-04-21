@@ -183,6 +183,18 @@ ADD FOREIGN KEY (TO_id) REFERENCES Technical_officer(TO_id);
 ALTER TABLE Timetable_TO_Officer
 ADD FOREIGN KEY (Notice_id) REFERENCES Notice(Notice_id);
 
+INSERT INTO Notice_TO_Officer (Notice_id, TO_id)
+VALUES
+('N1', 'TO001'),
+('N1', 'TO002'),
+('N1', 'TO003'),
+('N1', 'TO004'),
+('N1', 'TO005'),
+('N2', 'TO001'),
+('N2', 'TO002'),
+('N2', 'TO003'),
+('N2', 'TO004'),
+('N2', 'TO005');
 
 
 
