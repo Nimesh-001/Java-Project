@@ -14,6 +14,15 @@ public class form {
         LOGINButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
+                String username = TextField.getText();
+                String password = String.valueOf(passwordField1.getPassword());
+
+                if(username.isEmpty() || password.isEmpty()) {
+                    JOptionPane.showMessageDialog(null, "Please enter your username and password");
+
+                }
+                
+
 
             }
         });
