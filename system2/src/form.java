@@ -41,7 +41,28 @@ public class form {
                         JOptionPane.showMessageDialog(null,"Loggging successful.. role: "+designation);
 
                         switch (designation.toLowerCase()){
-                            
+                            case "Admin":
+                                new Admindashbord();
+                                break;
+
+
+                            case "Lecturer":
+                                new Lecturdashbord();
+                                break;
+
+                            case "Student":
+                                new Studentdashboard();
+                                break;
+
+                            case "Technical Officer":
+                                new Todashboard();
+                                break;
+
+                            default:
+                                JOptionPane.showMessageDialog(null,"Invalid designation.. Unknown role: "+designation);
+                                break;
+
+
                         }
                     }
                 } catch (SQLException ex) {
