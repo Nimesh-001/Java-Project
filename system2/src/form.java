@@ -18,7 +18,7 @@ public class form {
         LOGINButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                System.out.println("Login button clicked");
+               // System.out.println("Login button clicked");
                 String username = TextField.getText();
                 String password = String.valueOf(passwordField1.getPassword());
 
