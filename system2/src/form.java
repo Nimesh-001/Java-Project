@@ -4,10 +4,10 @@ import java.awt.event.ActionListener;
 
 public class form {
     private JPanel panel1;
-    private JTextField EXBNSTextField;
     private JPasswordField passwordField1;
     private JButton LOGINButton;
     private JButton CLEARButton;
+    private JTextField TextField;
 
 
     public form() {

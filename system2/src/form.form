@@ -65,7 +65,7 @@
                   <text value="Username : "/>
                 </properties>
               </component>
-              <component id="fe454" class="javax.swing.JTextField" binding="EXBNSTextField" default-binding="true">
+              <component id="fe454" class="javax.swing.JTextField" binding="TextField">
                 <constraints>
                   <grid row="2" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="8" fill="1" indent="0" use-parent-layout="false">
                     <preferred-size width="150" height="-1"/>
