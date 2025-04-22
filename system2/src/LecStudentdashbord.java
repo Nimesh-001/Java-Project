@@ -4,9 +4,11 @@ public class LecStudentdashbord {
     private JPanel panel1;
     private JButton detailsButton;
     private JButton eligibilityButton;
-    private JButton marksGradeGPAButton;
-    private JButton attendanceButton;
-    private JButton medicalButton;
+    private JButton gradeButton;
+    private JButton markButton;
+    private JButton GPAButton;
+    private JButton attendanceButton1;
+    private JButton medicalButton1;
 
     public static void main(String[] args) {
         JFrame frame = new JFrame("LecStudentdashbord");
