@@ -21,7 +21,7 @@ public class form {
             @Override
             public void actionPerformed(ActionEvent e) {
                 TextField.setText("");
-                
+                passwordField1.setText("");
 
 
             }
