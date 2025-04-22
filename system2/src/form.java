@@ -18,6 +18,7 @@ public class form {
         LOGINButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
+                System.out.println("Login button clicked");
                 String username = TextField.getText();
                 String password = String.valueOf(passwordField1.getPassword());
 
@@ -41,12 +42,12 @@ public class form {
                        // JOptionPane.showMessageDialog(null,"Loggging successful.. role: "+designation);
 
                         switch (designation.toLowerCase()){
-                            case "Admin":
+                            case "admin":
                                 new Admindashbord();
                                 break;
 
 
-                            case "Lecturer":
+                            case "lecturer":
                                 new Lecturdashbord();
                                 break;
 
@@ -54,7 +55,7 @@ public class form {
                                 new Studentdashboard();
                                 break;
 
-                            case "Technical Officer":
+                            case "technical Officer":
                                 new Todashboard();
                                 break;
 
