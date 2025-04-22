@@ -38,7 +38,7 @@ public class form {
 
                     if(rs.next()) {
                         String designation = rs.getString("designation");
-                        JOptionPane.showMessageDialog(null,"Loggging successful.. role: "+designation);
+                       // JOptionPane.showMessageDialog(null,"Loggging successful.. role: "+designation);
 
                         switch (designation.toLowerCase()){
                             case "Admin":
@@ -50,7 +50,7 @@ public class form {
                                 new Lecturdashbord();
                                 break;
 
-                            case "Student":
+                            case "student":
                                 new Studentdashboard();
                                 break;
 
