@@ -36,7 +36,14 @@ public class form {
                     pst.setString(2, password);
                     ResultSet rs = pst.executeQuery();
 
-                    
+                    if(rs.next()) {
+                        String designation = rs.getString("designation");
+                        JOptionPane.showMessageDialog(null,"Loggging successful.. role: "+designation);
+
+                        switch (designation.toLowerCase()){
+                            
+                        }
+                    }
                 } catch (SQLException ex) {
                     throw new RuntimeException(ex);
                 }
