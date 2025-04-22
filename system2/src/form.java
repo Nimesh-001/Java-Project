@@ -1,6 +1,10 @@
 import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
 
 public class form {
     private JPanel panel1;
@@ -21,7 +25,21 @@ public class form {
                     JOptionPane.showMessageDialog(null, "Please enter your username and password");
 
                 }
-                
+                Dbconnector dbc = new Dbconnector();
+                Connection con = dbc.getConnection();
+
+
+                try {
+                    String sql = "select * from user where username = ? and password = ?";
+                    PreparedStatement pst = con.prepareStatement(sql);
+                    pst.setString(1, username);
+                    pst.setString(2, password);
+                    ResultSet rs = pst.executeQuery();
+
+                    
+                } catch (SQLException ex) {
+                    throw new RuntimeException(ex);
+                }
 
 
             }
