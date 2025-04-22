@@ -1,4 +1,6 @@
 import javax.swing.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
 public class Todashboard {
     private JPanel panel1;
@@ -12,6 +14,15 @@ public class Todashboard {
     private JButton noticeButton1;
     private JButton timetableButton1;
     private JButton button10;
+
+    public Todashboard() {
+        attendenceButton1.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+
+            }
+        });
+    }
 
     public static void main(String[] args) {
         JFrame frame = new JFrame("Todashboard");
