@@ -2,16 +2,14 @@ import javax.swing.*;
 
 public class Lecturdashbord {
     private JPanel panel1;
-    private JButton coursesButton;
-    private JButton marksButton;
-    private JButton studentsButton;
-    private JButton noticeButton;
+    private JButton editProfileButton;
     private JButton logoutButton;
     private JButton coursesButton1;
     private JButton marksButton1;
     private JButton studentsButton1;
     private JButton noticeButton1;
     private JButton button10;
+    private JTextField textField1;
 
 
     public static void main(String[] args) {
@@ -24,5 +22,9 @@ public class Lecturdashbord {
         frame.setResizable(false);
         frame.setLocationRelativeTo(null);
 
+    }
+
+    private void createUIComponents() {
+        // TODO: place custom component creation code here
     }
 }
