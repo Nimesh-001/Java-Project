@@ -13,10 +13,9 @@ public class Admindashbord {
     private JButton userProfilesButton1;
     private JButton button1;
 
-
-    public static void main(String[] args) {
+    public Admindashbord() {
         JFrame frame = new JFrame("Admindashbord");
-        frame.setContentPane(new Admindashbord().panel1);
+        frame.setContentPane(this.panel1);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.pack();
         frame.setVisible(true);
@@ -24,5 +23,9 @@ public class Admindashbord {
         frame.setLocationRelativeTo(null);
         frame.setSize(1000,500);
         frame.setVisible(true);
+    }
+
+    public static void main(String[] args) {
+        new Admindashbord();
     }
 }
