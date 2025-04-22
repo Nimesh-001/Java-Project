@@ -68,10 +68,12 @@ public class form {
                     else {
                         JOptionPane.showMessageDialog(null,"Invalid username or password");
                     }
-                    
+
 
                 } catch (SQLException ex) {
-                    throw new RuntimeException(ex);
+                    ex.printStackTrace();
+                    JOptionPane.showMessageDialog(null,ex.getMessage());
+                    JOptionPane.showMessageDialog(null,"database error..");
                 }
 
 
