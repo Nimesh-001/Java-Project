@@ -9,7 +9,7 @@ public class Dbconnector {
         Connection con = null;
 
         try {
-            String url = "jdbc:mysql://localhost:3306/tecmis";
+            String url = "jdbc:mysql://localhost:3306/TecMIS_DB";
             String user = "root";
             String password = "1234";
 
