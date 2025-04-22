@@ -24,6 +24,7 @@ public class form {
 
                 if(username.isEmpty() || password.isEmpty()) {
                     JOptionPane.showMessageDialog(null, "Please enter your username and password");
+                    return;
 
                 }
                 Dbconnector dbc = new Dbconnector();
@@ -31,7 +32,7 @@ public class form {
 
 
                 try {
-                    String sql = "select * from user where username = ? and password = ?";
+                    String sql = "select * from USER where Username = ? and Password = ?";
                     PreparedStatement pst = con.prepareStatement(sql);
                     pst.setString(1, username);
                     pst.setString(2, password);
