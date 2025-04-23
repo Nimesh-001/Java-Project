@@ -9,6 +9,7 @@ public class LecStudentdashbord {
     private JButton GPAButton;
     private JButton attendanceButton1;
     private JButton medicalButton1;
+    private JButton backButton;
 
     public static void main(String[] args) {
         JFrame frame = new JFrame("LecStudentdashbord");
