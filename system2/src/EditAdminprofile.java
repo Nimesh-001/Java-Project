@@ -40,6 +40,12 @@ public class EditAdminprofile {
                 String password = String.valueOf(passwordField2.getPassword());
                 String pic_path = textField6.getText();
 
+                if (firstname.isEmpty() || lastname.isEmpty() || designation.isEmpty() || phone.isEmpty() ||
+                        email.isEmpty() || password.isEmpty() || pic_path.isEmpty()) {
+                    JOptionPane.showMessageDialog(null, "All fields must be filled out.");
+                    return;
+                }
+
                 Dbconnector db = new Dbconnector();
                 Connection con = db.getConnection();
 
