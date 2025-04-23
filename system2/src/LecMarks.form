@@ -95,7 +95,11 @@
             </constraints>
             <properties>
               <model>
-                <item value="ICT1222"/>
+                <item value="ICT2113"/>
+                <item value="ICT2122"/>
+                <item value="ICT2142"/>
+                <item value="ICT2152"/>
+                <item value="ICT2133"/>
               </model>
             </properties>
           </component>
