@@ -1,7 +1,7 @@
 import javax.swing.*;
 
 public class TO_Timetable_Update {
-    private JPanel panal1;
+    public JPanel panal1;
     private JButton logoutButton;
     private JButton attendenceButton;
     private JButton timetableButton;
@@ -12,4 +12,5 @@ public class TO_Timetable_Update {
     private JButton viewButton;
     private JButton updateButton1;
     private JPanel Edit;
+
 }
