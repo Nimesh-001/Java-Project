@@ -43,7 +43,7 @@ public class EditAdminprofile {
                 Dbconnector db = new Dbconnector();
                 Connection con = db.getConnection();
 
-                String sql = "UPDATE USER SET First_Name=?, Last_Name=?, Designation=?, Phone_Number=?, Email=?, Password=?, Profile_Pic_Path=? WHERE Username='AD0001'";
+                String sql = "UPDATE USER SET First_Name=?, Last_Name=?, Designation=?, Phone_Number=?, Profile_Pic_Path=?, Password=?, Email=? WHERE Username='AD0001'";
 
 
                 try {
