@@ -8,6 +8,8 @@ public class LecStudentAttendance {
     private JButton backButton;
     private JButton clearButton;
     private JTable table1;
+    private JComboBox comboBox1;
+    private JComboBox comboBox2;
 
     public static void main(String[] args) {
         JFrame frame = new JFrame("LecStudentAttendance");
