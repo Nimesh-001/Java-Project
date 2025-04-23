@@ -18,7 +18,7 @@ public class form {
 
     public form() {
         frame = new JFrame("form");
-        frame.setContentPane(new form().panel1);
+        frame.setContentPane(this.panel1);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.pack();
         frame.setVisible(true);
