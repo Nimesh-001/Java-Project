@@ -78,13 +78,15 @@ public class Admindashbord {
         Dbconnector dbc = new Dbconnector();
         Connection con = dbc.getConnection();
 
-        String sql= "SELECT Profile_Pic_Path FROM USER WHERE Username='AD0001'";
+        String sql= "SELECT Profile_Pic_Path,First_Name FROM USER WHERE Username='AD0001'";
         try {
             PreparedStatement pst = con.prepareStatement(sql);
             ResultSet rs = pst.executeQuery();
 
             if(rs.next()){
                 String path = rs.getString("Profile_Pic_Path");
+                String first_name = rs.getString("First_Name");
+                adminUsernameLabel.setText("WELCOME "+first_name);
 
                 if(path!=null && !path.isEmpty()){
                     ImageIcon image = new ImageIcon(path);
