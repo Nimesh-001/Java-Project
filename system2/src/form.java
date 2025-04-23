@@ -83,6 +83,16 @@ public class form {
                     JOptionPane.showMessageDialog(null,ex.getMessage());
                     JOptionPane.showMessageDialog(null,"database error..");
                 }
+                finally {
+                    if (con != null) {
+                        try {
+                            con.close();
+                        } catch (SQLException ex) {
+                            ex.printStackTrace();
+                        }
+                    }
+                }
+
 
 
             }
