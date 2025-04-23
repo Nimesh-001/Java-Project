@@ -12,9 +12,9 @@ public class LecNotice {
         frame.setContentPane(this.panel1);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.pack();
-        frame.setVisible(true);
         frame.setLocationRelativeTo(null);
         frame.setResizable(false);
+        frame.setVisible(true);
         frame.setSize(1000,500);
 
         backButton.addActionListener(new ActionListener() {
