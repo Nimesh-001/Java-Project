@@ -34,7 +34,7 @@ public class form {
 
 
                 try {
-                    String sql = "select * from USER where Username = ? and Password = ?";
+                    String sql = "select * from USER where Username = ? and BINARY Password = ?";
                     PreparedStatement pst = con.prepareStatement(sql);
                     pst.setString(1, username);
                     pst.setString(2, password);
