@@ -66,7 +66,7 @@
                   <grid row="5" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
                 </constraints>
                 <properties>
-                  <icon value="image/5.png"/>
+                  <icon value="image/2.png"/>
                   <text value=""/>
                 </properties>
               </component>
@@ -84,7 +84,8 @@
                   <grid row="4" column="0" row-span="1" col-span="2" vsize-policy="0" hsize-policy="0" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
                 </constraints>
                 <properties>
-                  <text value="Label"/>
+                  <foreground color="-131073"/>
+                  <text value="welcome"/>
                 </properties>
               </component>
             </children>
@@ -102,8 +103,8 @@
                   <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
                 </constraints>
                 <properties>
-                  <font name="Arial Black" size="16" style="1"/>
-                  <text value="WELCOME, ADMIN"/>
+                  <font name="Arial Black" size="24" style="1"/>
+                  <text value="ADMIN Dashboard"/>
                 </properties>
               </component>
               <grid id="f891c" layout-manager="GridLayoutManager" row-count="2" column-count="4" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
@@ -196,15 +197,6 @@
                   </component>
                 </children>
               </grid>
-              <component id="3823a" class="javax.swing.JButton" binding="button1" default-binding="true">
-                <constraints>
-                  <grid row="0" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="4" fill="0" indent="0" use-parent-layout="false"/>
-                </constraints>
-                <properties>
-                  <icon value="image/2.png"/>
-                  <text value=""/>
-                </properties>
-              </component>
             </children>
           </grid>
         </children>
