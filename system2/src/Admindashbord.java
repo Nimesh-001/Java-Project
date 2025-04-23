@@ -2,11 +2,8 @@ import javax.swing.*;
 
 public class Admindashbord {
     private JPanel panel1;
-    private JButton userProfilesButton;
-    private JButton coursesButton;
-    private JButton noticesButton;
     private JButton logoutButton;
-    private JButton timetablesButton;
+    private JButton editProfileButton;
     private JButton timetablesButton1;
     private JButton noticesButton1;
     private JButton coursesButton1;
