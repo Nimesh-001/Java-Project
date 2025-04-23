@@ -22,6 +22,7 @@ public class LecMarks {
     private JButton ADDButton6;
     private JButton ADDButton7;
     private JButton ADDButton8;
+    private JButton backButton;
 
     public static void main(String[] args) {
         JFrame frame = new JFrame("LecMarks");
