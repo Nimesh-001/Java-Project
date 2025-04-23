@@ -1,4 +1,5 @@
 import javax.swing.*;
+import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.sql.Connection;
@@ -84,6 +85,12 @@ public class Admindashbord {
             if(rs.next()){
                 String path = rs.getString("Profile_Pic_Path");
 
+                if(path!=null && !path.isEmpty()){
+                    ImageIcon image = new ImageIcon(path);
+                    Image img = image.getImage().getScaledInstance(100,100,Image.SCALE_SMOOTH);
+                    profilePicLabel.setIcon(new ImageIcon(img));
+
+                }
             }
 
         } catch (SQLException e) {
