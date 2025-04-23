@@ -61,7 +61,7 @@ public class form {
                                 new Studentdashboard();
                                 break;
 
-                            case "technical Officer":
+                            case "technical officer":
                                 frame.dispose();
                                 new Todashboard();
                                 break;
