@@ -56,11 +56,12 @@ public class Todashboard {
                 frame.setLocationRelativeTo(null);
             }
         });
-        noticeButton1.addActionListener(new ActionListener() {
+
+        timetableButton1.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                JFrame frame = new JFrame("TO_Notice");
-                frame.setContentPane(new TO_Notice().panal1);
+                JFrame frame = new JFrame("TO_Timetable");
+                frame.setContentPane(new TO_Timetable().panal1);
                 frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
                 frame.pack();
                 frame.setVisible(true);
@@ -69,11 +70,11 @@ public class Todashboard {
                 frame.setLocationRelativeTo(null);
             }
         });
-        timetableButton1.addActionListener(new ActionListener() {
+        noticeButton1.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                JFrame frame = new JFrame("TO_Timetable");
-                frame.setContentPane(new TO_Timetable().panal1);
+                JFrame frame = new JFrame("TO_Notice");
+                frame.setContentPane(new TO_Notice().panal1);
                 frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
                 frame.pack();
                 frame.setVisible(true);
