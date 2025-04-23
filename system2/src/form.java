@@ -17,6 +17,16 @@ public class form {
 
 
     public form() {
+        frame = new JFrame("form");
+        frame.setContentPane(new form().panel1);
+        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        frame.pack();
+        frame.setVisible(true);
+        frame.setSize(1000,500);
+        frame.setLocationRelativeTo(null);
+        frame.setTitle("Login form");
+        frame.setResizable(false);
+
         LOGINButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -109,15 +119,8 @@ public class form {
     }
 
     public static void main(String[] args) {
-        frame = new JFrame("form");
-        frame.setContentPane(new form().panel1);
-        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        frame.pack();
-        frame.setVisible(true);
-        frame.setSize(1000,500);
-        frame.setLocationRelativeTo(null);
-        frame.setTitle("Login form");
-        frame.setResizable(false);
+        new form();
+
 
     }
 }
