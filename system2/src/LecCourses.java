@@ -1,4 +1,6 @@
 import javax.swing.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
 public class LecCourses {
     private JPanel panel1;
@@ -7,14 +9,40 @@ public class LecCourses {
     private JButton DELETEButton;
     private JButton backButton;
 
-    public static void main(String[] args) {
+    public LecCourses() {
         JFrame frame = new JFrame("LecCourses");
-        frame.setContentPane(new LecCourses().panel1);
+        frame.setContentPane(this.panel1);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.pack();
         frame.setVisible(true);
         frame.setLocationRelativeTo(null);
         frame.setResizable(false);
         frame.setSize(1000,500);
+
+
+        ADDButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+
+            }
+        });
+        DELETEButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+
+            }
+        });
+        backButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                frame.dispose();
+                new Lecturdashbord();
+            }
+        });
+    }
+
+    public static void main(String[] args) {
+        new LecCourses();
+
     }
 }
