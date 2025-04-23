@@ -43,7 +43,8 @@ public class EditAdminprofile {
                 Dbconnector db = new Dbconnector();
                 Connection con = db.getConnection();
 
-                String sql = "UPDATE USER SET First_Name=?, Last_Name=?, Designation=?, Phone_Number=?, Email=?, Password=?, Picture_Path=? WHERE Username='AD0001'";
+                String sql = "UPDATE USER SET First_Name=?, Last_Name=?, Designation=?, Phone_Number=?, Email=?, Password=?, Profile_Pic_Path=? WHERE Username='AD0001'";
+
 
                 try {
                     PreparedStatement pst = con.prepareStatement(sql);
@@ -63,7 +64,7 @@ public class EditAdminprofile {
                         JOptionPane.showMessageDialog(null, "Admin Profile Not Updated");
                     }
 
-                    
+
 
                 } catch (SQLException ex) {
                     JOptionPane.showMessageDialog(null, "Error updating profile: " + ex.getMessage());
