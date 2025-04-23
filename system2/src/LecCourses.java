@@ -5,6 +5,7 @@ public class LecCourses {
     private JComboBox comboBox1;
     private JButton ADDButton;
     private JButton DELETEButton;
+    private JButton backButton;
 
     public static void main(String[] args) {
         JFrame frame = new JFrame("LecCourses");
