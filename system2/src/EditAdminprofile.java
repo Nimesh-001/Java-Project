@@ -1,6 +1,9 @@
 import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.SQLException;
 
 public class EditAdminprofile {
     private JPanel panel1;
@@ -29,7 +32,31 @@ public class EditAdminprofile {
         updateButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
+                String firstname = textField1.getText();
+                String lastname = textField2.getText();
+                String designation = textField3.getText();
+                String phone = textField4.getText();
+                String email = textField5.getText();
+                String password = String.valueOf(passwordField2.getPassword());
+                String pic_path = textField6.getText();
 
+                Dbconnector db = new Dbconnector();
+                Connection con = db.getConnection();
+
+                String sql = "UPDATE USER SET First_Name=?, Last_Name=?, Designation=?, Phone_Number=?, Email=?, Password=?, Picture_Path=? WHERE Username=?";
+                try {
+                    PreparedStatement pst = con.prepareStatement(sql);
+                    pst.setString(1, firstname);
+                    pst.setString(2, lastname);
+                    pst.setString(3, designation);
+                    pst.setString(4, phone);
+                    pst.setString(5, email);
+                    pst.setString(6, password);
+                    pst.setString(7, pic_path);
+
+                } catch (SQLException ex) {
+
+                }
             }
         });
         resetButton.addActionListener(new ActionListener() {

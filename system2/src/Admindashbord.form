@@ -43,7 +43,7 @@
                 </constraints>
                 <properties>
                   <background color="-13922170"/>
-                  <font name="Arial Black" size="14" style="1"/>
+                  <font name="Arial Black" size="16" style="1"/>
                   <foreground color="-131073"/>
                   <horizontalAlignment value="2"/>
                   <text value="Logout"/>
@@ -55,7 +55,7 @@
                 </constraints>
                 <properties>
                   <background color="-13922170"/>
-                  <font name="Arial Black" size="14" style="1"/>
+                  <font name="Arial Black" size="16" style="1"/>
                   <foreground color="-131073"/>
                   <horizontalAlignment value="2"/>
                   <text value="Edit profile"/>
@@ -157,7 +157,7 @@
                     </constraints>
                     <properties>
                       <background color="-13922170"/>
-                      <font name="Arial Black" size="14" style="1"/>
+                      <font name="Arial Black" size="16" style="1"/>
                       <foreground color="-131073"/>
                       <text value="Timetables"/>
                     </properties>
@@ -168,7 +168,7 @@
                     </constraints>
                     <properties>
                       <background color="-13922170"/>
-                      <font name="Arial Black" size="14" style="1"/>
+                      <font name="Arial Black" size="16" style="1"/>
                       <foreground color="-131073"/>
                       <text value="Notices"/>
                     </properties>
@@ -179,7 +179,7 @@
                     </constraints>
                     <properties>
                       <background color="-13922170"/>
-                      <font name="Arial Black" size="14" style="1"/>
+                      <font name="Arial Black" size="16" style="1"/>
                       <foreground color="-131073"/>
                       <text value="Courses"/>
                     </properties>
@@ -190,7 +190,7 @@
                     </constraints>
                     <properties>
                       <background color="-13922170"/>
-                      <font name="Arial Black" size="14" style="1"/>
+                      <font name="Arial Black" size="16" style="1"/>
                       <foreground color="-131073"/>
                       <text value="User Profiles"/>
                     </properties>
