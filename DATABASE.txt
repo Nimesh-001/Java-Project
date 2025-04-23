@@ -6,7 +6,76 @@ CREATE DATABASE Tecmis;
 
 
 
+CREATE TABLE USER (
+    NIC VARCHAR(20),
+    First_Name VARCHAR(50),
+    Last_Name VARCHAR(50),
+    Designation VARCHAR(50),
+    Phone_Number VARCHAR(15),
+    Email VARCHAR(100),
+    Password VARCHAR(255),
+    PRIMARY KEY (NIC)
+);
+
+
+INSERT INTO USER (NIC, First_Name, Last_Name, Designation, Phone_Number, Email, Password)
+VALUES
+
+('9900123456', 'P.H.P.Nuwan', 'Laksiri', 'Lecture', '0711234567', 'phpnuwan@gmail.com', 'NuL@ks123'),
+('9902345558', 'S.A.Akila', 'Brahmana', 'Lecture', '0722345558', 'bakila@gmail.com', 'Brhm@Ak234'),
+('9903895890', 'N.A.Shasitha', 'Lakal', 'Lecture', '077389589', 'shashithalakal@gmail.com', 'L@kSh567'),
+('9904510100', 'G.A.Chanduni', 'Gamage', 'Lecture', '0774510100', 'chanduniGg@gmail.com', 'ChGm@0100'),
+('9905678801', 'P.M.Chathuranga', 'Adhikari', 'Lecture', '0765678801', 'chathurangaadhi@gmail.com', 'Ch@Adh890'),
+
+
+
+('9905964783', 'Kasun', 'Jayasingha', 'Technical Officer', '071-5964783', 'kasun@gmail.com', 'K@Jay4783'),
+('9905821467', 'Malik', 'Kumara', 'Technical Officer', '076-5821467', 'malik@gmail.com', 'M@Kum1467'),
+('9904598627', 'Nihal', 'Perera', 'Technical Officer', '071-4598627', 'nihal@gmail.com', 'N@Per8627'),
+('9908264739', 'Anushka', 'Bandara', 'Technical Officer', '076-8264739', 'anushka@gmail.com', 'A@Ban4739'),
+('9909267300', 'Ranil', 'Kumarathunga', 'Technical Officer', '071-9267300', 'ranil@gmail.com', 'R@Kum7300'),
+
+
+('2002123456', 'Chathura', 'Wickramasingha', 'Student', '0757654890', 'chathura@gmail.com', 'C@Wick123'),
+('20028934265', 'Ruwan', 'Fernando', 'Student', '0758934265', 'ruwan@gmail.com', 'R@Fern123'),
+('20029754362', 'Nimesh', 'Lakshan', 'Student', '0759754362', 'nimesh@gmail.com', 'N@Laks123'),
+('20018908465', 'Asanka', 'Gunasekara', 'Student', '0768908465', 'asanka@gmail.com', 'A@Guna123'),
+('20025678434', 'Shanika', 'Fernando', 'Student', '0725678434', 'shanika@gmail.com', 'S@Fern123'),
+('20020987432', 'Pavithra', 'Gunawardana', 'Student', '0750987432', 'pavithra@gmail.com', 'P@Guna123'),
+('20027642315', 'Chamara', 'De Silva', 'Student', '0757642315', 'chamara@gmail.com', 'C@DeSi123'),
+('20026783452', 'Lakshan', 'Ariyadasa', 'Student', '0756783452', 'lakshan@gmail.com', 'L@Aria123'),
+('20035673453', 'Harish', 'Prasath', 'Student', '0725673453', 'harish@gmail.com', 'H@Pras123'),
+('20038908765', 'Saman', 'Jayasingha', 'Student', '0789087654', 'saman@gmail.com', 'S@Jaya123'),
+('20027689043', 'Prasad', 'Fernando', 'Student', '0768904356', 'prasad@gmail.com', 'P@Fern123'),
+('20017236789', 'Chamara', 'Gunawardana', 'Student', '0723678905', 'cg@gmail.com', 'C@Guna123'),
+('20027098754', 'Tharushi', 'Dasanayaka', 'Student', '0709875467', 'tharushi@gmail.com', 'T@Dasa123'),
+('20027894321', 'Sanjaya', 'Jayasingha', 'Student', '0789432109', 'sanjaya@gmail.com', 'S@Jaya123'),
+('20037234579', 'Chameli', 'Mendis', 'Student', '0723457908', 'chameli@gmail.com', 'C@Mend123'),
+('20027035516', 'Lalithya', 'Rasingolla', 'Student', '0703551672', 'lalithya@gmail.com', 'L@Rasi123'),
+('20027012344', 'Nuwan', 'Herath', 'Student', '0701234456', 'nuwan@gmail.com', 'N@Hera123'),
+('20027667843', 'Isuru', 'Perera', 'Student', '0766784321', 'isuru@gmail.com', 'I@Pere123'),
+('20037156783', 'Dilini', 'Madushani', 'Student', '0715678345', 'dilini@gmail.com', 'D@Madu123'),
+('20037043219', 'Kasun', 'Rathnayake', 'Student', '0704321987', 'kasun@gmail.com', 'K@Rath123'),
+
+
+('9901123456', 'K.M.Sachini', 'Perera', 'Admin', '0711123456', 'sachi@gmail.com', 'Sa@Per123');
+
+
+
 //admin table//
+
+CREATE TABLE Admin (
+    NIC VARCHAR(20),
+    Admin_id CHAR(10),
+    PRIMARY KEY (Admin_id)
+);
+
+ALTER TABLE Admin
+ADD FOREIGN KEY (NIC) REFERENCES USER(NIC);
+
+INSERT INTO Admin (NIC, Admin_id)
+VALUES
+('9901123456', 'A001');
 
 
 
@@ -94,6 +163,201 @@ VALUES
 
 
 //attendance table//
+
+CREATE TABLE Attendance (
+    Course_code CHAR(10),
+    Student_id CHAR(20),
+    Session_Type VARCHAR(15),
+    Session_date VARCHAR(50),
+    Status VARCHAR(15),
+    TO_id CHAR(10),
+    Medical_id CHAR(10),
+    PRIMARY KEY (Student_id, Course_code)
+);
+
+
+ALTER TABLE Attendance
+ADD FOREIGN KEY (Course_code) REFERENCES Course_unit(Course_code);
+
+ALTER TABLE Attendance
+ADD FOREIGN KEY (Student_id) REFERENCES Student(Student_id);
+
+ALTER TABLE Attendance
+ADD FOREIGN KEY (TO_id) REFERENCES Technical_officer(TO_id);
+
+ALTER TABLE Attendance
+ADD FOREIGN KEY (Medical_id) REFERENCES Medical(Medical_id);
+
+
+INSERT INTO Attendance (Course_code, Student_id, Session_Type, Session_date, Status, TO_id, Medical_id)
+VALUES
+('ICT2113', 'TG_2022_1400', 'P', '2025-01-06', 'Present', 'TO001', 'LEC003'),
+('ICT2113', 'TG_2022_1401', 'P', '2025-01-06', 'Present', 'TO001', 'LEC003'),
+('ICT2113', 'TG_2022_1402', 'P', '2025-01-06', 'Present', 'TO001', 'LEC003'),
+('ICT2113', 'TG_2022_1403', 'P', '2025-01-06', 'Present', 'TO001', 'LEC003'),
+('ICT2113', 'TG_2022_1404', 'P', '2025-01-06', 'Present', 'TO001', 'LEC003'),
+('ICT2113', 'TG_2022_1405', 'P', '2025-01-06', 'Present', 'TO001', 'LEC003'),
+('ICT2113', 'TG_2022_1406', 'P', '2025-01-06', 'Present', 'TO001', 'LEC003'),
+('ICT2113', 'TG_2022_1407', 'P', '2025-01-06', 'Present', 'TO001', 'LEC003'),
+('ICT2113', 'TG_2022_1408', 'P', '2025-01-06', 'Present', 'TO001', 'LEC003'),
+('ICT2113', 'TG_2022_1409', 'P', '2025-01-06', 'Present', 'TO001', 'LEC003'),
+('ICT2113', 'TG_2022_1410', 'P', '2025-01-06', 'Present', 'TO001', 'LEC003'),
+('ICT2113', 'TG_2022_1411', 'P', '2025-01-06', 'Present', 'TO001', 'LEC003'),
+('ICT2113', 'TG_2022_1412', 'P', '2025-01-06', 'Present', 'TO001', 'LEC003'),
+('ICT2113', 'TG_2022_1413', 'P', '2025-01-06', 'Present', 'TO001', 'LEC003'),
+('ICT2113', 'TG_2022_1414', 'P', '2025-01-06', 'Present', 'TO001', 'LEC003'),
+('ICT2113', 'TG_2022_1415', 'P', '2025-01-06', 'Present', 'TO001', 'LEC003'),
+('ICT2113', 'TG_2022_1416', 'P', '2025-01-06', 'Present', 'TO001', 'LEC003'),
+('ICT2113', 'TG_2022_1417', 'P', '2025-01-06', 'Present', 'TO001', 'LEC003'),
+('ICT2113', 'TG_2022_1418', 'P', '2025-01-06', 'Present', 'TO001', 'LEC003'),
+('ICT2113', 'TG_2022_1419', 'P', '2025-01-06', 'Present', 'TO001', 'LEC003');
+
+
+INSERT INTO Attendance (Course_code, Student_id, Session_Type, Session_date, Status, TO_id, Medical_id)
+VALUES
+('ICT2113', 'TG_2022_1401', 'T', '2025-01-06', 'Present', 'TO001', 'LEC003'),
+('ICT2113', 'TG_2022_1402', 'T', '2025-01-06', 'Present', 'TO001', 'LEC003'),
+('ICT2113', 'TG_2022_1403', 'T', '2025-01-06', 'Present', 'TO001', 'LEC003'),
+('ICT2113', 'TG_2022_1404', 'T', '2025-01-06', 'Present', 'TO001', 'LEC003'),
+('ICT2113', 'TG_2022_1405', 'T', '2025-01-06', 'Present', 'TO001', 'LEC003'),
+('ICT2113', 'TG_2022_1406', 'T', '2025-01-06', 'Present', 'TO001', 'LEC003'),
+('ICT2113', 'TG_2022_1407', 'T', '2025-01-06', 'Present', 'TO001', 'LEC003'),
+('ICT2113', 'TG_2022_1408', 'T', '2025-01-06', 'Present', 'TO001', 'LEC003'),
+('ICT2113', 'TG_2022_1409', 'T', '2025-01-06', 'Present', 'TO001', 'LEC003'),
+('ICT2113', 'TG_2022_1410', 'T', '2025-01-06', 'Present', 'TO001', 'LEC003'),
+('ICT2113', 'TG_2022_1411', 'T', '2025-01-06', 'Present', 'TO001', 'LEC003'),
+('ICT2113', 'TG_2022_1412', 'T', '2025-01-06', 'Present', 'TO001', 'LEC003'),
+('ICT2113', 'TG_2022_1413', 'T', '2025-01-06', 'Present', 'TO001', 'LEC003'),
+('ICT2113', 'TG_2022_1414', 'T', '2025-01-06', 'Present', 'TO001', 'LEC003'),
+('ICT2113', 'TG_2022_1415', 'T', '2025-01-06', 'Present', 'TO001', 'LEC003'),
+('ICT2113', 'TG_2022_1416', 'T', '2025-01-06', 'Present', 'TO001', 'LEC003'),
+('ICT2113', 'TG_2022_1417', 'T', '2025-01-06', 'Present', 'TO001', 'LEC003'),
+('ICT2113', 'TG_2022_1418', 'T', '2025-01-06', 'Present', 'TO001', 'LEC003'),
+('ICT2113', 'TG_2022_1419', 'T', '2025-01-06', 'Present', 'TO001', 'LEC003');
+
+
+INSERT INTO Attendance (Course_code, Student_id, Session_Type, Session_date, Status, TO_id, Medical_id)
+VALUES
+('ICT2133', 'TG_2022_1400', 'T', '2025-01-07', 'Present', 'TO002', 'LEC004'),
+('ICT2133', 'TG_2022_1401', 'T', '2025-01-07', 'Present', 'TO002', 'LEC004'),
+('ICT2133', 'TG_2022_1402', 'T', '2025-01-07', 'Present', 'TO002', 'LEC004'),
+('ICT2133', 'TG_2022_1403', 'T', '2025-01-07', 'Present', 'TO002', 'LEC004'),
+('ICT2133', 'TG_2022_1404', 'T', '2025-01-07', 'Present', 'TO002', 'LEC004'),
+('ICT2133', 'TG_2022_1405', 'T', '2025-01-07', 'Present', 'TO002', 'LEC004'),
+('ICT2133', 'TG_2022_1406', 'T', '2025-01-07', 'Present', 'TO002', 'LEC004'),
+('ICT2133', 'TG_2022_1407', 'T', '2025-01-07', 'Present', 'TO002', 'LEC004'),
+('ICT2133', 'TG_2022_1408', 'T', '2025-01-07', 'Present', 'TO002', 'LEC004'),
+('ICT2133', 'TG_2022_1409', 'T', '2025-01-07', 'Present', 'TO002', 'LEC004'),
+('ICT2133', 'TG_2022_1410', 'T', '2025-01-07', 'Present', 'TO002', 'LEC004'),
+('ICT2133', 'TG_2022_1411', 'T', '2025-01-07', 'Present', 'TO002', 'LEC004'),
+('ICT2133', 'TG_2022_1412', 'T', '2025-01-07', 'Present', 'TO002', 'LEC004'),
+('ICT2133', 'TG_2022_1413', 'T', '2025-01-07', 'Present', 'TO002', 'LEC004'),
+('ICT2133', 'TG_2022_1414', 'T', '2025-01-07', 'Present', 'TO002', 'LEC004'),
+('ICT2133', 'TG_2022_1415', 'T', '2025-01-07', 'Present', 'TO002', 'LEC004'),
+('ICT2133', 'TG_2022_1416', 'T', '2025-01-07', 'Present', 'TO002', 'LEC004'),
+('ICT2133', 'TG_2022_1417', 'T', '2025-01-07', 'Present', 'TO002', 'LEC004'),
+('ICT2133', 'TG_2022_1418', 'T', '2025-01-07', 'Present', 'TO002', 'LEC004'),
+('ICT2133', 'TG_2022_1419', 'T', '2025-01-07', 'Present', 'TO002', 'LEC004');
+
+
+INSERT INTO Attendance (Course_code, Student_id, Session_Type, Session_date, Status, TO_id, Medical_id)
+VALUES
+('ICT2133', 'TG_2022_1400', 'P', '2025-01-07', 'Present', 'TO002', 'LEC004'),
+('ICT2133', 'TG_2022_1401', 'P', '2025-01-07', 'Present', 'TO002', 'LEC004'),
+('ICT2133', 'TG_2022_1402', 'P', '2025-01-07', 'Present', 'TO002', 'LEC004'),
+('ICT2133', 'TG_2022_1403', 'P', '2025-01-07', 'Present', 'TO002', 'LEC004'),
+('ICT2133', 'TG_2022_1404', 'P', '2025-01-07', 'Present', 'TO002', 'LEC004'),
+('ICT2133', 'TG_2022_1405', 'P', '2025-01-07', 'Present', 'TO002', 'LEC004'),
+('ICT2133', 'TG_2022_1406', 'P', '2025-01-07', 'Present', 'TO002', 'LEC004'),
+('ICT2133', 'TG_2022_1407', 'P', '2025-01-07', 'Present', 'TO002', 'LEC004'),
+('ICT2133', 'TG_2022_1408', 'P', '2025-01-07', 'Present', 'TO002', 'LEC004'),
+('ICT2133', 'TG_2022_1409', 'P', '2025-01-07', 'Present', 'TO002', 'LEC004'),
+('ICT2133', 'TG_2022_1410', 'P', '2025-01-07', 'Present', 'TO002', 'LEC004'),
+('ICT2133', 'TG_2022_1411', 'P', '2025-01-07', 'Present', 'TO002', 'LEC004'),
+('ICT2133', 'TG_2022_1412', 'P', '2025-01-07', 'Present', 'TO002', 'LEC004'),
+('ICT2133', 'TG_2022_1413', 'P', '2025-01-07', 'Present', 'TO002', 'LEC004'),
+('ICT2133', 'TG_2022_1414', 'P', '2025-01-07', 'Present', 'TO002', 'LEC004'),
+('ICT2133', 'TG_2022_1415', 'P', '2025-01-07', 'Present', 'TO002', 'LEC004'),
+('ICT2133', 'TG_2022_1416', 'P', '2025-01-07', 'Present', 'TO002', 'LEC004'),
+('ICT2133', 'TG_2022_1417', 'P', '2025-01-07', 'Present', 'TO002', 'LEC004'),
+('ICT2133', 'TG_2022_1418', 'P', '2025-01-07', 'Present', 'TO002', 'LEC004'),
+('ICT2133', 'TG_2022_1419', 'P', '2025-01-07', 'Present', 'TO002', 'LEC004');
+
+
+
+INSERT INTO Attendance (Course_code, Student_id, Session_Type, Session_date, Status, TO_id, Medical_id)
+VALUES
+('ICT2152', 'TG_2022_1400', 'T', '2025-01-08', 'Present', 'TO002', 'LEC003'),
+('ICT2152', 'TG_2022_1401', 'T', '2025-01-08', 'Present', 'TO002', 'LEC003'),
+('ICT2152', 'TG_2022_1402', 'T', '2025-01-08', 'Present', 'TO002', 'LEC003'),
+('ICT2152', 'TG_2022_1403', 'T', '2025-01-08', 'Present', 'TO002', 'LEC003'),
+('ICT2152', 'TG_2022_1404', 'T', '2025-01-08', 'Present', 'TO002', 'LEC003'),
+('ICT2152', 'TG_2022_1405', 'T', '2025-01-08', 'Present', 'TO002', 'LEC003'),
+('ICT2152', 'TG_2022_1406', 'T', '2025-01-08', 'Present', 'TO002', 'LEC003'),
+('ICT2152', 'TG_2022_1407', 'T', '2025-01-08', 'Present', 'TO002', 'LEC003'),
+('ICT2152', 'TG_2022_1408', 'T', '2025-01-08', 'Present', 'TO002', 'LEC003'),
+('ICT2152', 'TG_2022_1409', 'T', '2025-01-08', 'Present', 'TO002', 'LEC003'),
+('ICT2152', 'TG_2022_1410', 'T', '2025-01-08', 'Present', 'TO002', 'LEC003'),
+('ICT2152', 'TG_2022_1411', 'T', '2025-01-08', 'Present', 'TO002', 'LEC003'),
+('ICT2152', 'TG_2022_1412', 'T', '2025-01-08', 'Present', 'TO002', 'LEC003'),
+('ICT2152', 'TG_2022_1413', 'T', '2025-01-08', 'Present', 'TO002', 'LEC003'),
+('ICT2152', 'TG_2022_1414', 'T', '2025-01-08', 'Present', 'TO002', 'LEC003'),
+('ICT2152', 'TG_2022_1415', 'T', '2025-01-08', 'Present', 'TO002', 'LEC003'),
+('ICT2152', 'TG_2022_1416', 'T', '2025-01-08', 'Present', 'TO002', 'LEC003'),
+('ICT2152', 'TG_2022_1417', 'T', '2025-01-08', 'Present', 'TO002', 'LEC003'),
+('ICT2152', 'TG_2022_1418', 'T', '2025-01-08', 'Present', 'TO002', 'LEC003'),
+('ICT2152', 'TG_2022_1419', 'T', '2025-01-08', 'Present', 'TO002', 'LEC003');
+
+
+INSERT INTO Attendance (Course_code, Student_id, Session_Type, Session_date, Status, TO_id, Medical_id)
+VALUES
+('ICT2122', 'TG_2022_1400', 'T', '2025-01-09', 'Present', 'TO002', 'LEC001'),
+('ICT2122', 'TG_2022_1401', 'T', '2025-01-09', 'Present', 'TO002', 'LEC001'),
+('ICT2122', 'TG_2022_1402', 'T', '2025-01-09', 'Present', 'TO002', 'LEC001'),
+('ICT2122', 'TG_2022_1403', 'T', '2025-01-09', 'Present', 'TO002', 'LEC001'),
+('ICT2122', 'TG_2022_1404', 'T', '2025-01-09', 'Present', 'TO002', 'LEC001'),
+('ICT2122', 'TG_2022_1405', 'T', '2025-01-09', 'Present', 'TO002', 'LEC001'),
+('ICT2122', 'TG_2022_1406', 'T', '2025-01-09', 'Present', 'TO002', 'LEC001'),
+('ICT2122', 'TG_2022_1407', 'T', '2025-01-09', 'Present', 'TO002', 'LEC001'),
+('ICT2122', 'TG_2022_1408', 'T', '2025-01-09', 'Present', 'TO002', 'LEC001'),
+('ICT2122', 'TG_2022_1409', 'T', '2025-01-09', 'Present', 'TO002', 'LEC001'),
+('ICT2122', 'TG_2022_1410', 'T', '2025-01-09', 'Present', 'TO002', 'LEC001'),
+('ICT2122', 'TG_2022_1411', 'T', '2025-01-09', 'Present', 'TO002', 'LEC001'),
+('ICT2122', 'TG_2022_1412', 'T', '2025-01-09', 'Present', 'TO002', 'LEC001'),
+('ICT2122', 'TG_2022_1413', 'T', '2025-01-09', 'Present', 'TO002', 'LEC001'),
+('ICT2122', 'TG_2022_1414', 'T', '2025-01-09', 'Present', 'TO002', 'LEC001'),
+('ICT2122', 'TG_2022_1415', 'T', '2025-01-09', 'Present', 'TO002', 'LEC001'),
+('ICT2122', 'TG_2022_1416', 'T', '2025-01-09', 'Present', 'TO002', 'LEC001'),
+('ICT2122', 'TG_2022_1417', 'T', '2025-01-09', 'Present', 'TO002', 'LEC001'),
+('ICT2122', 'TG_2022_1418', 'T', '2025-01-09', 'Present', 'TO002', 'LEC001'),
+('ICT2122', 'TG_2022_1419', 'T', '2025-01-09', 'Present', 'TO002', 'LEC001');
+
+
+INSERT INTO Attendance (Course_code, Student_id, Session_Type, Session_date, Status, TO_id, Medical_id)
+VALUES
+('ICT2142', 'TG_2022_1400', 'P', '2025-01-09', 'Present', 'TO002', 'LEC001'),
+('ICT2142', 'TG_2022_1401', 'P', '2025-01-09', 'Present', 'TO002', 'LEC001'),
+('ICT2142', 'TG_2022_1402', 'P', '2025-01-09', 'Present', 'TO002', 'LEC001'),
+('ICT2142', 'TG_2022_1403', 'P', '2025-01-09', 'Present', 'TO002', 'LEC001'),
+('ICT2142', 'TG_2022_1404', 'P', '2025-01-09', 'Present', 'TO002', 'LEC001'),
+('ICT2142', 'TG_2022_1405', 'P', '2025-01-09', 'Present', 'TO002', 'LEC001'),
+('ICT2142', 'TG_2022_1406', 'P', '2025-01-09', 'Present', 'TO002', 'LEC001'),
+('ICT2142', 'TG_2022_1407', 'P', '2025-01-09', 'Present', 'TO002', 'LEC001'),
+('ICT2142', 'TG_2022_1408', 'P', '2025-01-09', 'Present', 'TO002', 'LEC001'),
+('ICT2142', 'TG_2022_1409', 'P', '2025-01-09', 'Present', 'TO002', 'LEC001'),
+('ICT2142', 'TG_2022_1410', 'P', '2025-01-09', 'Present', 'TO002', 'LEC001'),
+('ICT2142', 'TG_2022_1411', 'P', '2025-01-09', 'Present', 'TO002', 'LEC001'),
+('ICT2142', 'TG_2022_1412', 'P', '2025-01-09', 'Present', 'TO002', 'LEC001'),
+('ICT2142', 'TG_2022_1413', 'P', '2025-01-09', 'Present', 'TO002', 'LEC001'),
+('ICT2142', 'TG_2022_1414', 'P', '2025-01-09', 'Present', 'TO002', 'LEC001'),
+('ICT2142', 'TG_2022_1415', 'P', '2025-01-09', 'Present', 'TO002', 'LEC001'),
+('ICT2142', 'TG_2022_1416', 'P', '2025-01-09', 'Present', 'TO002', 'LEC001'),
+('ICT2142', 'TG_2022_1417', 'P', '2025-01-09', 'Present', 'TO002', 'LEC001'),
+('ICT2142', 'TG_2022_1418', 'P', '2025-01-09', 'Present', 'TO002', 'LEC001'),
+('ICT2142', 'TG_2022_1419', 'P', '2025-01-09', 'Present', 'TO002', 'LEC001');
+
+
+
 
 
 
@@ -226,6 +490,156 @@ VALUES
 
 //marks table//
 
+CREATE TABLE Marks (
+    Student_id CHAR(20),
+    Lecturer_id CHAR(10),
+    Course_code CHAR(10),
+    Medical_id CHAR(10),
+    Quiz1 FLOAT,
+    Quiz2 FLOAT,
+    Quiz3 FLOAT,
+    Quiz4 FLOAT,
+    Assessment_Mark FLOAT,
+    Mid_Practical FLOAT,
+    Mid_Theory FLOAT,
+    End_Practical FLOAT,
+    End_Theory FLOAT,
+    PRIMARY KEY (Student_id, Course_code)
+);
+
+
+ALTER TABLE Marks
+ADD FOREIGN KEY (Student_id) REFERENCES Student(Student_id);
+
+ALTER TABLE Marks
+ADD FOREIGN KEY (Lecturer_id) REFERENCES Lecturer(Lecturer_id);
+
+ALTER TABLE Marks
+ADD FOREIGN KEY (Course_code) REFERENCES Course_unit(Course_code);
+
+ALTER TABLE Marks
+ADD FOREIGN KEY (Medical_id) REFERENCES Medical(Medical_id);
+
+
+INSERT INTO Marks (Student_id, Lecturer_id, Course_code, Medical_id, Quiz1, Quiz2, Quiz3, Quiz4, Assessment_Mark, Mid_Practical, Mid_Theory, End_Practical, End_Theory)
+VALUES
+('TG_2022_1400', 'LEC003', 'ICT2113', '0', 70, 80, 90, 0, 60, 40, 85, 80, 90),
+('TG_2022_1401', 'LEC003', 'ICT2113', '0', 55, 65, 75, 0, 50, 30, 60, 45, 80),
+('TG_2022_1402', 'LEC003', 'ICT2113', '0', 60, 70, 80, 0, 40, 50, 70, 60, 75),
+('TG_2022_1403', 'LEC003', 'ICT2113', '0', 45, 55, 65, 0, 35, 25, 50, 40, 65),
+('TG_2022_1404', 'LEC003', 'ICT2113', '0', 80, 70, 60, 0, 75, 55, 90, 85, 95),
+('TG_2022_1405', 'LEC003', 'ICT2113', '0', 65, 75, 85, 0, 60, 45, 80, 75, 85),
+('TG_2022_1406', 'LEC003', 'ICT2113', '0', 50, 60, 70, 0, 30, 20, 55, 45, 70),
+('TG_2022_1407', 'LEC003', 'ICT2113', '0', 75, 85, 95, 0, 65, 55, 90, 80, 88),
+('TG_2022_1408', 'LEC003', 'ICT2113', '0', 60, 70, 80, 0, 45, 30, 65, 55, 77),
+('TG_2022_1409', 'LEC003', 'ICT2113', '0', 85, 95, 85, 0, 70, 65, 95, 85, 90),
+('TG_2022_1410', 'LEC003', 'ICT2113', '0', 60, 70, 80, 0, 50, 40, 70, 60, 80),
+('TG_2022_1411', 'LEC003', 'ICT2113', '0', 50, 60, 70, 0, 45, 25, 55, 45, 67),
+('TG_2022_1412', 'LEC003', 'ICT2113', '0', 70, 80, 90, 0, 60, 50, 85, 75, 87),
+('TG_2022_1413', 'LEC003', 'ICT2113', '0', 40, 50, 60, 0, 30, 25, 45, 35, 55),
+('TG_2022_1414', 'LEC003', 'ICT2113', '0', 55, 65, 75, 0, 45, 35, 60, 50, 75),
+('TG_2022_1415', 'LEC003', 'ICT2113', '0', 80, 70, 60, 0, 75, 65, 90, 85, 88),
+('TG_2022_1416', 'LEC003', 'ICT2113', '0', 60, 70, 80, 0, 50, 40, 70, 60, 78),
+('TG_2022_1417', 'LEC003', 'ICT2113', '0', 55, 65, 75, 0, 40, 30, 60, 50, 68),
+('TG_2022_1418', 'LEC003', 'ICT2113', '0', 90, 80, 70, 0, 85, 70, 95, 90, 95),
+('TG_2022_1419', 'LEC003', 'ICT2113', '0', 75, 85, 95, 0, 65, 60, 90, 80, 88);
+
+
+INSERT INTO Marks (Student_id, Lecturer_id, Course_code, Medical_id, Quiz1, Quiz2, Quiz3, Quiz4, Assessment_Mark, Mid_Practical, Mid_Theory, End_Practical, End_Theory)
+VALUES
+('TG_2022_1400', 'LEC001', 'ICT2122', '0', 85, 90, 80, 0, 80, 0, 75, 0, 85),
+('TG_2022_1401', 'LEC001', 'ICT2122', '0', 70, 75, 65, 0, 70, 0, 65, 0, 75),
+('TG_2022_1402', 'LEC001', 'ICT2122', '0', 75, 80, 72, 0, 75, 0, 70, 0, 80),
+('TG_2022_1403', 'LEC001', 'ICT2122', '0', 60, 65, 55, 0, 60, 0, 55, 0, 70),
+('TG_2022_1404', 'LEC001', 'ICT2122', '0', 90, 95, 85, 0, 90, 0, 85, 0, 95),
+('TG_2022_1405', 'LEC001', 'ICT2122', '0', 85, 88, 80, 0, 85, 0, 80, 0, 90),
+('TG_2022_1406', 'LEC001', 'ICT2122', '0', 65, 70, 60, 0, 65, 0, 55, 0, 75),
+('TG_2022_1407', 'LEC001', 'ICT2122', '0', 80, 85, 75, 0, 80, 0, 70, 0, 85),
+('TG_2022_1408', 'LEC001', 'ICT2122', '0', 75, 78, 70, 0, 75, 0, 65, 0, 80),
+('TG_2022_1409', 'LEC001', 'ICT2122', '0', 90, 92, 85, 0, 90, 0, 85, 0, 95),
+('TG_2022_1410', 'LEC001', 'ICT2122', '0', 70, 75, 68, 0, 70, 0, 60, 0, 75),
+('TG_2022_1411', 'LEC001', 'ICT2122', '0', 65, 70, 60, 0, 65, 0, 55, 0, 70),
+('TG_2022_1412', 'LEC001', 'ICT2122', '0', 80, 85, 78, 0, 85, 0, 75, 0, 90),
+('TG_2022_1413', 'LEC001', 'ICT2122', '0', 50, 55, 45, 0, 50, 0, 40, 0, 60),
+('TG_2022_1414', 'LEC001', 'ICT2122', '0', 65, 68, 55, 0, 65, 0, 60, 0, 75),
+('TG_2022_1415', 'LEC001', 'ICT2122', '0', 80, 85, 75, 0, 80, 0, 70, 0, 85),
+('TG_2022_1416', 'LEC001', 'ICT2122', '0', 75, 80, 72, 0, 75, 0, 65, 0, 80),
+('TG_2022_1417', 'LEC001', 'ICT2122', '0', 70, 75, 65, 0, 70, 0, 60, 0, 75),
+('TG_2022_1418', 'LEC001', 'ICT2122', '0', 95, 90, 85, 0, 95, 0, 85, 0, 100),
+('TG_2022_1419', 'LEC001', 'ICT2122', '0', 80, 85, 75, 0, 80, 0, 70, 0, 90);
+
+
+INSERT INTO Marks (Student_id, Lecturer_id, Course_code, Medical_id, Quiz1, Quiz2, Quiz3, Quiz4, Assessment_Mark, Mid_Practical, Mid_Theory, End_Practical, End_Theory)
+VALUES
+('TG_2022_1400', 'LEC004', 'ICT2133', '0', 85, 80, 70, 75, 80, 0, 0, 0, 85),
+('TG_2022_1401', 'LEC004', 'ICT2133', '0', 70, 65, 60, 65, 70, 0, 0, 0, 75),
+('TG_2022_1402', 'LEC004', 'ICT2133', '0', 75, 70, 65, 70, 75, 0, 0, 0, 80),
+('TG_2022_1403', 'LEC004', 'ICT2133', '0', 60, 55, 50, 55, 60, 0, 0, 0, 70),
+('TG_2022_1404', 'LEC004', 'ICT2133', '0', 90, 85, 80, 85, 90, 0, 0, 0, 95),
+('TG_2022_1405', 'LEC004', 'ICT2133', '0', 85, 80, 75, 80, 85, 0, 0, 0, 90),
+('TG_2022_1406', 'LEC004', 'ICT2133', '0', 65, 60, 55, 60, 65, 0, 0, 0, 75),
+('TG_2022_1407', 'LEC004', 'ICT2133', '0', 80, 75, 70, 75, 80, 0, 0, 0, 85),
+('TG_2022_1408', 'LEC004', 'ICT2133', '0', 75, 70, 65, 70, 75, 0, 0, 0, 80),
+('TG_2022_1409', 'LEC004', 'ICT2133', '0', 90, 85, 80, 85, 90, 0, 0, 0, 95),
+('TG_2022_1410', 'LEC004', 'ICT2133', '0', 70, 65, 60, 65, 70, 0, 0, 0, 75),
+('TG_2022_1411', 'LEC004', 'ICT2133', '0', 65, 60, 55, 60, 65, 0, 0, 0, 70),
+('TG_2022_1412', 'LEC004', 'ICT2133', '0', 80, 75, 75, 80, 85, 0, 0, 0, 90),
+('TG_2022_1413', 'LEC004', 'ICT2133', '0', 50, 45, 40, 45, 50, 0, 0, 0, 60),
+('TG_2022_1414', 'LEC004', 'ICT2133', '0', 65, 60, 55, 60, 65, 0, 0, 0, 75),
+('TG_2022_1415', 'LEC004', 'ICT2133', '0', 80, 75, 70, 75, 80, 0, 0, 0, 85),
+('TG_2022_1416', 'LEC004', 'ICT2133', '0', 75, 70, 65, 70, 75, 0, 0, 0, 80),
+('TG_2022_1417', 'LEC004', 'ICT2133', '0', 70, 65, 60, 65, 70, 0, 0, 0, 75),
+('TG_2022_1418', 'LEC004', 'ICT2133', '0', 95, 90, 85, 90, 95, 0, 0, 0, 100),
+('TG_2022_1419', 'LEC004', 'ICT2133', '0', 80, 75, 70, 75, 80, 0, 0, 0, 90);
+
+
+
+INSERT INTO Marks (Student_id, Lecturer_id, Course_code, Medical_id, Quiz1, Quiz2, Quiz3, Quiz4, Assessment_Mark, Mid_Practical, Mid_Theory, End_Practical, End_Theory)
+VALUES
+('TG_2022_1400', 'LEC001', 'ICT2142', '0', 0, 0, 0, 0, 90, 85, 0, 90, 0),
+('TG_2022_1401', 'LEC001', 'ICT2142', '0', 0, 0, 0, 0, 75, 80, 0, 85, 0),
+('TG_2022_1402', 'LEC001', 'ICT2142', '0', 0, 0, 0, 0, 80, 75, 0, 85, 0),
+('TG_2022_1403', 'LEC001', 'ICT2142', '0', 0, 0, 0, 0, 70, 65, 0, 75, 0),
+('TG_2022_1404', 'LEC001', 'ICT2142', '0', 0, 0, 0, 0, 95, 90, 0, 95, 0),
+('TG_2022_1405', 'LEC001', 'ICT2142', '0', 0, 0, 0, 0, 90, 85, 0, 95, 0),
+('TG_2022_1406', 'LEC001', 'ICT2142', '0', 0, 0, 0, 0, 75, 70, 0, 80, 0),
+('TG_2022_1407', 'LEC001', 'ICT2142', '0', 0, 0, 0, 0, 85, 80, 0, 90, 0),
+('TG_2022_1408', 'LEC001', 'ICT2142', '0', 0, 0, 0, 0, 80, 75, 0, 85, 0),
+('TG_2022_1409', 'LEC001', 'ICT2142', '0', 0, 0, 0, 0, 95, 90, 0, 95, 0),
+('TG_2022_1410', 'LEC001', 'ICT2142', '0', 0, 0, 0, 0, 75, 70, 0, 80, 0),
+('TG_2022_1411', 'LEC001', 'ICT2142', '0', 0, 0, 0, 0, 70, 65, 0, 75, 0),
+('TG_2022_1412', 'LEC001', 'ICT2142', '0', 0, 0, 0, 0, 85, 80, 0, 95, 0),
+('TG_2022_1413', 'LEC001', 'ICT2142', '0', 0, 0, 0, 0, 60, 55, 0, 65, 0),
+('TG_2022_1414', 'LEC001', 'ICT2142', '0', 0, 0, 0, 0, 75, 70, 0, 80, 0),
+('TG_2022_1415', 'LEC001', 'ICT2142', '0', 0, 0, 0, 0, 85, 80, 0, 90, 0),
+('TG_2022_1416', 'LEC001', 'ICT2142', '0', 0, 0, 0, 0, 80, 75, 0, 85, 0),
+('TG_2022_1417', 'LEC001', 'ICT2142', '0', 0, 0, 0, 0, 75, 70, 0, 80, 0),
+('TG_2022_1418', 'LEC001', 'ICT2142', '0', 0, 0, 0, 0, 100, 95, 0, 100, 0),
+('TG_2022_1419', 'LEC001', 'ICT2142', '0', 0, 0, 0, 0, 90, 85, 0, 95, 0);
+
+
+INSERT INTO Marks (Student_id, Lecturer_id, Course_code, Medical_id, Quiz1, Quiz2, Quiz3, Quiz4, Assessment_Mark, Mid_Practical, Mid_Theory, End_Practical, End_Theory)
+VALUES
+('TG_2022_1400', 'LEC002', 'ICT2152', '0', 85, 90, 75, 0, 90, 0, 0, 0, 85),
+('TG_2022_1401', 'LEC002', 'ICT2152', '0', 70, 75, 65, 0, 80, 0, 0, 0, 80),
+('TG_2022_1402', 'LEC002', 'ICT2152', '0', 78, 80, 72, 0, 85, 0, 0, 0, 85),
+('TG_2022_1403', 'LEC002', 'ICT2152', '0', 65, 70, 60, 0, 75, 0, 0, 0, 75),
+('TG_2022_1404', 'LEC002', 'ICT2152', '0', 90, 92, 80, 0, 95, 0, 0, 0, 95),
+('TG_2022_1405', 'LEC002', 'ICT2152', '0', 80, 88, 78, 0, 90, 0, 0, 0, 90),
+('TG_2022_1406', 'LEC002', 'ICT2152', '0', 72, 76, 68, 0, 80, 0, 0, 0, 80),
+('TG_2022_1407', 'LEC002', 'ICT2152', '0', 85, 90, 75, 0, 90, 0, 0, 0, 85),
+('TG_2022_1408', 'LEC002', 'ICT2152', '0', 77, 82, 70, 0, 85, 0, 0, 0, 85),
+('TG_2022_1409', 'LEC002', 'ICT2152', '0', 88, 92, 80, 0, 95, 0, 0, 0, 95),
+('TG_2022_1410', 'LEC002', 'ICT2152', '0', 76, 80, 68, 0, 80, 0, 0, 0, 77),
+('TG_2022_1411', 'LEC002', 'ICT2152', '0', 65, 70, 60, 0, 75, 0, 0, 0, 75),
+('TG_2022_1412', 'LEC002', 'ICT2152', '0', 80, 85, 75, 0, 90, 0, 0, 0, 90),
+('TG_2022_1413', 'LEC002', 'ICT2152', '0', 65, 70, 60, 0, 75, 0, 0, 0, 75),
+('TG_2022_1414', 'LEC002', 'ICT2152', '0', 85, 88, 78, 0, 90, 0, 0, 0, 90),
+('TG_2022_1415', 'LEC002', 'ICT2152', '0', 90, 93, 80, 0, 95, 0, 0, 0, 95),
+('TG_2022_1416', 'LEC002', 'ICT2152', '0', 78, 81, 73, 0, 85, 0, 0, 0, 85),
+('TG_2022_1417', 'LEC002', 'ICT2152', '0', 82, 85, 75, 0, 90, 0, 0, 0, 90),
+('TG_2022_1418', 'LEC002', 'ICT2152', '0', 75, 80, 70, 0, 85, 0, 0, 0, 85),
+('TG_2022_1419', 'LEC002', 'ICT2152', '0', 85, 70, 67, 0, 90, 0, 0, 0, 90);
 
 
 
