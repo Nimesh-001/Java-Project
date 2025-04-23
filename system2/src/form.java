@@ -13,6 +13,8 @@ public class form {
     private JButton CLEARButton;
     private JTextField TextField;
 
+    public static JFrame frame;
+
 
     public form() {
         LOGINButton.addActionListener(new ActionListener() {
@@ -44,19 +46,23 @@ public class form {
 
                         switch (designation.toLowerCase()){
                             case "admin":
+                                frame.dispose();
                                 new Admindashbord();
                                 break;
 
 
                             case "lecturer":
+                                frame.dispose();
                                 new Lecturdashbord();
                                 break;
 
                             case "student":
+                                frame.dispose();
                                 new Studentdashboard();
                                 break;
 
                             case "technical Officer":
+                                frame.dispose();
                                 new Todashboard();
                                 break;
 
@@ -93,7 +99,7 @@ public class form {
     }
 
     public static void main(String[] args) {
-        JFrame frame = new JFrame("form");
+        frame = new JFrame("form");
         frame.setContentPane(new form().panel1);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.pack();
