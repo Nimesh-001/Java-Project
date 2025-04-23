@@ -1,7 +1,7 @@
 import javax.swing.*;
 
 public class TO_medical_Update {
-    private JPanel panal1;
+    public JPanel panal1;
     private JButton logoutButton;
     private JButton attendenceButton;
     private JButton timetableButton;
