@@ -43,7 +43,8 @@ public class EditAdminprofile {
                 Dbconnector db = new Dbconnector();
                 Connection con = db.getConnection();
 
-                String sql = "UPDATE USER SET First_Name=?, Last_Name=?, Designation=?, Phone_Number=?, Email=?, Password=?, Picture_Path=? WHERE Username=?";
+                String sql = "UPDATE USER SET First_Name=?, Last_Name=?, Designation=?, Phone_Number=?, Email=?, Password=?, Picture_Path=? WHERE Username='AD0001'";
+
                 try {
                     PreparedStatement pst = con.prepareStatement(sql);
                     pst.setString(1, firstname);
@@ -54,14 +55,31 @@ public class EditAdminprofile {
                     pst.setString(6, password);
                     pst.setString(7, pic_path);
 
-                } catch (SQLException ex) {
+                    int result = pst.executeUpdate();
+                    if(result > 0) {
+                        JOptionPane.showMessageDialog(null, "Admin Profile Updated");
+                    }
+                    else {
+                        JOptionPane.showMessageDialog(null, "Admin Profile Not Updated");
+                    }
 
+                    
+
+                } catch (SQLException ex) {
+                    JOptionPane.showMessageDialog(null, "Error updating profile: " + ex.getMessage());
                 }
             }
         });
         resetButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
+                textField1.setText("");
+                textField2.setText("");
+                textField3.setText("");
+                textField4.setText("");
+                passwordField2.setText("");
+                textField5.setText("");
+                textField6.setText("");
 
             }
         });
