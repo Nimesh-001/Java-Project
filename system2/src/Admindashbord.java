@@ -16,6 +16,7 @@ public class Admindashbord {
     private JButton coursesButton1;
     private JButton userProfilesButton1;
     private JLabel profilePicLabel;
+    private JLabel adminUsernameLabel;
 
     public Admindashbord() {
         JFrame frame = new JFrame("Admindashbord");
