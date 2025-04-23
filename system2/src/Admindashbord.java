@@ -87,7 +87,7 @@ public class Admindashbord {
 
                 if(path!=null && !path.isEmpty()){
                     ImageIcon image = new ImageIcon(path);
-                    Image img = image.getImage().getScaledInstance(200,200,Image.SCALE_SMOOTH);
+                    Image img = image.getImage().getScaledInstance(150,150,Image.SCALE_SMOOTH);
                     profilePicLabel.setIcon(new ImageIcon(img));
 
                 }
