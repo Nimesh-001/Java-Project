@@ -8,7 +8,6 @@ public class Lecturdashbord {
     private JButton marksButton1;
     private JButton studentsButton1;
     private JButton noticeButton1;
-    private JButton button10;
     private JTextField textField1;
 
 
