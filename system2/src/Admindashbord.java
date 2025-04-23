@@ -10,6 +10,7 @@ public class Admindashbord {
     private JButton noticesButton1;
     private JButton coursesButton1;
     private JButton userProfilesButton1;
+    private JLabel profilePicLabel;
 
     public Admindashbord() {
         JFrame frame = new JFrame("Admindashbord");

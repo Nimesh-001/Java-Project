@@ -75,6 +75,15 @@ public class EditAdminprofile {
                 } catch (SQLException ex) {
                     JOptionPane.showMessageDialog(null, "Error updating profile: " + ex.getMessage());
                 }
+                finally {
+                    if (con != null) {
+                        try {
+                            con.close();
+                        } catch (SQLException ex) {
+                            ex.printStackTrace();
+                        }
+                    }
+                }
             }
         });
         resetButton.addActionListener(new ActionListener() {
