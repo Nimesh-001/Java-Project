@@ -20,7 +20,7 @@ public class Admindashbord {
         frame.setResizable(false);
         frame.setLocationRelativeTo(null);
         frame.setSize(1000,500);
-        frame.setVisible(true);
+
 
 
         userProfilesButton1.addActionListener(new ActionListener() {
