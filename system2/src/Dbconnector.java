@@ -11,7 +11,7 @@ public class Dbconnector {
         try {
             String url = "jdbc:mysql://localhost:3306/TecMIS_DB";
             String user = "root";
-            String password = "1234";
+            String password = "12345";
 
             con = DriverManager.getConnection(url,user,password);
             System.out.println("Connected to database successfully");
