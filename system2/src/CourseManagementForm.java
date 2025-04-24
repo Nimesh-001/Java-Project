@@ -74,6 +74,15 @@ public class CourseManagementForm {
         ADDButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
+
+                if (textField1.getText().isEmpty() || textField2.getText().isEmpty() ||
+                        textField4.getText().isEmpty() || textField5.getText().isEmpty() ||
+                        textField6.getText().isEmpty() || textField7.getText().isEmpty() ||
+                        textField8.getText().isEmpty()) {
+                    JOptionPane.showMessageDialog(null, "Please fill all the fields to add a course.");
+                    return;
+                }
+                
                 String sql= "INSERT INTO Course_unit (Course_code, CourseName, Course_type, Theory_hours, Practical_hours, Credits, Lecturer_Username, Admin_Username) VALUES (?, ?, ?, ?, ?, ?, ?, ?)";
                 try {
                     PreparedStatement pst = con.prepareStatement(sql);
