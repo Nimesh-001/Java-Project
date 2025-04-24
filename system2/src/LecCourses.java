@@ -8,6 +8,7 @@ public class LecCourses {
     private JButton ADDButton;
     private JButton DELETEButton;
     private JButton backButton;
+    private JButton viewButton;
 
     public LecCourses() {
         JFrame frame = new JFrame("LecCourses");
@@ -37,6 +38,12 @@ public class LecCourses {
             public void actionPerformed(ActionEvent e) {
                 frame.dispose();
                 new Lecturdashbord();
+            }
+        });
+        viewButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+
             }
         });
     }
