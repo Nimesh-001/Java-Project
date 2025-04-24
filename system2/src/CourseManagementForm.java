@@ -2,6 +2,8 @@ import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.SQLException;
 
 public class CourseManagementForm {
 
@@ -69,6 +71,13 @@ public class CourseManagementForm {
         ADDButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
+                String sql= "INSERT INTO Course_unit (Course_code, CourseName, Course_type, Theory_hours, Practical_hours, Credits, Lecturer_Username, Admin_Username) VALUES (?, ?, ?, ?, ?, ?, ?, ?)";
+                try {
+                    PreparedStatement pst = con.prepareStatement(sql);
+                    pst.close();
+                } catch (SQLException ex) {
+                    JOptionPane.showMessageDialog(null,"error.."+ex.getMessage());
+                }
 
             }
         });
