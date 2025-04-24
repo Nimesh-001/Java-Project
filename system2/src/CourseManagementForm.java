@@ -82,7 +82,7 @@ public class CourseManagementForm {
                     JOptionPane.showMessageDialog(null, "Please fill all the fields to add a course.");
                     return;
                 }
-                
+
                 String sql= "INSERT INTO Course_unit (Course_code, CourseName, Course_type, Theory_hours, Practical_hours, Credits, Lecturer_Username, Admin_Username) VALUES (?, ?, ?, ?, ?, ?, ?, ?)";
                 try {
                     PreparedStatement pst = con.prepareStatement(sql);
