@@ -26,7 +26,7 @@ public class LecStudentDetails {
 
         table1.setModel(new DefaultTableModel(
                 new Object[][]{},
-                new String[]{"Username", "First_Name", "Last_Name", "Email"}
+                new String[]{"Username", "First_Name", "Last_Name", "Email","Phone_Number"}
         ));
 
         backButton.addActionListener(e -> {
@@ -74,6 +74,7 @@ public class LecStudentDetails {
                 row.add(rs.getString("First_Name"));
                 row.add(rs.getString("Last_Name"));
                 row.add(rs.getString("Email"));
+                row.add(rs.getString("Phone_Number"));
                 model.addRow(row);
             }
 
