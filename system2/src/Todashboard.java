@@ -17,17 +17,21 @@ public class Todashboard {
     private JPanel panal2;
 
     public Todashboard() {
+
+        JFrame frame = new JFrame("Todashboard");
+        frame.setContentPane(this.panel1);
+        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        frame.pack();
+        frame.setVisible(true);
+        frame.setSize(1000,500);
+        frame.setResizable(false);
+        frame.setLocationRelativeTo(null);
+
         attendenceButton1.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                JFrame frame = new JFrame("TO_Attendance");
-                frame.setContentPane(new TO_Attendance().panel1);
-                frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-                frame.pack();
-                frame.setVisible(true);
-                frame.setSize(1000,500);
-                frame.setResizable(false);
-                frame.setLocationRelativeTo(null);
+                frame.dispose();
+                new TO_Attendance();
             }
         });
         medicalButton1.addActionListener(new ActionListener() {
@@ -87,14 +91,7 @@ public class Todashboard {
 
 
     public static void main(String[] args) {
-        JFrame frame = new JFrame("Todashboard");
-        frame.setContentPane(new Todashboard().panel1);
-        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        frame.pack();
-        frame.setVisible(true);
-        frame.setSize(1000,500);
-        frame.setResizable(false);
-        frame.setLocationRelativeTo(null);
+       new Todashboard();
 
     }
 }

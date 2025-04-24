@@ -14,6 +14,16 @@ public class TO_Attendance {
     private JButton deleteButton;
 
     public TO_Attendance() {
+
+        JFrame frame = new JFrame("TO_Attendance");
+        frame.setContentPane(this.panel1);
+        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        frame.pack();
+        frame.setVisible(true);
+        frame.setLocationRelativeTo(null);
+        frame.setResizable(false);
+        frame.setSize(1000, 500);
+
         addButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -47,10 +57,7 @@ public class TO_Attendance {
     }
 
     public static void main(String[] args) {
-        JFrame frame = new JFrame("TO_Attendance");
-        frame.setContentPane(new TO_Attendance().panel1);
-        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        frame.pack();
-        frame.setVisible(true);
+        new TO_Attendance();
+
     }
 }
