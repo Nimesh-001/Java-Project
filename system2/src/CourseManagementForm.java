@@ -74,6 +74,17 @@ public class CourseManagementForm {
                 String sql= "INSERT INTO Course_unit (Course_code, CourseName, Course_type, Theory_hours, Practical_hours, Credits, Lecturer_Username, Admin_Username) VALUES (?, ?, ?, ?, ?, ?, ?, ?)";
                 try {
                     PreparedStatement pst = con.prepareStatement(sql);
+                    pst.setString(1, textField1.getText());
+                    pst.setString(2, textField2.getText());
+                    pst.setString(3, comboBox1.getSelectedItem().toString());
+                    pst.setString(4, String.valueOf(Integer.parseInt(textField4.getText())));
+                    pst.setString(5, String.valueOf(Integer.parseInt(textField5.getText())));
+                    pst.setString(6, String.valueOf(Integer.parseInt(textField6.getText())));
+                    pst.setString(7,textField7.getText());
+                    pst.setString(8,textField8.getText());
+
+                    pst.execute();
+                    JOptionPane.showMessageDialog(null,"success");
                     pst.close();
                 } catch (SQLException ex) {
                     JOptionPane.showMessageDialog(null,"error.."+ex.getMessage());
