@@ -82,7 +82,22 @@ VALUES
 
 //lecture table//
 
+CREATE TABLE Lecturer (
+    NIC VARCHAR(20),
+    Lecturer_id CHAR(10),
+    PRIMARY KEY (Lecturer_id)
+);
 
+ALTER TABLE Lecturer
+ADD FOREIGN KEY (NIC) REFERENCES USER(NIC);
+
+INSERT INTO Lecturer (NIC, Lecturer_id)
+VALUES
+('9900123456', 'LEC001'),
+('9902345558', 'LEC002'),
+('9903895890', 'LEC003'),
+('9904510100', 'LEC004'),
+('9905678801', 'LEC005');
 
 
 //technical_officer table//
@@ -114,8 +129,37 @@ VALUES
 
 //medical table//
 
+CREATE TABLE Medical (
+    Medical_id CHAR(10),
+    Submission_date VARCHAR(15),
+    Status VARCHAR(15),
+    Start_date VARCHAR(15),
+    End_date VARCHAR(15),
+    Reason VARCHAR(100),
+    Course_code CHAR(10),
+    Student_id CHAR(20),
+    TO_id CHAR(10),
+    PRIMARY KEY (Medical_id)
+);
 
 
+ALTER TABLE Medical
+ADD FOREIGN KEY (Course_code) REFERENCES Course_unit(Course_code);
+
+ALTER TABLE Medical
+ADD FOREIGN KEY (Student_id) REFERENCES Student(Student_id);
+
+ALTER TABLE Medical
+ADD FOREIGN KEY (TO_id) REFERENCES Technical_officer(TO_id);
+
+
+INSERT INTO Medical (Medical_id, Submission_date, Status, Start_date, End_date, Reason, Course_code, Student_id, TO_id)
+VALUES
+('MED001', '2025-01-19', 'Approved', '2025-01-15', '2025-04-15', 'Diabetes', 'ICT2152', 'TG_2022_1405', 'TO001'),
+('MED002', '2025-03-14', 'Pending', '2025-03-10', '2025-03-11', 'Gastritis', 'ICT2113', 'TG_2022_1403', 'TO002'),
+('MED003', '2025-03-14', 'Pending', '2025-03-10', '2025-03-11', 'Gastritis', 'ICT2133', 'TG_2022_1403', 'TO001'),
+('MED004', '2025-04-28', 'Approved', '2025-04-23', '2025-04-23', 'Bone Fracture', 'ICT2152', 'TG_2022_1401', 'TO003'),
+('MED005', '2025-04-30', 'Approved', '2025-04-22', '2025-04-22', 'High Blood Pressure', 'ICT2133', 'TG_2022_1419', 'TO004');
 
 
 //attendance table//
@@ -321,8 +365,125 @@ VALUES
 
 //lecture-attendance table//
 
+CREATE TABLE Lecturer_Attendance (
+    Lecturer_id CHAR(10),
+    Student_id CHAR(10),
+    Course_code CHAR(10),
+    PRIMARY KEY (Lecturer_id, Student_id, Course_code)
+);
+
+INSERT INTO Lecturer_Attendance (Lecturer_id, Student_id, Course_code) VALUES
+('LEC001', 'AT001', 'ICT2122'),
+('LEC001', 'AT002', 'ICT2122'),
+('LEC001', 'AT003', 'ICT2122'),
+('LEC001', 'AT004', 'ICT2122'),
+('LEC001', 'AT005', 'ICT2122'),
+('LEC001', 'AT006', 'ICT2122'),
+('LEC001', 'AT007', 'ICT2122'),
+('LEC001', 'AT008', 'ICT2122'),
+('LEC001', 'AT009', 'ICT2122'),
+('LEC001', 'AT010', 'ICT2122'),
+('LEC001', 'AT011', 'ICT2122'),
+('LEC001', 'AT012', 'ICT2122'),
+('LEC001', 'AT013', 'ICT2122'),
+('LEC001', 'AT014', 'ICT2122'),
+('LEC001', 'AT015', 'ICT2122'),
+('LEC001', 'AT016', 'ICT2122'),
+('LEC001', 'AT017', 'ICT2122'),
+('LEC001', 'AT018', 'ICT2122'),
+('LEC001', 'AT019', 'ICT2122'),
+('LEC001', 'AT020', 'ICT2122');
+
+-- For course code 'ICT2142'
+INSERT INTO Lecturer_Attendance (Lecturer_id, Student_id, Course_code) VALUES
+('LEC001', 'AT001', 'ICT2142'),
+('LEC001', 'AT002', 'ICT2142'),
+('LEC001', 'AT003', 'ICT2142'),
+('LEC001', 'AT004', 'ICT2142'),
+('LEC001', 'AT005', 'ICT2142'),
+('LEC001', 'AT006', 'ICT2142'),
+('LEC001', 'AT007', 'ICT2142'),
+('LEC001', 'AT008', 'ICT2142'),
+('LEC001', 'AT009', 'ICT2142'),
+('LEC001', 'AT010', 'ICT2142'),
+('LEC001', 'AT011', 'ICT2142'),
+('LEC001', 'AT012', 'ICT2142'),
+('LEC001', 'AT013', 'ICT2142'),
+('LEC001', 'AT014', 'ICT2142'),
+('LEC001', 'AT015', 'ICT2142'),
+('LEC001', 'AT016', 'ICT2142'),
+('LEC001', 'AT017', 'ICT2142'),
+('LEC001', 'AT018', 'ICT2142'),
+('LEC001', 'AT019', 'ICT2142'),
+('LEC001', 'AT020', 'ICT2142');
+
+INSERT INTO Lecturer_Attendance (Lecturer_id, Student_id, Course_code) VALUES
+('LEC002', 'AT001', 'ICT2152'),
+('LEC002', 'AT002', 'ICT2152'),
+('LEC002', 'AT003', 'ICT2152'),
+('LEC002', 'AT004', 'ICT2152'),
+('LEC002', 'AT005', 'ICT2152'),
+('LEC002', 'AT006', 'ICT2152'),
+('LEC002', 'AT007', 'ICT2152'),
+('LEC002', 'AT008', 'ICT2152'),
+('LEC002', 'AT009', 'ICT2152'),
+('LEC002', 'AT010', 'ICT2152'),
+('LEC002', 'AT011', 'ICT2152'),
+('LEC002', 'AT012', 'ICT2152'),
+('LEC002', 'AT013', 'ICT2152'),
+('LEC002', 'AT014', 'ICT2152'),
+('LEC002', 'AT015', 'ICT2152'),
+('LEC002', 'AT016', 'ICT2152'),
+('LEC002', 'AT017', 'ICT2152'),
+('LEC002', 'AT018', 'ICT2152'),
+('LEC002', 'AT019', 'ICT2152'),
+('LEC002', 'AT020', 'ICT2152');
+
+INSERT INTO Lecturer_Attendance (Lecturer_id, Student_id, Course_code) VALUES
+('LEC003', 'AT001', 'ICT2113'),
+('LEC003', 'AT002', 'ICT2113'),
+('LEC003', 'AT003', 'ICT2113'),
+('LEC003', 'AT004', 'ICT2113'),
+('LEC003', 'AT005', 'ICT2113'),
+('LEC003', 'AT006', 'ICT2113'),
+('LEC003', 'AT007', 'ICT2113'),
+('LEC003', 'AT008', 'ICT2113'),
+('LEC003', 'AT009', 'ICT2113'),
+('LEC003', 'AT010', 'ICT2113'),
+('LEC003', 'AT011', 'ICT2113'),
+('LEC003', 'AT012', 'ICT2113'),
+('LEC003', 'AT013', 'ICT2113'),
+('LEC003', 'AT014', 'ICT2113'),
+('LEC003', 'AT015', 'ICT2113'),
+('LEC003', 'AT016', 'ICT2113'),
+('LEC003', 'AT017', 'ICT2113'),
+('LEC003', 'AT018', 'ICT2113'),
+('LEC003', 'AT019', 'ICT2113'),
+('LEC003', 'AT020', 'ICT2113');
 
 
+INSERT INTO Lecturer_Attendance (Lecturer_id, Student_id, Course_code) 
+VALUES
+('LEC004', 'AT001', 'ICT2133'),
+('LEC004', 'AT002', 'ICT2133'),
+('LEC004', 'AT003', 'ICT2133'),
+('LEC004', 'AT004', 'ICT2133'),
+('LEC004', 'AT005', 'ICT2133'),
+('LEC004', 'AT006', 'ICT2133'),
+('LEC004', 'AT007', 'ICT2133'),
+('LEC004', 'AT008', 'ICT2133'),
+('LEC004', 'AT009', 'ICT2133'),
+('LEC004', 'AT010', 'ICT2133'),
+('LEC004', 'AT011', 'ICT2133'),
+('LEC004', 'AT012', 'ICT2133'),
+('LEC004', 'AT013', 'ICT2133'),
+('LEC004', 'AT014', 'ICT2133'),
+('LEC004', 'AT015', 'ICT2133'),
+('LEC004', 'AT016', 'ICT2133'),
+('LEC004', 'AT017', 'ICT2133'),
+('LEC004', 'AT018', 'ICT2133'),
+('LEC004', 'AT019', 'ICT2133'),
+('LEC004', 'AT020', 'ICT2133');
 
 
 
@@ -485,8 +646,19 @@ VALUES
 
 //lecture-medical table//
 
+CREATE TABLE Lecturer_Medical (
+    Lecturer_id CHAR(10),
+    Medical_id CHAR(10),
+    PRIMARY KEY (Lecturer_id, Medical_id)
+);
 
-
+INSERT INTO Lecturer_Medical (Lecturer_id, Medical_id)
+VALUES
+('LEC001', 'MED001'),
+('LEC002', 'MED002'),
+('LEC003', 'MED003'),
+('LEC004', 'MED004'),
+('LEC005', 'MED005');
 
 
 //timetable-technical officer table//
@@ -503,7 +675,70 @@ VALUES
 
 //notice-lecture table//
 
+CREATE TABLE Notice_Lecturer (
+    Notice_id CHAR(10),
+    Lecturer_id CHAR(10),
+    PRIMARY KEY (Notice_id, Lecturer_id)
+);
 
+
+
+INSERT INTO Notice_Lecturer (Notice_id, Lecturer_id)
+VALUES
+('N1', 'LEC001'),
+('N1', 'LEC002'),
+('N1', 'LEC003'),
+('N1', 'LEC004'),
+('N1', 'LEC005'),
+('N2', 'LEC001'),
+('N2', 'LEC002'),
+('N2', 'LEC003'),
+('N2', 'LEC004'),
+('N2', 'LEC005');
+
+INSERT INTO Notice_Student (Notice_id, Student_id)
+VALUES
+('N1', 'TG_2022_1400'),
+('N1', 'TG_2022_1401'),
+('N1', 'TG_2022_1402'),
+('N1', 'TG_2022_1403'),
+('N1', 'TG_2022_1404'),
+('N1', 'TG_2022_1405'),
+('N1', 'TG_2022_1406'),
+('N1', 'TG_2022_1407'),
+('N1', 'TG_2022_1408'),
+('N1', 'TG_2022_1409'),
+('N1', 'TG_2022_1410'),
+('N1', 'TG_2022_1411'),
+('N1', 'TG_2022_1412'),
+('N1', 'TG_2022_1413'),
+('N1', 'TG_2022_1414'),
+('N1', 'TG_2022_1415'),
+('N1', 'TG_2022_1416'),
+('N1', 'TG_2022_1417'),
+('N1', 'TG_2022_1418'),
+('N1', 'TG_2022_1419'),
+
+('N2', 'TG_2022_1400'),
+('N2', 'TG_2022_1401'),
+('N2', 'TG_2022_1402'),
+('N2', 'TG_2022_1403'),
+('N2', 'TG_2022_1404'),
+('N2', 'TG_2022_1405'),
+('N2', 'TG_2022_1406'),
+('N2', 'TG_2022_1407'),
+('N2', 'TG_2022_1408'),
+('N2', 'TG_2022_1409'),
+('N2', 'TG_2022_1410'),
+('N2', 'TG_2022_1411'),
+('N2', 'TG_2022_1412'),
+('N2', 'TG_2022_1413'),
+('N2', 'TG_2022_1414'),
+('N2', 'TG_2022_1415'),
+('N2', 'TG_2022_1416'),
+('N2', 'TG_2022_1417'),
+('N2', 'TG_2022_1418'),
+('N2', 'TG_2022_1419');
 
 
 
