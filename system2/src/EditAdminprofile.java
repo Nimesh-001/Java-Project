@@ -118,6 +118,7 @@ public class EditAdminprofile {
     }
 
     public static void main(String[] args) {
+
         new EditAdminprofile();
     }
 }

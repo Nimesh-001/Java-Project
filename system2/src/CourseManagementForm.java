@@ -43,14 +43,7 @@ public class CourseManagementForm {
         clearButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                textField1.setText("");
-                textField2.setText("");
-                comboBox1.setSelectedIndex(0);
-                textField4.setText("");
-                textField5.setText("");
-                textField6.setText("");
-                textField7.setText("");
-                textField8.setText("");
+                clearFields();
 
 
             }
@@ -97,6 +90,8 @@ public class CourseManagementForm {
 
                     pst.execute();
                     JOptionPane.showMessageDialog(null,"success");
+                    clearFields();
+
                     pst.close();
                 } catch (SQLException ex) {
                     JOptionPane.showMessageDialog(null,"error.."+ex.getMessage());
@@ -139,6 +134,7 @@ public class CourseManagementForm {
                     }
 
                     JOptionPane.showMessageDialog(null, "Course details updated successfully.");
+                    clearFields();
                 } catch (Exception ex) {
                     JOptionPane.showMessageDialog(null, "Error: " + ex.getMessage());
                 }
@@ -236,6 +232,17 @@ public class CourseManagementForm {
         } catch (Exception ex) {
             JOptionPane.showMessageDialog(null, "Update failed for " + column + ": " + ex.getMessage());
         }
+    }
+
+    public void clearFields() {
+        textField1.setText("");
+        textField2.setText("");
+        textField4.setText("");
+        textField5.setText("");
+        textField6.setText("");
+        textField7.setText("");
+        textField8.setText("");
+        comboBox1.setSelectedIndex(0);
     }
 
 
