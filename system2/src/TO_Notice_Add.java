@@ -7,11 +7,6 @@ import java.util.List;
 
 public class TO_Notice_Add {
     public JPanel panal1;
-    private JButton logoutButton;
-    private JButton attendenceButton;
-    private JButton timetableButton;
-    private JButton noticeButton;
-    private JButton medicalButton;
     private JTextField textField1;
     private JTextField textField2;
     private JTextField textField3;
@@ -26,8 +21,19 @@ public class TO_Notice_Add {
     private JPanel Edit;
     private JTextArea textArea1;
     private JButton deleteButton;
+    private JButton Back;
 
     public TO_Notice_Add() {
+
+        JFrame frame = new JFrame("TO_Notice_Add");
+        frame.setContentPane(this.panal1);
+        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        frame.pack();
+        frame.setVisible(true);
+        frame.setLocationRelativeTo(null);
+        frame.setResizable(false);
+        frame.setSize(1000, 500);
+
         addButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -186,6 +192,13 @@ public class TO_Notice_Add {
         });
 
 
+        Back.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                frame.dispose();
+                new Todashboard();
+            }
+        });
     }
 
 
@@ -207,10 +220,7 @@ public class TO_Notice_Add {
     }
 
     public static void main(String[] args) {
-        JFrame frame = new JFrame("TO_Notice_Add");
-        frame.setContentPane(new TO_Notice_Add().panal1);
-        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        frame.pack();
-        frame.setVisible(true);
+        new TO_Notice_Add();
+
     }
 }

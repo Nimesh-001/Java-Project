@@ -7,11 +7,6 @@ import java.sql.SQLException;
 
 public class TO_Attendance_Update {
     public JPanel panel1;
-    private JButton logoutButton;
-    private JButton attendenceButton;
-    private JButton timetableButton;
-    private JButton noticeButton;
-    private JButton medicalButton;
     private JTextField textField1;
     private JTextField textField2;
     private JTextField textField3;
@@ -24,9 +19,19 @@ public class TO_Attendance_Update {
     private JTextArea textArea1;
     private JTextField textField5;
     private JButton updateButton;
+    private JButton backButton;
 
 
     public TO_Attendance_Update() {
+        JFrame frame = new JFrame("TO_Attendance_Update");
+        frame.setContentPane(this.panel1);
+        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        frame.pack();
+        frame.setVisible(true);
+        frame.setLocationRelativeTo(null);
+        frame.setResizable(false);
+        frame.setSize(1000, 500);
+
         viewButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -124,13 +129,17 @@ public class TO_Attendance_Update {
 
             }
         });
+        backButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                frame.dispose();
+                new TO_Attendance();
+
+            }
+        });
     }
 
     public static void main(String[] args) {
-        JFrame frame = new JFrame("TO_Attendance_Update");
-        frame.setContentPane(new TO_Attendance_Update().panel1);
-        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        frame.pack();
-        frame.setVisible(true);
+        new TO_Attendance_Update();
     }
 }

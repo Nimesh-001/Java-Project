@@ -1,5 +1,4 @@
 import javax.swing.*;
-import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.sql.Connection;
@@ -8,11 +7,6 @@ import java.sql.SQLException;
 
 public class TO_Attendance_Delete {
     public JPanel panal1;
-    private JButton logoutButton;
-    private JButton attendenceButton;
-    private JButton timetableButton;
-    private JButton noticeButton;
-    private JButton medicalButton;
     private JTextField textField1;
     private JTextField textField2;
     private JTextField textField3;
@@ -24,8 +18,18 @@ public class TO_Attendance_Delete {
     private JButton viewButton;
     private JButton deleteButton;
     private JTextArea textArea1;
+    private JButton backButton;
 
     public TO_Attendance_Delete() {
+        JFrame frame = new JFrame("TO_Attendance_Delete");
+        frame.setContentPane(this.panal1);
+        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        frame.pack();
+        frame.setVisible(true);
+        frame.setLocationRelativeTo(null);
+        frame.setResizable(false);
+        frame.setSize(1000, 500);
+
         viewButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -122,13 +126,17 @@ public class TO_Attendance_Delete {
             }
         });
 
+
+        backButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                frame.dispose();
+                new TO_Attendance();
+            }
+        });
     }
 
     public static void main(String[] args) {
-        JFrame frame = new JFrame("TO_Attendance_Delete");
-        frame.setContentPane(new TO_Attendance_Delete().panal1);
-        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        frame.pack();
-        frame.setVisible(true);
+        new TO_Attendance_Delete();
     }
 }

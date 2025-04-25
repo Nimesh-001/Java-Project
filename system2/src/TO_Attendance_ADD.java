@@ -7,11 +7,6 @@ import java.sql.SQLException;
 
 public class TO_Attendance_ADD {
     public JPanel panel1;
-    private JButton logoutButton;
-    private JButton attendenceButton;
-    private JButton timetableButton;
-    private JButton noticeButton;
-    private JButton medicalButton;
     private JTextField textField1;
     private JTextField textField2;
     private JTextField textField3;
@@ -28,8 +23,20 @@ public class TO_Attendance_ADD {
     private JLabel Medical_Id;
     private JTextArea textArea1;
     private JButton addButton;
+    private JButton Back;
 
     public TO_Attendance_ADD() {
+
+        JFrame frame = new JFrame("TO_Attendance_ADD");
+        frame.setContentPane(this.panel1);
+        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        frame.pack();
+        frame.setVisible(true);
+        frame.setLocationRelativeTo(null);
+        frame.setResizable(false);
+        frame.setSize(1000, 500);
+
+
         addButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -46,9 +53,14 @@ public class TO_Attendance_ADD {
                     return;
                 }
 
-                try (Connection con = DB.getConnection()) {
-                    String query = "INSERT INTO attendance (Course_code, Student_id, Session_Type, Session_date, Status, TO_id, Medical_id) " +
-                            "VALUES (?, ?, ?, ?, ?, ?, ?)";
+                Dbconnector db = new Dbconnector();
+                Connection con = db.getConnection();
+
+                String query = "INSERT INTO attendance (Course_code, Student_id, Session_Type, Session_date, Status, TO_id, Medical_id) " +
+                        "VALUES (?, ?, ?, ?, ?, ?, ?)";
+
+                try  {
+
 
                     PreparedStatement ps = con.prepareStatement(query);
                     ps.setString(1, courseCode);
@@ -74,13 +86,17 @@ public class TO_Attendance_ADD {
             }
         });
 
+        Back.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                frame.dispose(); // Close current window
+                new TO_Attendance();
+            }
+        });
     }
 
     public static void main(String[] args) {
-        JFrame frame = new JFrame("TO_Attendance_ADD");
-        frame.setContentPane(new TO_Attendance_ADD().panel1);
-        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        frame.pack();
-        frame.setVisible(true);
+
+        new TO_Attendance_ADD();
     }
 }

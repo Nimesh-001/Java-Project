@@ -7,11 +7,6 @@ import java.sql.SQLException;
 
 public class TO_Medical_Add {
     public JPanel panal1;
-    private JButton logoutButton;
-    private JButton attendenceButton;
-    private JButton timetableButton;
-    private JButton noticeButton;
-    private JButton medicalButton;
     private JTextField textField1;
     private JTextField textField2;
     private JTextField textField3;
@@ -32,8 +27,18 @@ public class TO_Medical_Add {
     private JLabel TO_ID;
     private JTextArea textArea1;
     private JButton Addbutton;
+    private JButton Back;
 
     public TO_Medical_Add() {
+        JFrame frame = new JFrame("TO_Medical_Add");
+        frame.setContentPane(this.panal1);
+        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        frame.pack();
+        frame.setVisible(true);
+        frame.setLocationRelativeTo(null);
+        frame.setResizable(false);
+        frame.setSize(1000, 500);
+
         Addbutton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -96,13 +101,17 @@ public class TO_Medical_Add {
             }
         });
 
+        Back.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                frame.dispose(); // Close current window
+                new TO_Medical();
+            }
+        });
     }
 
     public static void main(String[] args) {
-        JFrame frame = new JFrame("TO_Medical_Add");
-        frame.setContentPane(new TO_Medical_Add().panal1);
-        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        frame.pack();
-        frame.setVisible(true);
+
+        new TO_Medical_Add();
     }
 }

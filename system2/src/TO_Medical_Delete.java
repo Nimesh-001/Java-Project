@@ -24,6 +24,15 @@ public class TO_Medical_Delete {
     private JTextArea textArea1;
 
     public TO_Medical_Delete() {
+        JFrame frame = new JFrame("TO_Medical_Delete");
+        frame.setContentPane(this.panal1);
+        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        frame.pack();
+        frame.setVisible(true);
+        frame.setLocationRelativeTo(null);
+        frame.setResizable(false);
+        frame.setSize(1000, 500);
+
         viewButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -132,10 +141,6 @@ public class TO_Medical_Delete {
     }
 
     public static void main(String[] args) {
-        JFrame frame = new JFrame("TO_Medical_Delete");
-        frame.setContentPane(new TO_Medical_Delete().panal1);
-        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        frame.pack();
-        frame.setVisible(true);
+        new TO_Medical_Delete();
     }
 }
