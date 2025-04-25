@@ -52,7 +52,31 @@ public class EditLectureProfile {
         updateButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                
+                String username = textField1.getText();
+
+                if (username.isEmpty()) {
+                    JOptionPane.showMessageDialog(null, "Please enter the Username to update.");
+                    return;
+                }
+
+                if (!textField2.getText().isEmpty()) {
+                    updateField("First_Name", textField2.getText(), username);
+                }
+                if (!textField3.getText().isEmpty()) {
+                    updateField("Last_Name", textField3.getText(), username);
+                }
+                if (!textField4.getText().isEmpty()) {
+                    updateField("Phone_Number", textField4.getText(), username);
+                }
+                if (!textField5.getText().isEmpty()) {
+                    updateField("Picture_Path", textField5.getText(), username);
+                }
+                if (!textField6.getText().isEmpty()) {
+                    updateField("Email", textField6.getText(), username);
+                }
+
+                JOptionPane.showMessageDialog(null, "User details updated successfully.");
+                clearFields();
 
             }
         });
