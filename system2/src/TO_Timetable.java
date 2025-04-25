@@ -64,6 +64,7 @@ public class TO_Timetable {
                  // Close current window
                 new Todashboard();
                 
+                
             }
         });
         deleteButton.addActionListener(new ActionListener() {
