@@ -65,24 +65,14 @@ public class AdminAUDupdate {
 
                 JOptionPane.showMessageDialog(null, "User details updated successfully.");
 
-                textField1.setText("");
-                textField2.setText("");
-                textField3.setText("");
-                textField4.setText("");
-                textField5.setText("");
-                textField6.setText("");
+                clearFields();
 
             }
         });
         CLEARButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                textField1.setText("");
-                textField2.setText("");
-                textField3.setText("");
-                textField4.setText("");
-                textField5.setText("");
-                textField6.setText("");
+                clearFields();
 
             }
         });
@@ -156,6 +146,16 @@ public class AdminAUDupdate {
         } catch (Exception ex) {
             JOptionPane.showMessageDialog(null, "Update failed for " + column + ": " + ex.getMessage());
         }
+    }
+
+
+    public void clearFields() {
+        textField1.setText("");
+        textField2.setText("");
+        textField3.setText("");
+        textField4.setText("");
+        textField5.setText("");
+        textField6.setText("");
     }
 
     public static void main(String[] args) {
