@@ -8,6 +8,8 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
+
+
 public class AdminAUDadd {
 
     Dbconnector dbc = new Dbconnector();
@@ -29,6 +31,8 @@ public class AdminAUDadd {
     private JButton logoutButton;
     private JPasswordField passwordField1;
 
+    
+
     public AdminAUDadd() {
 
         JFrame frame = new JFrame("AdminAUDadd");
@@ -39,6 +43,8 @@ public class AdminAUDadd {
         frame.setLocationRelativeTo(null);
         frame.setResizable(false);
         frame.setSize(1000,500);
+
+
 
         ADDButton.addActionListener(new ActionListener() {
             @Override
