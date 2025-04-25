@@ -1,8 +1,11 @@
 import javax.swing.*;
+import javax.swing.table.DefaultTableModel;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
 
 public class AdminAUDupdate {
 
@@ -79,6 +82,39 @@ public class AdminAUDupdate {
         VIEWButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
+                String sql = "SELECT * FROM USER";
+                try {
+                    PreparedStatement pst = con.prepareStatement(sql);
+                    ResultSet rs = pst.executeQuery();
+
+
+                    DefaultTableModel model = new DefaultTableModel();
+                    model.addColumn("Username");
+                    model.addColumn("First Name");
+                    model.addColumn("Last Name");
+                    model.addColumn("Designation");
+                    model.addColumn("Phone Number");
+                    model.addColumn("Email");
+
+
+                    while (rs.next()) {
+                        model.addRow(new Object[]{
+                                rs.getString("Username"),
+                                rs.getString("First_Name"),
+                                rs.getString("Last_Name"),
+                                rs.getString("Designation"),
+                                rs.getString("Phone_Number"),
+                                rs.getString("Email")
+                        });
+                    }
+
+
+                    table1.setModel(model);
+                    rs.close();
+                    //pst.close();
+                } catch (SQLException ex) {
+                    JOptionPane.showMessageDialog(null, "Error loading data: " + ex.getMessage());
+                }
 
             }
         });
