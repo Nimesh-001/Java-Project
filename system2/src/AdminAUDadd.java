@@ -109,8 +109,8 @@ public class AdminAUDadd {
                     model.addColumn("Designation");
                     model.addColumn("Phone_Number");
                     model.addColumn("Email");
-                    model.addColumn("Password");
-                    model.addColumn("Profile_Pic_Path");
+                    //model.addColumn("Password");
+                    //model.addColumn("Profile_Pic_Path");
 
                     // Iterate through the ResultSet and add each row to the model
                     while (rs.next()) {
@@ -120,10 +120,10 @@ public class AdminAUDadd {
                         String designation = rs.getString("Designation");
                         String phoneNumber = rs.getString("Phone_Number");
                         String email = rs.getString("Email");
-                        String password = rs.getString("Password");
-                        String profilePicPath = rs.getString("Profile_Pic_Path");
+                        //String password = rs.getString("Password");
+                       // String profilePicPath = rs.getString("Profile_Pic_Path");
 
-                        model.addRow(new Object[]{username, firstName, lastName, designation, phoneNumber, email, password, profilePicPath});
+                        model.addRow(new Object[]{username, firstName, lastName, designation, phoneNumber, email,/* password, profilePicPath*/});
                     }
 
                     // Set the table model
