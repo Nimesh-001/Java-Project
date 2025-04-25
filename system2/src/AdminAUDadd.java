@@ -1,12 +1,18 @@
 import javax.swing.*;
+import javax.swing.table.DefaultTableModel;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.ComponentAdapter;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.sql.SQLException;
 
 public class AdminAUDadd {
+
+    Dbconnector dbc = new Dbconnector();
+    Connection con = dbc.getConnection();
+
     private JPanel panel1;
     private JTextField textField1;
     private JTextField textField2;
@@ -45,8 +51,7 @@ public class AdminAUDadd {
                     return;
                 }
 
-                Dbconnector dbc = new Dbconnector();
-                Connection con = dbc.getConnection();
+
 
                 String sql = "INSERT INTO USER (Username, First_Name, Last_Name, Designation, Phone_Number, Email, Password, Profile_Pic_Path) VALUES (?, ?, ?, ?, ?, ?, ?, ?)";
 
@@ -84,6 +89,38 @@ public class AdminAUDadd {
         VIEWButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
+
+                DefaultTableModel model = (DefaultTableModel) table1.getModel();
+                model.setRowCount(0);  // Clears previous rows in the table
+
+                String sql = "SELECT * FROM USER";
+
+                try {
+                    // Creating a prepared statement to execute the SQL query
+                    PreparedStatement pst = con.prepareStatement(sql);
+                    ResultSet rs = pst.executeQuery();  // Execute the query and get the result
+
+                    // Iterate over the result set and add rows to the table
+                    while (rs.next()) {
+                        String username = rs.getString("Username");
+                        String firstName = rs.getString("First_Name");
+                        String lastName = rs.getString("Last_Name");
+                        String designation = rs.getString("Designation");
+                        String phoneNumber = rs.getString("Phone_Number");
+                        String email = rs.getString("Email");
+                        String password = rs.getString("Password");
+                        String profilePicPath = rs.getString("Profile_Pic_Path");
+
+                        // Add data to the table model
+                        model.addRow(new Object[]{username, firstName, lastName, designation, phoneNumber, email, password, profilePicPath});
+                    }
+
+                    // Close the result set and prepared statement
+                    rs.close();
+                    pst.close();
+                } catch (SQLException ex) {
+                    JOptionPane.showMessageDialog(null, "Error fetching data: " + ex.getMessage());
+                }
 
             }
         });
