@@ -31,7 +31,7 @@ public class AdminAUDadd {
     private JButton logoutButton;
     private JPasswordField passwordField1;
 
-    
+
 
     public AdminAUDadd() {
 
@@ -95,18 +95,24 @@ public class AdminAUDadd {
         VIEWButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-
-                DefaultTableModel model = (DefaultTableModel) table1.getModel();
-                model.setRowCount(0);  // Clears previous rows in the table
-
                 String sql = "SELECT * FROM USER";
 
                 try {
-                    // Creating a prepared statement to execute the SQL query
                     PreparedStatement pst = con.prepareStatement(sql);
-                    ResultSet rs = pst.executeQuery();  // Execute the query and get the result
+                    ResultSet rs = pst.executeQuery();
 
-                    // Iterate over the result set and add rows to the table
+                    // Create a new DefaultTableModel with columns
+                    DefaultTableModel model = new DefaultTableModel();
+                    model.addColumn("Username");
+                    model.addColumn("First_Name");
+                    model.addColumn("Last_Name");
+                    model.addColumn("Designation");
+                    model.addColumn("Phone_Number");
+                    model.addColumn("Email");
+                    model.addColumn("Password");
+                    model.addColumn("Profile_Pic_Path");
+
+                    // Iterate through the ResultSet and add each row to the model
                     while (rs.next()) {
                         String username = rs.getString("Username");
                         String firstName = rs.getString("First_Name");
@@ -117,15 +123,15 @@ public class AdminAUDadd {
                         String password = rs.getString("Password");
                         String profilePicPath = rs.getString("Profile_Pic_Path");
 
-                        // Add data to the table model
                         model.addRow(new Object[]{username, firstName, lastName, designation, phoneNumber, email, password, profilePicPath});
                     }
 
-                    // Close the result set and prepared statement
-                    rs.close();
-                    pst.close();
-                } catch (SQLException ex) {
-                    JOptionPane.showMessageDialog(null, "Error fetching data: " + ex.getMessage());
+                    // Set the table model
+                    table1.setModel(model);
+
+                } catch (Exception ex) {
+                    // Handle any errors that may occur
+                    JOptionPane.showMessageDialog(null, "Error: " + ex.getMessage());
                 }
 
             }
@@ -148,7 +154,7 @@ public class AdminAUDadd {
         });
     }
 
-    private void clearFields() {
+    public void clearFields() {
         textField1.setText("");
         textField2.setText("");
         textField3.setText("");
