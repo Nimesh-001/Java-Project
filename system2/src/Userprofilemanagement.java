@@ -59,6 +59,8 @@ public class Userprofilemanagement {
         logoutButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
+                frame.dispose();
+                new form();
 
             }
         });
