@@ -6,8 +6,8 @@ import java.awt.event.ActionListener;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
-public class TO_medical_Update {
-    public JPanel panal1;
+public class TO_Medical_Delete {
+    private JPanel panal1;
     private JButton logoutButton;
     private JButton attendenceButton;
     private JButton timetableButton;
@@ -15,16 +15,15 @@ public class TO_medical_Update {
     private JButton medicalButton;
     private JTextField textField1;
     private JTextField textField2;
-    private JLabel Medical_id;
-    private JLabel Student_ID;
     private JTextField textField3;
     private JLabel Course_code;
-    private JTextArea textArea1;
-    private JTextField textField4;
+    private JLabel StudentID;
+    private JLabel Session_Type;
     private JButton viewButton;
-    private JButton updateButton;
+    private JButton deleteButton;
+    private JTextArea textArea1;
 
-    public TO_medical_Update() {
+    public TO_Medical_Delete() {
         viewButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -69,7 +68,7 @@ public class TO_medical_Update {
                                 "\nReason: " + reason);
 
                         // Enable editing the 'Status' in the textField4
-                        textField4.setText(status); // Pre-fill the status field with the current value
+                        //textField4.setText(status); // Pre-fill the status field with the current value
                     } else {
                         textArea1.setText("No medical record found.");
                     }
@@ -84,50 +83,43 @@ public class TO_medical_Update {
                 }
             }
         });
-        updateButton.addActionListener(new ActionListener() {
+        deleteButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                // Retrieve the new status value from the textField4
-                String newStatus = textField4.getText().trim();
-
-                if (newStatus.isEmpty()) {
-                    textArea1.setText("Please enter a new status.");
-                    return;
-                }
-
-                // Retrieve the input values for the other fields
+                // Get the input values
                 String medicalId = textField1.getText().trim();
                 String studentId = textField2.getText().trim();
                 String courseCode = textField3.getText().trim();
 
-                // Validate if the required fields are filled
+                // Check if all fields are filled
                 if (medicalId.isEmpty() || studentId.isEmpty() || courseCode.isEmpty()) {
-                    textArea1.setText("Please fill in Medical ID, Student ID, and Course Code.");
+                    textArea1.setText("Please enter all the required fields (Medical ID, Student ID, and Course Code).");
                     return;
                 }
 
-                // Create the update query
-                String query = "UPDATE medical SET Status = ? WHERE Medical_id = ? AND Student_id = ? AND Course_code = ?";
+                // Create delete SQL query
+                String deleteQuery = "DELETE FROM medical WHERE Medical_id = ? AND Student_id = ? AND Course_code = ?";
 
                 try {
                     // Get database connection
                     Connection con = DB.getConnection();
-                    PreparedStatement ps = con.prepareStatement(query);
-                    ps.setString(1, newStatus);
-                    ps.setString(2, medicalId);
-                    ps.setString(3, studentId);
-                    ps.setString(4, courseCode);
+                    PreparedStatement ps = con.prepareStatement(deleteQuery);
 
-                    // Execute the update
+                    // Set query parameters
+                    ps.setString(1, medicalId);
+                    ps.setString(2, studentId);
+                    ps.setString(3, courseCode);
+
+                    // Execute deletion
                     int rowsAffected = ps.executeUpdate();
 
                     if (rowsAffected > 0) {
-                        textArea1.setText("Medical record updated successfully.");
+                        textArea1.setText("Medical record deleted successfully.");
                     } else {
-                        textArea1.setText("Failed to update the medical record.");
+                        textArea1.setText("No matching medical record found to delete.");
                     }
 
-                    // Close resources
+                    // Close connection
                     ps.close();
                     con.close();
 
@@ -136,11 +128,12 @@ public class TO_medical_Update {
                 }
             }
         });
+
     }
 
     public static void main(String[] args) {
-        JFrame frame = new JFrame("TO_medical_Update");
-        frame.setContentPane(new TO_medical_Update().panal1);
+        JFrame frame = new JFrame("TO_Medical_Delete");
+        frame.setContentPane(new TO_Medical_Delete().panal1);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.pack();
         frame.setVisible(true);

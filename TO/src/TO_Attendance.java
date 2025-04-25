@@ -34,6 +34,16 @@ public class TO_Attendance {
                 frame.setVisible(true);
             }
         });
+        deleteButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                JFrame frame = new JFrame("TO_Attendance_Delete");
+                frame.setContentPane(new TO_Attendance_Delete().panal1);
+                frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+                frame.pack();
+                frame.setVisible(true);
+            }
+        });
     }
 
     public static void main(String[] args) {
