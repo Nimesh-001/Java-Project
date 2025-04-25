@@ -95,45 +95,42 @@ public class AdminAUDadd {
         VIEWButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                String sql = "SELECT * FROM Course_unit";
+                String sql = "SELECT * FROM USER";
 
                 try {
                     PreparedStatement pst = con.prepareStatement(sql);
                     ResultSet rs = pst.executeQuery();
 
-
+                    // Create a new DefaultTableModel with columns
                     DefaultTableModel model = new DefaultTableModel();
-                    model.addColumn("Course_code");
-                    model.addColumn("CourseName");
-                    model.addColumn("Course_type");
-                    model.addColumn("Theory_hours");
-                    model.addColumn("Practical_hours");
-                    model.addColumn("Credits");
-                    model.addColumn("Lecturer_Username");
-                    model.addColumn("Admin_Username");
+                    model.addColumn("Username");
+                    model.addColumn("First_Name");
+                    model.addColumn("Last_Name");
+                    model.addColumn("Designation");
+                    model.addColumn("Phone_Number");
+                    model.addColumn("Email");
+                    //model.addColumn("Password");
+                    //model.addColumn("Profile_Pic_Path");
 
-
+                    // Iterate through the ResultSet and add each row to the model
                     while (rs.next()) {
-                        String courseCode = rs.getString("Course_code");
-                        String courseName = rs.getString("CourseName");
-                        String courseType = rs.getString("Course_type");
-                        String theoryHours = rs.getString("Theory_hours");
-                        String practicalHours = rs.getString("Practical_hours");
-                        String credits = rs.getString("Credits");
-                        String lecturerUsername = rs.getString("Lecturer_Username");
-                        String adminUsername = rs.getString("Admin_Username");
+                        String username = rs.getString("Username");
+                        String firstName = rs.getString("First_Name");
+                        String lastName = rs.getString("Last_Name");
+                        String designation = rs.getString("Designation");
+                        String phoneNumber = rs.getString("Phone_Number");
+                        String email = rs.getString("Email");
+                        //String password = rs.getString("Password");
+                       // String profilePicPath = rs.getString("Profile_Pic_Path");
 
-                        model.addRow(new Object[]{
-                                courseCode, courseName, courseType,
-                                theoryHours, practicalHours, credits,
-                                lecturerUsername, adminUsername
-                        });
+                        model.addRow(new Object[]{username, firstName, lastName, designation, phoneNumber, email,/* password, profilePicPath*/});
                     }
 
-
+                    // Set the table model
                     table1.setModel(model);
 
                 } catch (Exception ex) {
+                    // Handle any errors that may occur
                     JOptionPane.showMessageDialog(null, "Error: " + ex.getMessage());
                 }
 

@@ -179,10 +179,12 @@ public class CourseManagementForm {
             @Override
             public void actionPerformed(ActionEvent e) {
                 String sql = "SELECT * FROM Course_unit";
+
                 try {
                     PreparedStatement pst = con.prepareStatement(sql);
                     ResultSet rs = pst.executeQuery();
 
+                    // Create a new DefaultTableModel with columns
                     DefaultTableModel model = new DefaultTableModel();
                     model.addColumn("Course_code");
                     model.addColumn("CourseName");
@@ -193,20 +195,27 @@ public class CourseManagementForm {
                     model.addColumn("Lecturer_Username");
                     model.addColumn("Admin_Username");
 
+                    // Iterate through the ResultSet and add each row to the model
                     while (rs.next()) {
-                        String code = rs.getString("Course_code");
-                        String name = rs.getString("CourseName");
-                        String type = rs.getString("Course_type");
-                        String theory = rs.getString("Theory_hours");
-                        String practical = rs.getString("Practical_hours");
-                        String credit = rs.getString("Credits");
-                        String lecturer = rs.getString("Lecturer_Username");
-                        String admin = rs.getString("Admin_Username");
+                        String courseCode = rs.getString("Course_code");
+                        String courseName = rs.getString("CourseName");
+                        String courseType = rs.getString("Course_type");
+                        String theoryHours = rs.getString("Theory_hours");
+                        String practicalHours = rs.getString("Practical_hours");
+                        String credits = rs.getString("Credits");
+                        String lecturerUsername = rs.getString("Lecturer_Username");
+                        String adminUsername = rs.getString("Admin_Username");
 
-                        model.addRow(new Object[]{code, name, type, theory, practical, credit, lecturer, admin});
+                        model.addRow(new Object[]{
+                                courseCode, courseName, courseType,
+                                theoryHours, practicalHours, credits,
+                                lecturerUsername, adminUsername
+                        });
                     }
 
+                    // Set the table model
                     table1.setModel(model);
+
                 } catch (Exception ex) {
                     JOptionPane.showMessageDialog(null, "Error: " + ex.getMessage());
                 }
