@@ -37,7 +37,7 @@ public class EditLectureProfile {
             @Override
             public void actionPerformed(ActionEvent e) {
                 frame.dispose();
-                //wasantha code
+                new Lecturdashbord();
 
             }
         });
