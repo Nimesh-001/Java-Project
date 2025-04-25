@@ -3,7 +3,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 public class View_Marks {
-    private JPanel panal1;
+    public JPanel panal1;
     private JPanel panal2;
     private JButton backButton;
     private JComboBox comboBox1;

@@ -5,7 +5,7 @@ import java.sql.*;
 
 public class Student_Timetable {
 
-    public JPanel panel1;
+    public JPanel panal1;
     private JPanel panal2;
     private JButton backButton;
     private JButton logoutButton;
@@ -14,7 +14,7 @@ public class Student_Timetable {
 
     public Student_Timetable() {
         JFrame frame = new JFrame("Student_Timetable");
-        frame.setContentPane(this.panel1);
+        frame.setContentPane(this.panal1);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.pack();
         frame.setVisible(true);
@@ -24,7 +24,7 @@ public class Student_Timetable {
 
         // Database connection and data fetching
         try {
-            Dbconnector db = new Dbconnector(); // Assuming Dbconnector is your connection class
+            DB db = new DB(); // Assuming Dbconnector is your connection class
             Connection con = db.getConnection(); // Get connection from Dbconnector
 
             if (con != null) {

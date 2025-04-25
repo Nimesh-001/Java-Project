@@ -3,7 +3,7 @@ import javax.swing.table.DefaultTableModel;
 import java.sql.*;
 
 public class Student_Medical {
-    public JPanel panel1;
+    public JPanel panal1;
     private JTable table1;
     private JTextField textField7; // For future use
     private JButton tables;
@@ -15,7 +15,7 @@ public class Student_Medical {
 
     public Student_Medical() {
         JFrame frame = new JFrame("Student_Medical");
-        frame.setContentPane(this.panel1);
+        frame.setContentPane(this.panal1);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.setSize(1000, 500);
         frame.setLocationRelativeTo(null);
@@ -24,7 +24,7 @@ public class Student_Medical {
 
         // Display medical records from the 'medical' table
         try {
-            Dbconnector db = new Dbconnector(); // Assuming this is your connection class
+            DB db = new DB(); // Assuming this is your connection class
             Connection con = db.getConnection();
 
             if (con != null) {

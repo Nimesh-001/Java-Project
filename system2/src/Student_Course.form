@@ -3,12 +3,12 @@
   <grid id="27dc6" binding="panal1" layout-manager="GridLayoutManager" row-count="1" column-count="2" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
     <margin top="0" left="0" bottom="0" right="0"/>
     <constraints>
-      <xy x="20" y="20" width="1101" height="416"/>
+      <xy x="20" y="20" width="1081" height="738"/>
     </constraints>
     <properties/>
     <border type="none"/>
     <children>
-      <grid id="3a6e7" layout-manager="GridLayoutManager" row-count="8" column-count="2" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
+      <grid id="5c621" layout-manager="GridLayoutManager" row-count="8" column-count="2" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
         <margin top="10" left="10" bottom="10" right="10"/>
         <constraints>
           <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="3" hsize-policy="3" anchor="0" fill="3" indent="0" use-parent-layout="false"/>
@@ -18,7 +18,7 @@
         </properties>
         <border type="none"/>
         <children>
-          <component id="4a55c" class="javax.swing.JButton" binding="attendenceButton" default-binding="true">
+          <component id="16279" class="javax.swing.JButton" binding="attendenceButton" default-binding="true">
             <constraints>
               <grid row="1" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
             </constraints>
@@ -30,7 +30,7 @@
               <text value="Attendence"/>
             </properties>
           </component>
-          <component id="501b" class="javax.swing.JButton" binding="logoutButton" default-binding="true">
+          <component id="ed03c" class="javax.swing.JButton" binding="logoutButton" default-binding="true">
             <constraints>
               <grid row="7" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
             </constraints>
@@ -42,7 +42,7 @@
               <text value="Logout"/>
             </properties>
           </component>
-          <component id="4cf97" class="javax.swing.JButton" binding="noticeButton" default-binding="true">
+          <component id="6e928" class="javax.swing.JButton" binding="noticeButton" default-binding="true">
             <constraints>
               <grid row="6" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
             </constraints>
@@ -54,7 +54,7 @@
               <text value="Notice"/>
             </properties>
           </component>
-          <component id="44d3f" class="javax.swing.JButton" binding="timetableButton" default-binding="true">
+          <component id="78b1f" class="javax.swing.JButton" binding="timetableButton" default-binding="true">
             <constraints>
               <grid row="5" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
             </constraints>
@@ -66,7 +66,7 @@
               <text value="Timetable"/>
             </properties>
           </component>
-          <component id="f005a" class="javax.swing.JButton" binding="gradeGPAButton" default-binding="true">
+          <component id="17f5e" class="javax.swing.JButton" binding="gradeGPAButton" default-binding="true">
             <constraints>
               <grid row="4" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
             </constraints>
@@ -78,7 +78,7 @@
               <text value="Grade/GPA"/>
             </properties>
           </component>
-          <component id="d3bf1" class="javax.swing.JButton" binding="medicalButton" default-binding="true">
+          <component id="12002" class="javax.swing.JButton" binding="medicalButton" default-binding="true">
             <constraints>
               <grid row="2" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
             </constraints>
@@ -90,7 +90,7 @@
               <text value="Medical"/>
             </properties>
           </component>
-          <component id="b650e" class="javax.swing.JButton" binding="courseButton" default-binding="true">
+          <component id="a8368" class="javax.swing.JButton" binding="courseButton" default-binding="true">
             <constraints>
               <grid row="3" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
             </constraints>
@@ -102,7 +102,7 @@
               <text value="Course"/>
             </properties>
           </component>
-          <component id="c3899" class="javax.swing.JLabel">
+          <component id="78895" class="javax.swing.JLabel">
             <constraints>
               <grid row="0" column="0" row-span="1" col-span="2" vsize-policy="0" hsize-policy="0" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
             </constraints>
@@ -112,7 +112,7 @@
               <text value="Dashboard"/>
             </properties>
           </component>
-          <component id="19d64" class="javax.swing.JLabel">
+          <component id="59b81" class="javax.swing.JLabel">
             <constraints>
               <grid row="3" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
             </constraints>
@@ -121,7 +121,7 @@
               <text value=""/>
             </properties>
           </component>
-          <component id="c6833" class="javax.swing.JLabel">
+          <component id="c92fe" class="javax.swing.JLabel">
             <constraints>
               <grid row="2" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
             </constraints>
@@ -130,7 +130,7 @@
               <text value=""/>
             </properties>
           </component>
-          <component id="f4957" class="javax.swing.JLabel">
+          <component id="a9b21" class="javax.swing.JLabel">
             <constraints>
               <grid row="1" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
             </constraints>
@@ -139,7 +139,7 @@
               <text value=""/>
             </properties>
           </component>
-          <component id="50194" class="javax.swing.JLabel">
+          <component id="f6933" class="javax.swing.JLabel">
             <constraints>
               <grid row="4" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
             </constraints>
@@ -148,7 +148,7 @@
               <text value=""/>
             </properties>
           </component>
-          <component id="5a62c" class="javax.swing.JLabel">
+          <component id="4ce83" class="javax.swing.JLabel">
             <constraints>
               <grid row="5" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
             </constraints>
@@ -157,7 +157,7 @@
               <text value=""/>
             </properties>
           </component>
-          <component id="7c48f" class="javax.swing.JLabel">
+          <component id="68d25" class="javax.swing.JLabel">
             <constraints>
               <grid row="6" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
             </constraints>
@@ -166,7 +166,7 @@
               <text value=""/>
             </properties>
           </component>
-          <component id="8d110" class="javax.swing.JLabel">
+          <component id="d98fa" class="javax.swing.JLabel">
             <constraints>
               <grid row="7" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
             </constraints>
@@ -177,7 +177,7 @@
           </component>
         </children>
       </grid>
-      <grid id="a37c0" binding="panel2" layout-manager="GridLayoutManager" row-count="16" column-count="9" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
+      <grid id="8d65c" binding="panel2" layout-manager="GridLayoutManager" row-count="14" column-count="7" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
         <margin top="0" left="0" bottom="0" right="0"/>
         <constraints>
           <grid row="0" column="1" row-span="1" col-span="1" vsize-policy="3" hsize-policy="3" anchor="0" fill="3" indent="0" use-parent-layout="false"/>
@@ -185,27 +185,27 @@
         <properties/>
         <border type="none"/>
         <children>
-          <component id="ff73b" class="javax.swing.JLabel">
+          <component id="9d9f0" class="javax.swing.JLabel">
             <constraints>
-              <grid row="0" column="0" row-span="1" col-span="9" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+              <grid row="0" column="0" row-span="1" col-span="7" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
             </constraints>
             <properties>
               <font name="Arial Black" size="16" style="1"/>
               <text value="WELCOME, STUDENT"/>
             </properties>
           </component>
-          <component id="b6499" class="javax.swing.JLabel">
+          <component id="c09ab" class="javax.swing.JLabel">
             <constraints>
-              <grid row="1" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
+              <grid row="1" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
             </constraints>
             <properties>
               <icon value="image/course.png"/>
               <text value=""/>
             </properties>
           </component>
-          <component id="eba47" class="javax.swing.JButton" binding="DSAButton">
+          <component id="b0f57" class="javax.swing.JButton" binding="DSAButton">
             <constraints>
-              <grid row="2" column="0" row-span="1" col-span="2" vsize-policy="0" hsize-policy="3" anchor="1" fill="1" indent="0" use-parent-layout="false"/>
+              <grid row="2" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="1" fill="1" indent="0" use-parent-layout="false"/>
             </constraints>
             <properties>
               <background color="-13922170"/>
@@ -214,18 +214,18 @@
               <text value="Data Structures and Algorithms"/>
             </properties>
           </component>
-          <component id="27939" class="javax.swing.JLabel">
+          <component id="1373c" class="javax.swing.JLabel">
             <constraints>
-              <grid row="3" column="0" row-span="1" col-span="2" vsize-policy="0" hsize-policy="0" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
+              <grid row="3" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
             </constraints>
             <properties>
               <icon value="image/course.png"/>
               <text value=""/>
             </properties>
           </component>
-          <component id="dae68" class="javax.swing.JButton" binding="EcommerceButton">
+          <component id="a930" class="javax.swing.JButton" binding="EcommerceButton">
             <constraints>
-              <grid row="5" column="0" row-span="2" col-span="2" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+              <grid row="4" column="0" row-span="2" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
             </constraints>
             <properties>
               <background color="-13922170"/>
@@ -234,18 +234,18 @@
               <text value="E-Commerce Implementation Management and Security"/>
             </properties>
           </component>
-          <component id="ce89a" class="javax.swing.JLabel">
+          <component id="4bb1a" class="javax.swing.JLabel">
             <constraints>
-              <grid row="8" column="0" row-span="1" col-span="3" vsize-policy="0" hsize-policy="0" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
+              <grid row="6" column="0" row-span="1" col-span="2" vsize-policy="0" hsize-policy="0" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
             </constraints>
             <properties>
               <icon value="image/course3.png"/>
               <text value=""/>
             </properties>
           </component>
-          <component id="8cf13" class="javax.swing.JButton" binding="OOPButton">
+          <component id="423d1" class="javax.swing.JButton" binding="OOPButton">
             <constraints>
-              <grid row="9" column="0" row-span="7" col-span="3" vsize-policy="0" hsize-policy="3" anchor="1" fill="1" indent="0" use-parent-layout="false"/>
+              <grid row="7" column="0" row-span="7" col-span="2" vsize-policy="0" hsize-policy="3" anchor="1" fill="1" indent="0" use-parent-layout="false"/>
             </constraints>
             <properties>
               <background color="-13922170"/>
@@ -254,18 +254,18 @@
               <text value="Object Oriented Programming"/>
             </properties>
           </component>
-          <component id="ae85b" class="javax.swing.JLabel">
+          <component id="620e9" class="javax.swing.JLabel">
             <constraints>
-              <grid row="1" column="7" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
+              <grid row="1" column="5" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
             </constraints>
             <properties>
               <icon value="image/course4.png"/>
               <text value=""/>
             </properties>
           </component>
-          <component id="b4902" class="javax.swing.JButton" binding="OOADButton">
+          <component id="d4488" class="javax.swing.JButton" binding="OOADButton">
             <constraints>
-              <grid row="2" column="6" row-span="1" col-span="2" vsize-policy="0" hsize-policy="3" anchor="1" fill="1" indent="0" use-parent-layout="false"/>
+              <grid row="2" column="5" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="1" fill="1" indent="0" use-parent-layout="false"/>
             </constraints>
             <properties>
               <background color="-13922170"/>
@@ -274,18 +274,18 @@
               <text value="Object Oriented Analysis and Design"/>
             </properties>
           </component>
-          <component id="8e676" class="javax.swing.JLabel">
+          <component id="dd85" class="javax.swing.JLabel">
             <constraints>
-              <grid row="3" column="6" row-span="1" col-span="2" vsize-policy="0" hsize-policy="0" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
+              <grid row="3" column="5" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
             </constraints>
             <properties>
               <icon value="image/course.png"/>
               <text value=""/>
             </properties>
           </component>
-          <component id="4d241" class="javax.swing.JButton" binding="OOPpracticumButton">
+          <component id="5d716" class="javax.swing.JButton" binding="OOPpracticumButton">
             <constraints>
-              <grid row="5" column="6" row-span="1" col-span="2" vsize-policy="0" hsize-policy="3" anchor="1" fill="1" indent="0" use-parent-layout="false"/>
+              <grid row="4" column="5" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="1" fill="1" indent="0" use-parent-layout="false"/>
             </constraints>
             <properties>
               <background color="-13922170"/>
@@ -294,42 +294,6 @@
               <text value="OOP Practicum "/>
             </properties>
           </component>
-          <grid id="98898" layout-manager="GridLayoutManager" row-count="1" column-count="1" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
-            <margin top="0" left="0" bottom="0" right="0"/>
-            <constraints>
-              <grid row="1" column="6" row-span="1" col-span="1" vsize-policy="3" hsize-policy="3" anchor="0" fill="3" indent="0" use-parent-layout="false"/>
-            </constraints>
-            <properties/>
-            <border type="none"/>
-            <children/>
-          </grid>
-          <grid id="eea08" layout-manager="GridLayoutManager" row-count="1" column-count="1" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
-            <margin top="0" left="0" bottom="0" right="0"/>
-            <constraints>
-              <grid row="4" column="0" row-span="1" col-span="1" vsize-policy="3" hsize-policy="3" anchor="0" fill="3" indent="0" use-parent-layout="false"/>
-            </constraints>
-            <properties/>
-            <border type="none"/>
-            <children/>
-          </grid>
-          <grid id="7cbfd" layout-manager="GridLayoutManager" row-count="1" column-count="1" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
-            <margin top="0" left="0" bottom="0" right="0"/>
-            <constraints>
-              <grid row="4" column="6" row-span="1" col-span="1" vsize-policy="3" hsize-policy="3" anchor="0" fill="3" indent="0" use-parent-layout="false"/>
-            </constraints>
-            <properties/>
-            <border type="none"/>
-            <children/>
-          </grid>
-          <grid id="1a50d" layout-manager="GridLayoutManager" row-count="1" column-count="1" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
-            <margin top="0" left="0" bottom="0" right="0"/>
-            <constraints>
-              <grid row="7" column="0" row-span="1" col-span="1" vsize-policy="3" hsize-policy="3" anchor="0" fill="3" indent="0" use-parent-layout="false"/>
-            </constraints>
-            <properties/>
-            <border type="none"/>
-            <children/>
-          </grid>
         </children>
       </grid>
     </children>

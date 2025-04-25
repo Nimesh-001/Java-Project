@@ -5,7 +5,7 @@ import java.awt.event.ActionListener;
 public class Studentdashboard {
 
 
-    private JPanel panel1;
+    private JPanel panal1;
     private JButton attendenceButton;
     private JButton logoutButton;
     private JButton noticeButton;
@@ -23,11 +23,20 @@ public class Studentdashboard {
     private JPanel panel2;
 
     public Studentdashboard() {
+        JFrame frame = new JFrame("Studentdashboard");
+        frame.setContentPane(this.panal1);
+        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        frame.pack();
+        frame.setVisible(true);
+        frame.setSize(1000,500);
+        frame.setLocationRelativeTo(null);
+        frame.setResizable(false);
+
         attendenceButton1.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
                 JFrame frame = new JFrame("Student_Attendence");
-                frame.setContentPane(new Student_Attendance().panel1);
+                frame.setContentPane(new Student_Attendance().panal1);
                 frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
                 frame.pack();
                 frame.setVisible(true);
@@ -37,7 +46,7 @@ public class Studentdashboard {
             @Override
             public void actionPerformed(ActionEvent e) {
                 JFrame frame = new JFrame("Student_Medical");
-                frame.setContentPane(new Student_Medical().panel1);
+                frame.setContentPane(new Student_Medical().panal1);
                 frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
                 frame.pack();
                 frame.setVisible(true);
@@ -48,7 +57,7 @@ public class Studentdashboard {
             @Override
             public void actionPerformed(ActionEvent e) {
                 JFrame frame = new JFrame("Student_Timetable");
-                frame.setContentPane(new Student_Timetable().panel1);
+                frame.setContentPane(new Student_Timetable().panal1);
                 frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
                 frame.pack();
                 frame.setVisible(true);
@@ -58,7 +67,7 @@ public class Studentdashboard {
             @Override
             public void actionPerformed(ActionEvent e) {
                 JFrame frame = new JFrame("Student_Course");
-                frame.setContentPane(new Student_course().panel1);
+                frame.setContentPane(new Student_Course().panal1);
                 frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
                 frame.pack();
                 frame.setVisible(true);
@@ -68,7 +77,7 @@ public class Studentdashboard {
             @Override
             public void actionPerformed(ActionEvent e) {
                 JFrame frame = new JFrame("Student_GPA");
-                frame.setContentPane(new Student_GPA().panel1);
+                frame.setContentPane(new View_Marks().panal1);
                 frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
                 frame.pack();
                 frame.setVisible(true);
@@ -83,14 +92,7 @@ public class Studentdashboard {
     }
 
     public static void main(String[] args) {
-        JFrame frame = new JFrame("Studentdashboard");
-        frame.setContentPane(new Studentdashboard().panel1);
-        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        frame.pack();
-        frame.setVisible(true);
-        frame.setSize(1000,500);
-        frame.setLocationRelativeTo(null);
-        frame.setResizable(false);
-
+        new Studentdashboard();
     }
+
 }
