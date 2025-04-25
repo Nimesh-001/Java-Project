@@ -43,7 +43,7 @@ public class AdminAUD {
             @Override
             public void actionPerformed(ActionEvent e) {
                 frame.dispose();
-                new Userprofilemanagement();
+                new Admindashbord();
 
             }
         });

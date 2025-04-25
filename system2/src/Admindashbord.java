@@ -36,7 +36,7 @@ public class Admindashbord {
             @Override
             public void actionPerformed(ActionEvent e) {
                 frame.dispose();
-                new Userprofilemanagement();
+                new AdminAUD();
 
             }
         });
