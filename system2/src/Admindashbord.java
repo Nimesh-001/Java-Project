@@ -35,6 +35,8 @@ public class Admindashbord {
         userProfilesButton1.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
+                frame.dispose();
+                new Userprofilemanagement();
 
             }
         });
