@@ -65,6 +65,13 @@ public class AdminAUDupdate {
 
                 JOptionPane.showMessageDialog(null, "User details updated successfully.");
 
+                textField1.setText("");
+                textField2.setText("");
+                textField3.setText("");
+                textField4.setText("");
+                textField5.setText("");
+                textField6.setText("");
+
             }
         });
         CLEARButton.addActionListener(new ActionListener() {
