@@ -149,16 +149,27 @@ public class CourseManagementForm {
             @Override
             public void actionPerformed(ActionEvent e) {
 
-                String sql = "DELETE FROM Course_unit WHERE Course_code=?";
+                String courseCode = textField1.getText();
+                if (courseCode.isEmpty()) {
+                    JOptionPane.showMessageDialog(null, "Enter a Course Code to delete.");
+                    return;
+                }
+
+                String sql = "DELETE FROM Course_unit WHERE Course_code = ?";
                 try {
-
                     PreparedStatement pst = con.prepareStatement(sql);
-                    pst.setString(1, textField1.getText());
+                    pst.setString(1, courseCode);
+                    int result = pst.executeUpdate();
 
-                    pst.executeUpdate();
-                    JOptionPane.showMessageDialog(null, "Course Deleted Successfully!");
+                    if (result > 0) {
+                        JOptionPane.showMessageDialog(null, "Course deleted successfully.");
+                    } else {
+                        JOptionPane.showMessageDialog(null, "Course not found.");
+                    }
+
+                    textField1.setText("");
                     pst.close();
-                } catch (Exception ex) {
+                } catch (SQLException ex) {
                     JOptionPane.showMessageDialog(null, "Error: " + ex.getMessage());
                 }
 
