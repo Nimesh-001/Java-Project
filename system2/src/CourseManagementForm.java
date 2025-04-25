@@ -108,22 +108,37 @@ public class CourseManagementForm {
             @Override
             public void actionPerformed(ActionEvent e) {
 
-                String sql = "UPDATE Course_unit SET CourseName=?, Course_type=?, Theory_hours=?, Practical_hours=?, Credits=?, Lecturer_Username=?, Admin_Username=? WHERE Course_code=?";
+                String courseCode = textField1.getText();
+
+                if (courseCode.isEmpty()) {
+                    JOptionPane.showMessageDialog(null, "Please enter the Course Code to update.");
+                    return;
+                }
+
                 try {
+                    if (!textField2.getText().isEmpty()) {
+                        updateField("CourseName", textField2.getText(), courseCode);
+                    }
+                    if (comboBox1.getSelectedIndex() != 0) {
+                        updateField("Course_type", comboBox1.getSelectedItem().toString(), courseCode);
+                    }
+                    if (!textField4.getText().isEmpty()) {
+                        updateField("Theory_hours", textField4.getText(), courseCode);
+                    }
+                    if (!textField5.getText().isEmpty()) {
+                        updateField("Practical_hours", textField5.getText(), courseCode);
+                    }
+                    if (!textField6.getText().isEmpty()) {
+                        updateField("Credits", textField6.getText(), courseCode);
+                    }
+                    if (!textField7.getText().isEmpty()) {
+                        updateField("Lecturer_Username", textField7.getText(), courseCode);
+                    }
+                    if (!textField8.getText().isEmpty()) {
+                        updateField("Admin_Username", textField8.getText(), courseCode);
+                    }
 
-                    PreparedStatement pst = con.prepareStatement(sql);
-                    pst.setString(1, textField2.getText());
-                    pst.setString(2, comboBox1.getSelectedItem().toString());
-                    pst.setInt(3, Integer.parseInt(textField4.getText()));
-                    pst.setInt(4, Integer.parseInt(textField5.getText()));
-                    pst.setInt(5, Integer.parseInt(textField6.getText()));
-                    pst.setString(6, textField7.getText());
-                    pst.setString(7, textField8.getText());
-                    pst.setString(8, textField1.getText());
-
-                    pst.executeUpdate();
-                    JOptionPane.showMessageDialog(null, "Course Updated Successfully!");
-                    pst.close();
+                    JOptionPane.showMessageDialog(null, "Course details updated successfully.");
                 } catch (Exception ex) {
                     JOptionPane.showMessageDialog(null, "Error: " + ex.getMessage());
                 }
@@ -188,6 +203,21 @@ public class CourseManagementForm {
             }
         });
     }
+
+    public void updateField(String column, String value, String courseCode) {
+        String sql = "UPDATE Course_unit SET " + column + " = ? WHERE Course_code = ?";
+
+        try {
+            PreparedStatement pst = con.prepareStatement(sql);
+            pst.setString(1, value);
+            pst.setString(2, courseCode);
+            pst.executeUpdate();
+            pst.close();
+        } catch (Exception ex) {
+            JOptionPane.showMessageDialog(null, "Update failed for " + column + ": " + ex.getMessage());
+        }
+    }
+
 
     public static void main(String[] args) {
         new CourseManagementForm();
