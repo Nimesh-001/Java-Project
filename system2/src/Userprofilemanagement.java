@@ -35,6 +35,8 @@ public class Userprofilemanagement {
         lecturerButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
+                frame.dispose();
+                new LecturerAUD();
 
             }
         });
