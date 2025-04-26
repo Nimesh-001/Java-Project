@@ -75,7 +75,7 @@ public class AdminTimetableManagement {
 
                 if (courseCode.isEmpty() || courseName.isEmpty() || startTime.isEmpty() || endTime.isEmpty() || date.isEmpty()) {
                     JOptionPane.showMessageDialog(null, "All fields must be filled out.");
-                    return; 
+                    return;
                 }
 
                 String query = "INSERT INTO newtimetable (course_code, course_name, start_time, end_time, date) VALUES (?, ?, ?, ?, ?)";
