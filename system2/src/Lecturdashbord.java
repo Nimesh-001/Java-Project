@@ -41,14 +41,14 @@ public class Lecturdashbord {
             @Override
             public void actionPerformed(ActionEvent e) {
                 frame.dispose();
-                new LecEditProfile();
+              //  new EditLectureProfile();
             }
         });
         marksButton1.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
                 frame.dispose();
-                new LecMarks();
+               // new LecMarks();
             }
         });
         studentsButton1.addActionListener(new ActionListener() {
