@@ -7,6 +7,7 @@ public class LecStudentGrade {
     private JButton viewResultsButton;
     private JButton backButton;
     private JTable table1;
+    private JButton logoutButton;
 
     public LecStudentGrade() {
 
@@ -30,6 +31,12 @@ public class LecStudentGrade {
             public void actionPerformed(ActionEvent e) {
                 frame.dispose();
                 new LecStudentdashbord();
+            }
+        });
+        logoutButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                new form();
             }
         });
     }
