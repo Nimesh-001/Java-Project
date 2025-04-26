@@ -28,12 +28,16 @@ public class View_Marks {
         frame.setVisible(true);
 
         // View full table (for course and mark type)
+        // View full table (for course and mark type)
         viewButtonwhole.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
                 String selectedCourse = comboBox3.getSelectedItem().toString();
-                String selectedType = comboBox1.getSelectedItem().toString(); // Mark Type
+                String selectedType = comboBox4.getSelectedItem().toString(); // Mark Type
 
+                System.out.println("Selected Type: " + selectedType);  // Debugging to confirm the selected value
+
+                // Check the selected Mark Type
                 if (selectedType.equals("CA Marks")) {
                     try {
                         DB db = new DB();
@@ -102,7 +106,7 @@ public class View_Marks {
                         ex.printStackTrace();
                         JOptionPane.showMessageDialog(null, "Error fetching marks: " + ex.getMessage());
                     }
-                } else {
+                } else if (selectedType.equals("Final Marks")) {
                     try {
                         DB db = new DB();
                         try (Connection con = db.getConnection()) {
@@ -169,9 +173,13 @@ public class View_Marks {
                         ex.printStackTrace();
                         JOptionPane.showMessageDialog(null, "Error fetching final marks: " + ex.getMessage());
                     }
+                } else {
+                    JOptionPane.showMessageDialog(null, "Please select a valid Mark Type (CA Marks or Final Marks).");
                 }
             }
         });
+
+
 
         // View single student result
         viewButton.addActionListener(new ActionListener() {
