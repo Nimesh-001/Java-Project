@@ -3,7 +3,7 @@
   <grid id="27dc6" binding="panel1" default-binding="true" layout-manager="GridLayoutManager" row-count="1" column-count="1" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
     <margin top="0" left="0" bottom="0" right="0"/>
     <constraints>
-      <xy x="20" y="20" width="539" height="400"/>
+      <xy x="20" y="20" width="542" height="400"/>
     </constraints>
     <properties/>
     <border type="none"/>
@@ -81,19 +81,30 @@
               <text value="Back"/>
             </properties>
           </component>
-          <scrollpane id="57ccc">
+          <scrollpane id="2543a">
             <constraints>
-              <grid row="2" column="1" row-span="1" col-span="3" vsize-policy="7" hsize-policy="7" anchor="0" fill="3" indent="0" use-parent-layout="false"/>
+              <grid row="2" column="1" row-span="1" col-span="3" vsize-policy="7" hsize-policy="7" anchor="0" fill="3" indent="0" use-parent-layout="false">
+                <preferred-size width="452" height="328"/>
+              </grid>
             </constraints>
             <properties/>
             <border type="none"/>
             <children>
-              <component id="5b75f" class="javax.swing.JTable" binding="table1" default-binding="true">
+              <component id="350fc" class="javax.swing.JTable" binding="table1" default-binding="true">
                 <constraints/>
                 <properties/>
               </component>
             </children>
           </scrollpane>
+          <component id="5e232" class="javax.swing.JButton" binding="logOutButton" default-binding="true">
+            <constraints>
+              <grid row="3" column="4" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+            </constraints>
+            <properties>
+              <background color="-13922170"/>
+              <text value="Log out"/>
+            </properties>
+          </component>
         </children>
       </grid>
     </children>
