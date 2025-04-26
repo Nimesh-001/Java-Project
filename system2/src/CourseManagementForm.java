@@ -185,7 +185,7 @@ public class CourseManagementForm {
                     // Create a new DefaultTableModel with columns
                     DefaultTableModel model = new DefaultTableModel();
                     model.addColumn("Course_code");
-                    model.addColumn("CourseName");
+                    model.addColumn("Course_Name");
                     model.addColumn("Course_type");
                     model.addColumn("Theory_hours");
                     model.addColumn("Practical_hours");
@@ -196,7 +196,7 @@ public class CourseManagementForm {
                     // Iterate through the ResultSet and add each row to the model
                     while (rs.next()) {
                         String courseCode = rs.getString("Course_code");
-                        String courseName = rs.getString("CourseName");
+                        String courseName = rs.getString("Course_Name");
                         String courseType = rs.getString("Course_type");
                         String theoryHours = rs.getString("Theory_hours");
                         String practicalHours = rs.getString("Practical_hours");
