@@ -20,6 +20,7 @@ public class LecCourses {
     private JButton uploadButton;
     private JButton viewButton;
     private JButton selectFileButton;
+    private JButton logoutButton;
 
     private File selectedFile;
 
@@ -164,6 +165,12 @@ public class LecCourses {
             }
         });
 
+        logoutButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                new form();
+            }
+        });
     }
 
     private void createUIComponents() {
