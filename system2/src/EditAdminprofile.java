@@ -70,7 +70,8 @@ public class EditAdminprofile {
                     updateField("Phone_Number", textField4.getText(), username);
                 }
                 if (!textField5.getText().isEmpty()) {
-                    updateField("Picture_Path", textField5.getText(), username);
+                    updateField("Profile_Pic_Path", textField5.getText(), username);
+
                 }
                 if (!textField6.getText().isEmpty()) {
                     updateField("Email", textField6.getText(), username);
