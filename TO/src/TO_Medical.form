@@ -1,0 +1,192 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<form xmlns="http://www.intellij.com/uidesigner/form/" version="1" bind-to-class="TO_Medical">
+  <grid id="27dc6" binding="panal1" layout-manager="GridLayoutManager" row-count="1" column-count="1" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
+    <margin top="0" left="0" bottom="0" right="0"/>
+    <constraints>
+      <xy x="20" y="20" width="500" height="400"/>
+    </constraints>
+    <properties/>
+    <border type="none"/>
+    <children>
+      <grid id="24c0b" layout-manager="GridLayoutManager" row-count="1" column-count="2" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
+        <margin top="0" left="0" bottom="0" right="0"/>
+        <constraints>
+          <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="3" hsize-policy="3" anchor="0" fill="3" indent="0" use-parent-layout="false"/>
+        </constraints>
+        <properties/>
+        <border type="none"/>
+        <children>
+          <grid id="e960b" layout-manager="GridLayoutManager" row-count="6" column-count="2" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
+            <margin top="10" left="10" bottom="10" right="10"/>
+            <constraints>
+              <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="3" hsize-policy="3" anchor="0" fill="3" indent="0" use-parent-layout="false"/>
+            </constraints>
+            <properties>
+              <background color="-13922170"/>
+            </properties>
+            <border type="none"/>
+            <children>
+              <component id="8c23c" class="javax.swing.JButton" binding="logoutButton" default-binding="true">
+                <constraints>
+                  <grid row="5" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+                </constraints>
+                <properties>
+                  <background color="-13922170"/>
+                  <font name="Arial Black" size="14" style="1"/>
+                  <foreground color="-131073"/>
+                  <text value="Logout"/>
+                </properties>
+              </component>
+              <component id="4c97e" class="javax.swing.JButton" binding="attendenceButton" default-binding="true">
+                <constraints>
+                  <grid row="1" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+                </constraints>
+                <properties>
+                  <background color="-13922170"/>
+                  <font name="Arial Black" size="14" style="1"/>
+                  <foreground color="-131073"/>
+                  <hideActionText value="false"/>
+                  <text value="Attendence"/>
+                </properties>
+              </component>
+              <component id="71435" class="javax.swing.JButton" binding="timetableButton" default-binding="true">
+                <constraints>
+                  <grid row="4" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+                </constraints>
+                <properties>
+                  <background color="-13922170"/>
+                  <font name="Arial Black" size="14" style="1"/>
+                  <foreground color="-131073"/>
+                  <text value="Timetable"/>
+                </properties>
+              </component>
+              <component id="51b47" class="javax.swing.JButton" binding="noticeButton" default-binding="true">
+                <constraints>
+                  <grid row="3" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+                </constraints>
+                <properties>
+                  <background color="-13922170"/>
+                  <font name="Arial Black" size="14" style="1"/>
+                  <foreground color="-131073"/>
+                  <text value="Notice"/>
+                </properties>
+              </component>
+              <component id="54080" class="javax.swing.JButton" binding="medicalButton" default-binding="true">
+                <constraints>
+                  <grid row="2" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+                </constraints>
+                <properties>
+                  <background color="-13922170"/>
+                  <font name="Arial Black" size="14" style="1"/>
+                  <foreground color="-131073"/>
+                  <text value="Medical"/>
+                </properties>
+              </component>
+              <component id="bac23" class="javax.swing.JLabel">
+                <constraints>
+                  <grid row="1" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+                </constraints>
+                <properties>
+                  <icon value="image/attendence small.png"/>
+                  <text value=""/>
+                </properties>
+              </component>
+              <component id="ea3a1" class="javax.swing.JLabel">
+                <constraints>
+                  <grid row="2" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+                </constraints>
+                <properties>
+                  <icon value="image/medical small.png"/>
+                  <text value=""/>
+                </properties>
+              </component>
+              <component id="b67be" class="javax.swing.JLabel">
+                <constraints>
+                  <grid row="3" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+                </constraints>
+                <properties>
+                  <icon value="image/3.png"/>
+                  <text value=""/>
+                </properties>
+              </component>
+              <component id="7a89f" class="javax.swing.JLabel">
+                <constraints>
+                  <grid row="4" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+                </constraints>
+                <properties>
+                  <icon value="image/5.png"/>
+                  <text value=""/>
+                </properties>
+              </component>
+              <component id="1a221" class="javax.swing.JLabel">
+                <constraints>
+                  <grid row="5" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+                </constraints>
+                <properties>
+                  <icon value="image/6.png"/>
+                  <text value=""/>
+                </properties>
+              </component>
+              <component id="579b2" class="javax.swing.JLabel">
+                <constraints>
+                  <grid row="0" column="0" row-span="1" col-span="2" vsize-policy="0" hsize-policy="0" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
+                </constraints>
+                <properties>
+                  <font name="Arial Black" size="20" style="1"/>
+                  <foreground color="-131073"/>
+                  <text value="Dashboard"/>
+                </properties>
+              </component>
+            </children>
+          </grid>
+          <grid id="e4e43" binding="panal2" layout-manager="GridLayoutManager" row-count="1" column-count="3" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
+            <margin top="0" left="0" bottom="0" right="0"/>
+            <constraints>
+              <grid row="0" column="1" row-span="1" col-span="1" vsize-policy="3" hsize-policy="3" anchor="0" fill="3" indent="0" use-parent-layout="false"/>
+            </constraints>
+            <properties/>
+            <border type="none"/>
+            <children>
+              <component id="96f90" class="javax.swing.JButton" binding="addButton">
+                <constraints>
+                  <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+                </constraints>
+                <properties>
+                  <background color="-13922170"/>
+                  <font name="Arial Black" size="14" style="1"/>
+                  <foreground color="-131073"/>
+                  <hideActionText value="false"/>
+                  <text value="Add"/>
+                </properties>
+              </component>
+              <component id="7d20c" class="javax.swing.JButton" binding="updateButton">
+                <constraints>
+                  <grid row="0" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+                </constraints>
+                <properties>
+                  <background color="-13922170"/>
+                  <font name="Arial Black" size="14" style="1"/>
+                  <foreground color="-131073"/>
+                  <hideActionText value="false"/>
+                  <text value="Update"/>
+                </properties>
+              </component>
+              <component id="9e763" class="javax.swing.JButton" binding="deleteButton">
+                <constraints>
+                  <grid row="0" column="2" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+                </constraints>
+                <properties>
+                  <background color="-13922170"/>
+                  <font name="Arial Black" size="14" style="1"/>
+                  <foreground color="-131073"/>
+                  <hideActionText value="false"/>
+                  <text value="Delete"/>
+                </properties>
+              </component>
+            </children>
+          </grid>
+        </children>
+      </grid>
+    </children>
+  </grid>
+</form>
