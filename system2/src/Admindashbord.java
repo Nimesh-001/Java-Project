@@ -51,6 +51,8 @@ public class Admindashbord {
         noticesButton1.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
+                frame.dispose();
+                new AdminNoticeManagement();
 
             }
         });
