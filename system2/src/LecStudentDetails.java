@@ -12,6 +12,7 @@ public class LecStudentDetails {
     private JButton clearButton;
     private JButton backButton;
     private JTable table1;
+    private JButton logoutButton;
 
     public LecStudentDetails() {
         JFrame frame = new JFrame("LecStudentDetails");
@@ -47,6 +48,12 @@ public class LecStudentDetails {
             textField1.setText("");
             DefaultTableModel model = (DefaultTableModel) table1.getModel();
             model.setRowCount(0);
+        });
+        logoutButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                new form();
+            }
         });
     }
 
