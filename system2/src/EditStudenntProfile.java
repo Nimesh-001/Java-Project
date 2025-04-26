@@ -61,7 +61,7 @@ public class EditStudenntProfile {
                 }
 
                 if (!textField5.getText().isEmpty()) {
-                    updateField("Picture_Path", textField5.getText(), username);
+                    updateField("Profile_Pic_Path", textField5.getText(), username);
                 }
 
                 JOptionPane.showMessageDialog(null, "Student details updated successfully.");
