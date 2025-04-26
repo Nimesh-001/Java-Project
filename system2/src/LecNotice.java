@@ -5,6 +5,8 @@ import java.awt.event.ActionListener;
 public class LecNotice {
     private JPanel panel1;
     private JButton backButton;
+    private JButton viewButton;
+    private JButton logoutButton;
 
     public LecNotice() {
 
@@ -22,6 +24,18 @@ public class LecNotice {
             public void actionPerformed(ActionEvent e) {
                 frame.dispose();
                 new Lecturdashbord();
+            }
+        });
+        viewButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+
+            }
+        });
+        logoutButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                new form();
             }
         });
     }
