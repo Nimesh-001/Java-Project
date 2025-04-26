@@ -12,6 +12,7 @@ public class LecStudentdashbord {
     private JButton attendanceButton1;
     private JButton medicalButton1;
     private JButton backButton;
+    private JButton logoutButton;
 
     public LecStudentdashbord() {
 
@@ -80,9 +81,15 @@ public class LecStudentdashbord {
                 new Lecturdashbord();
             }
         });
+        logoutButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+
+            }
+        });
     }
 
     public static void main(String[] args) {
-       new LecStudentdashbord();
+       new form();
     }
 }
