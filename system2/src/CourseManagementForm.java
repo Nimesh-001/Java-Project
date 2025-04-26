@@ -113,7 +113,8 @@ public class CourseManagementForm {
 
                 try {
                     if (!textField2.getText().isEmpty()) {
-                        updateField("CourseName", textField2.getText(), courseCode);
+                        updateField("Course_Name", textField2.getText(), courseCode);
+
                     }
                     if (comboBox1.getSelectedIndex() != 0) {
                         updateField("Course_type", comboBox1.getSelectedItem().toString(), courseCode);
