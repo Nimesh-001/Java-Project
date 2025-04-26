@@ -11,6 +11,7 @@ public class LecStudentMarks {
     private JComboBox<String> comboBox1;
     private JButton viewButton;
     private JTable table1;
+    private JButton logoutButton;
 
     public LecStudentMarks() {
 
@@ -43,6 +44,12 @@ public class LecStudentMarks {
                 String courseCode = comboBox1.getSelectedItem().toString();
 
                 loadData(studentId, courseCode);
+            }
+        });
+        logoutButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                new form();
             }
         });
     }
