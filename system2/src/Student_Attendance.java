@@ -25,7 +25,6 @@ public class Student_Attendance {
         frame.setContentPane(this.panal1);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.pack();
-        frame.setVisible(true);
         frame.setLocationRelativeTo(null);
         frame.setResizable(false);
         frame.setSize(1000, 500);

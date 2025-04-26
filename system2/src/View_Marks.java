@@ -15,14 +15,14 @@ public class View_Marks {
     private JTable table1;
 
     public View_Marks() {
-        JFrame frame = new JFrame("View_Marks");
-        frame.setContentPane(new View_Marks().panal1);
+        JFrame frame = new JFrame("View Marks");
+        frame.setContentPane(this.panal1);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.pack();
-        frame.setVisible(true);
         frame.setLocationRelativeTo(null);
         frame.setResizable(false);
         frame.setSize(1000, 500);
+
 
         viewButtonwhole.addActionListener(new ActionListener() {
             @Override

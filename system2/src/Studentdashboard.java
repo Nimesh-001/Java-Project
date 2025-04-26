@@ -31,17 +31,22 @@ public class Studentdashboard {
         frame.setSize(1000,500);
         frame.setLocationRelativeTo(null);
         frame.setResizable(false);
-
+// Create one instance of Student_Attendance and reuse it
         attendenceButton1.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
+                // Create an instance of Student_Attendance only when the button is clicked
+                Student_Attendance studentAttendance = new Student_Attendance();
+
                 JFrame frame = new JFrame("Student_Attendence");
-                frame.setContentPane(new Student_Attendance().panal1);
+                frame.setContentPane(studentAttendance.panal1);
                 frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
                 frame.pack();
                 frame.setVisible(true);
             }
         });
+
+
         medicalButton1.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -83,12 +88,7 @@ public class Studentdashboard {
                 frame.setVisible(true);
             }
         });
-        gradeGPAButton1.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-
-            }
-        });
+        
     }
 
     public static void main(String[] args) {

@@ -17,10 +17,10 @@ public class Student_Medical {
         JFrame frame = new JFrame("Student_Medical");
         frame.setContentPane(this.panal1);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        frame.setSize(1000, 500);
+        frame.pack();
         frame.setLocationRelativeTo(null);
         frame.setResizable(false);
-        frame.setVisible(true);
+        frame.setSize(1000, 500);
 
         // Display medical records from the 'medical' table
         try {

@@ -43,7 +43,9 @@
                     <preferred-size width="150" height="50"/>
                   </grid>
                 </constraints>
-                <properties/>
+                <properties>
+                  <font name="Arial Black" size="14" style="1"/>
+                </properties>
               </component>
               <component id="6d09a" class="javax.swing.JTextArea" binding="textArea2" default-binding="true">
                 <constraints>
