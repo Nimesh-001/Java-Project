@@ -176,8 +176,13 @@ public class View_Marks {
         // View single student result
         viewButton.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
-                String studentId = comboBox4.getSelectedItem().toString(); // Corrected
-                String courseCode = comboBox2.getSelectedItem().toString();
+                String studentId = comboBox1.getSelectedItem() != null ? comboBox1.getSelectedItem().toString() : "";
+                String courseCode = comboBox2.getSelectedItem() != null ? comboBox2.getSelectedItem().toString() : "";
+
+                if (studentId.isEmpty() || courseCode.isEmpty()) {
+                    JOptionPane.showMessageDialog(null, "Please select both Student ID and Course Code.");
+                    return;
+                }
 
                 try {
                     DB db = new DB();
@@ -194,15 +199,19 @@ public class View_Marks {
 
                             try (ResultSet rs = stmt.executeQuery()) {
                                 DefaultTableModel model = new DefaultTableModel(
-                                        new String[]{"Student ID", "Course Code", "CA Marks", "Eligibility"}, 0
+                                        new String[]{"CA Marks", "Eligibility"}, 0
                                 );
 
+                                boolean foundData = false;
                                 while (rs.next()) {
-                                    String id = rs.getString("StudentID");
-                                    String code = rs.getString("CourseCode");
                                     int caMarks = rs.getInt("CAMarks");
                                     String eligibility = rs.getString("Eligibility");
-                                    model.addRow(new Object[]{id, code, caMarks, eligibility});
+                                    model.addRow(new Object[]{caMarks, eligibility});
+                                    foundData = true;
+                                }
+
+                                if (!foundData) {
+                                    JOptionPane.showMessageDialog(null, "No data found for the selected Student ID and Course Code.");
                                 }
 
                                 table1.setModel(model);
@@ -215,6 +224,7 @@ public class View_Marks {
                 }
             }
         });
+
 
     }
 
