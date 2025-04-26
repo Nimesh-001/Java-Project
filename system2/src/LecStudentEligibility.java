@@ -9,6 +9,7 @@ public class LecStudentEligibility {
     private JButton clearButton;
     private JButton backButton;
     private JTable table1;
+    private JButton logoutButton;
 
     public LecStudentEligibility() {
 
@@ -38,6 +39,12 @@ public class LecStudentEligibility {
             public void actionPerformed(ActionEvent e) {
                 frame.dispose();
                 new LecStudentdashbord();
+            }
+        });
+        logoutButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                new form();
             }
         });
     }
