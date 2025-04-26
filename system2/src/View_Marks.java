@@ -2,22 +2,20 @@ import javax.swing.*;
 import javax.swing.table.DefaultTableModel;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.sql.Connection;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
+import java.sql.*;
 
 public class View_Marks {
     public JPanel panal1;
     private JPanel panal2;
     private JButton backButton;
-    private JComboBox comboBox1;
-    private JComboBox comboBox2;
+    private JComboBox<String> comboBox1; // Mark Type (CA Marks / Final Marks)
+    private JComboBox<String> comboBox2; // Course Code
     private JButton viewButton;
     private JButton logoutButton;
-    private JComboBox comboBox3;
+    private JComboBox<String> comboBox3; // Course Code for whole table view
     private JButton viewButtonwhole;
     private JTable table1;
-    private JComboBox comboBox4;
+    private JComboBox<String> comboBox4; // Student ID
 
     public View_Marks() {
         JFrame frame = new JFrame("View Marks");
@@ -29,12 +27,14 @@ public class View_Marks {
         frame.setSize(1000, 500);
         frame.setVisible(true);
 
+        // View full table (for course and mark type)
         viewButtonwhole.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
                 String selectedCourse = comboBox3.getSelectedItem().toString();
-                String selectedType = comboBox1.getSelectedItem().toString(); // e.g., "CA marks"
-                if(selectedType.equals("CA Marks")) {
+                String selectedType = comboBox1.getSelectedItem().toString(); // Mark Type
+
+                if (selectedType.equals("CA Marks")) {
                     try {
                         DB db = new DB();
                         try (Connection con = db.getConnection()) {
@@ -80,7 +80,6 @@ public class View_Marks {
 
                                 float ca = quizTotal + assessPart + midPart;
 
-                                // Determine eligibility based on course code
                                 String eligibility = "Not Eligible";
                                 if (code.equals("ICT2152") || code.equals("ICT2113") || code.equals("ICT2133")) {
                                     if (ca > 15) {
@@ -103,7 +102,7 @@ public class View_Marks {
                         ex.printStackTrace();
                         JOptionPane.showMessageDialog(null, "Error fetching marks: " + ex.getMessage());
                     }
-                }else{
+                } else {
                     try {
                         DB db = new DB();
                         try (Connection con = db.getConnection()) {
@@ -119,18 +118,45 @@ public class View_Marks {
 
                             DefaultTableModel model = new DefaultTableModel(new String[]{"Student ID", "Final Marks"}, 0);
 
-                            if (!rs.next()) {
-                                System.out.println("No data returned from the query!");
-                                return;
-                            }
-
-                            do {
+                            while (rs.next()) {
                                 String sid = rs.getString("Student_id");
-                                // rest of your logic to calculate Final marks...
+                                String code = rs.getString("Course_code");
+                                float q1 = rs.getFloat("Quiz1");
+                                float q2 = rs.getFloat("Quiz2");
+                                float q3 = rs.getFloat("Quiz3");
+                                float q4 = rs.getFloat("Quiz4");
+                                float assess = rs.getFloat("Assessment_Mark");
+                                float midT = rs.getFloat("Mid_Theory");
+                                float midP = rs.getFloat("Mid_Practical");
+                                float endT = rs.getFloat("End_Theory");
+                                float endP = rs.getFloat("End_Practical");
 
-                                // Add row to model
-                                model.addRow(new Object[]{sid, frame});
-                            } while (rs.next());
+                                float quizTotal;
+                                if (code.equals("ICT2122") || code.equals("ICT2142")) {
+                                    float least = Math.min(Math.min(q1, q2), Math.min(q3, q4));
+                                    quizTotal = ((q1 + q2 + q3 + q4 - least) / 300.0f) * 10;
+                                } else {
+                                    float least = Math.min(q1, Math.min(q2, q3));
+                                    quizTotal = ((q1 + q2 + q3 - least) / 200.0f) * 10;
+                                }
+
+                                float assessPart = (assess / 100.0f) * 10;
+
+                                float midPart;
+                                float endPart;
+
+                                if (code.equals("ICT2113") || code.equals("TCS2133")) {
+                                    midPart = ((midT + midP) / 200.0f) * 20;
+                                    endPart = ((endT + endP) / 200.0f) * 60;
+                                } else {
+                                    midPart = ((midT + midP) / 100.0f) * 20;
+                                    endPart = ((endT + endP) / 100.0f) * 60;
+                                }
+
+                                float finalMark = quizTotal + assessPart + midPart + endPart;
+
+                                model.addRow(new Object[]{sid, finalMark});
+                            }
 
                             table1.setModel(model);
                             table1.revalidate();
@@ -144,17 +170,52 @@ public class View_Marks {
                         JOptionPane.showMessageDialog(null, "Error fetching final marks: " + ex.getMessage());
                     }
                 }
-
-
             }
         });
 
+        // View single student result
         viewButton.addActionListener(new ActionListener() {
-            @Override
             public void actionPerformed(ActionEvent e) {
-                // Optional: code for a different view
+                String studentId = comboBox4.getSelectedItem().toString(); // Corrected
+                String courseCode = comboBox2.getSelectedItem().toString();
+
+                try {
+                    DB db = new DB();
+                    try (Connection con = db.getConnection()) {
+                        if (con == null) {
+                            JOptionPane.showMessageDialog(null, "Failed to connect to the database.");
+                            return;
+                        }
+
+                        String sql = "{CALL GetCAMarks(?, ?)}";
+                        try (CallableStatement stmt = con.prepareCall(sql)) {
+                            stmt.setString(1, studentId);
+                            stmt.setString(2, courseCode);
+
+                            try (ResultSet rs = stmt.executeQuery()) {
+                                DefaultTableModel model = new DefaultTableModel(
+                                        new String[]{"Student ID", "Course Code", "CA Marks", "Eligibility"}, 0
+                                );
+
+                                while (rs.next()) {
+                                    String id = rs.getString("StudentID");
+                                    String code = rs.getString("CourseCode");
+                                    int caMarks = rs.getInt("CAMarks");
+                                    String eligibility = rs.getString("Eligibility");
+                                    model.addRow(new Object[]{id, code, caMarks, eligibility});
+                                }
+
+                                table1.setModel(model);
+                            }
+                        }
+                    }
+                } catch (SQLException ex) {
+                    ex.printStackTrace();
+                    JOptionPane.showMessageDialog(null, "Error retrieving marks: " + ex.getMessage());
+                }
             }
         });
+
     }
 
     public static void main(String[] args) {
