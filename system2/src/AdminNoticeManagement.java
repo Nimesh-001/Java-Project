@@ -1,16 +1,23 @@
 import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.sql.Connection;
 
 public class AdminNoticeManagement {
+
+    Dbconnector dbc = new Dbconnector();
+    Connection con = dbc.getConnection();
+
     private JPanel panel1;
     private JButton ADDButton;
     private JButton VIEWButton;
     private JButton DELETEButton;
     private JButton logoutButton;
     private JTextArea textArea1;
-    private JTable table1;
     private JButton backButton;
+    private JTextArea textArea2;
 
     public AdminNoticeManagement() {
 
@@ -26,6 +33,20 @@ public class AdminNoticeManagement {
         ADDButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
+                String newNotice = textArea1.getText().trim();
+                if (!newNotice.isEmpty()) {
+                    try {
+                        FileWriter writer = new FileWriter("notices.txt", true);
+                        writer.write(newNotice + "\n");
+                        writer.close();
+                        JOptionPane.showMessageDialog(null, "Notice Added Successfully!");
+                        textArea1.setText(""); 
+                    } catch (IOException ex) {
+                        ex.printStackTrace();
+                    }
+                } else {
+                    JOptionPane.showMessageDialog(null, "Please enter a notice!");
+                }
 
             }
         });
@@ -44,6 +65,8 @@ public class AdminNoticeManagement {
         logoutButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
+                frame.dispose();
+                new form();
 
             }
         });
