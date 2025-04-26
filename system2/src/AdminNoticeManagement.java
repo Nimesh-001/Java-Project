@@ -1,6 +1,8 @@
 import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.io.BufferedReader;
+import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.sql.Connection;
@@ -40,7 +42,7 @@ public class AdminNoticeManagement {
                         writer.write(newNotice + "\n");
                         writer.close();
                         JOptionPane.showMessageDialog(null, "Notice Added Successfully!");
-                        textArea1.setText(""); 
+                        textArea1.setText("");
                     } catch (IOException ex) {
                         ex.printStackTrace();
                     }
@@ -53,6 +55,17 @@ public class AdminNoticeManagement {
         VIEWButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
+                try {
+                    BufferedReader reader = new BufferedReader(new FileReader("notices.txt"));
+                    String line;
+                    textArea2.setText(""); // Clear before loading
+                    while ((line = reader.readLine()) != null) {
+                        textArea2.append(line + "\n\n"); // show each notice separately
+                    }
+                    reader.close();
+                } catch (IOException ex) {
+                    ex.printStackTrace();
+                }
 
             }
         });
