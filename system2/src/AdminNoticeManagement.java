@@ -72,6 +72,15 @@ public class AdminNoticeManagement {
         DELETEButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
+                try {
+                    FileWriter writer = new FileWriter("notices.txt");
+                    writer.write("");
+                    writer.close();
+                    textArea2.setText("");
+                    JOptionPane.showMessageDialog(null, "All notices deleted!");
+                } catch (IOException ex) {
+                    ex.printStackTrace();
+                }
 
             }
         });
