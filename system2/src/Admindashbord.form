@@ -105,7 +105,7 @@
                 </constraints>
                 <properties>
                   <font name="Arial Black" size="24" style="1"/>
-                  <text value="ADMIN Dashboard"/>
+                  <text value="ADMIN DASHBOARD"/>
                 </properties>
               </component>
               <grid id="f891c" layout-manager="GridLayoutManager" row-count="2" column-count="4" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">

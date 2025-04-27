@@ -35,24 +35,32 @@ public class Admindashbord {
         userProfilesButton1.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
+                frame.dispose();
+                new AdminAUD();
 
             }
         });
         coursesButton1.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
+                frame.dispose();
+                new CourseManagementForm();
 
             }
         });
         noticesButton1.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
+                frame.dispose();
+                new AdminNoticeManagement();
 
             }
         });
         timetablesButton1.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
+                frame.dispose();
+                new AdminTimetableManagement();
 
             }
         });
@@ -103,5 +111,6 @@ public class Admindashbord {
 
     public static void main(String[] args) {
         new Admindashbord();
+
     }
 }
