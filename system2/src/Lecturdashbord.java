@@ -1,6 +1,11 @@
 import javax.swing.*;
+import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
 
 public class Lecturdashbord {
     private JPanel panel1;
@@ -15,8 +20,7 @@ public class Lecturdashbord {
     private JButton noticeButton1;
     private JButton editProfileButton;
     private JButton button10;
-    private JTextField textField1;
-
+    private JLabel profilePicLabel;
 
 
     public Lecturdashbord() {
@@ -30,6 +34,8 @@ public class Lecturdashbord {
         frame.setResizable(false);
         frame.setLocationRelativeTo(null);
 
+        loadprofileimage();
+
         coursesButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -41,7 +47,7 @@ public class Lecturdashbord {
             @Override
             public void actionPerformed(ActionEvent e) {
                 frame.dispose();
-              //  new EditLectureProfile();
+                new EditLectureProfile();
             }
         });
         marksButton1.addActionListener(new ActionListener() {
@@ -62,7 +68,7 @@ public class Lecturdashbord {
             @Override
             public void actionPerformed(ActionEvent e) {
                 frame.dispose();
-                new LecNotice();
+                new UserViewNotice();
             }
         });
         logoutButton.addActionListener(new ActionListener() {
@@ -73,7 +79,32 @@ public class Lecturdashbord {
             }
         });
     }
+    public void loadprofileimage(){
+        Dbconnector dbc = new Dbconnector();
+        Connection con = dbc.getConnection();
 
+        String sql= "SELECT Profile_Pic_Path,First_Name FROM USER WHERE Username='LEC0001'";
+        try {
+            PreparedStatement pst = con.prepareStatement(sql);
+            ResultSet rs = pst.executeQuery();
+
+            if(rs.next()){
+                String path = rs.getString("Profile_Pic_Path");
+                String first_name = rs.getString("First_Name");
+                //adminUsernameLabel.setText("WELCOME "+first_name);
+
+                if(path!=null && !path.isEmpty()){
+                    ImageIcon image = new ImageIcon(path);
+                    Image img = image.getImage().getScaledInstance(200,200,Image.SCALE_SMOOTH);
+                    profilePicLabel.setIcon(new ImageIcon(img));
+
+                }
+            }
+
+        } catch (SQLException e) {
+            JOptionPane.showMessageDialog(null, "error loading image:"+e.getMessage());
+        }
+    }
     public static void main(String[] args) {
         new Lecturdashbord();
 
