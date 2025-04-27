@@ -20,7 +20,7 @@ public class LecStudentAttendance {
     private Dbconnector dbc;
 
     public LecStudentAttendance() {
-        dbc = new Dbconnector(); // Initialize Dbconnector
+        dbc = new Dbconnector();
         JFrame frame = new JFrame("LecStudentAttendance");
         frame.setContentPane(this.panel1);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -38,7 +38,7 @@ public class LecStudentAttendance {
             }
         });
 
-        // View student-specific attendance
+
         viewButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -53,7 +53,7 @@ public class LecStudentAttendance {
 
                     ResultSet rs = pst.executeQuery();
 
-                    // Load data into table
+
                     DefaultTableModel model = new DefaultTableModel();
                     model.addColumn("Student Username");
                     model.addColumn("Course Code");
@@ -80,7 +80,7 @@ public class LecStudentAttendance {
             }
         });
 
-        // View attendance for entire batch of selected course
+
         viewButton1.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -120,21 +120,28 @@ public class LecStudentAttendance {
             }
         });
 
-        // Clear the JTable
+
         clearButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
                 DefaultTableModel model = (DefaultTableModel) table1.getModel();
-                model.setRowCount(0); // Clear all rows
+                model.setRowCount(0);
                 textField1.setText("");
             }
         });
 
-        // Load courses into combo boxes
+
         loadCourses();
+        logOutButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                frame.dispose();
+                new form();
+            }
+        });
     }
 
-    // Load course codes into combo boxes
+
     private void loadCourses() {
         try (Connection conn = dbc.getConnection()) {
             String sql = "SELECT DISTINCT Course_code FROM attendance";
