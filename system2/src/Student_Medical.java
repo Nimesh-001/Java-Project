@@ -1,5 +1,8 @@
 import javax.swing.*;
 import javax.swing.table.DefaultTableModel;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.awt.event.ComponentAdapter;
 import java.sql.*;
 
 public class Student_Medical {
@@ -19,15 +22,16 @@ public class Student_Medical {
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.pack();
         frame.setLocationRelativeTo(null);
+        frame.setVisible(true);
         frame.setResizable(false);
         frame.setSize(1000, 500);
 
         // Display medical records from the 'medical' table
-        try {
-            DB db = new DB(); // Assuming this is your connection class
-            Connection con = db.getConnection();
+        Dbconnector dbc = new Dbconnector();  // Using your Dbconnector class
+        Connection con = dbc.getConnection();
 
-            if (con != null) {
+        if (con != null) {
+            try {
                 String sql = "SELECT Medical_id, Submission_date, Status, Start_date, End_date, Reason, Course_code, Student_id FROM medical ORDER BY Submission_date DESC";
                 PreparedStatement pst = con.prepareStatement(sql);
                 ResultSet rs = pst.executeQuery();
@@ -52,7 +56,6 @@ public class Student_Medical {
                     String course = rs.getString("Course_code");
                     String student = rs.getString("Student_id");
 
-
                     model.addRow(new Object[]{mid, subDate, status, start, end, reason, course, student});
                 }
 
@@ -61,12 +64,33 @@ public class Student_Medical {
                 // Optional: Adjust column widths
                 table1.getColumnModel().getColumn(0).setPreferredWidth(100); // Medical ID
                 table1.getColumnModel().getColumn(5).setPreferredWidth(200); // Reason
-            } else {
-                JOptionPane.showMessageDialog(null, "Database connection failed.");
+            } catch (SQLException ex) {
+                JOptionPane.showMessageDialog(null, "Database error: " + ex.getMessage());
+            } finally {
+                try {
+                    con.close(); // Always close the connection after use
+                } catch (SQLException e) {
+                    e.printStackTrace();
+                }
             }
-        } catch (SQLException ex) {
-            JOptionPane.showMessageDialog(null, "Database error: " + ex.getMessage());
+        } else {
+            JOptionPane.showMessageDialog(null, "Database connection failed.");
         }
+        backButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                frame.dispose();
+                new Studentdashboard();
+            }
+        });
+
+        logoutButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                frame.dispose();
+                new form();
+            }
+        });
     }
 
     public static void main(String[] args) {

@@ -63,36 +63,41 @@ public class TO_Medical_Add {
                 String query = "INSERT INTO medical (Medical_id, Submission_date, Status, Start_date, End_date, Reason, Course_code, Student_id, TO_id) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)";
 
                 try {
-                    // Get a connection to the database
-                    Connection con = DB.getConnection();
+                    // Get a connection to the database using Dbconnector
+                    Dbconnector dbc = new Dbconnector();
+                    Connection con = dbc.getConnection();
 
-                    // Prepare the statement
-                    PreparedStatement ps = con.prepareStatement(query);
+                    if (con != null) {
+                        // Prepare the statement
+                        PreparedStatement ps = con.prepareStatement(query);
 
-                    // Set the parameters for the query
-                    ps.setString(1, medicalId);
-                    ps.setString(2, submissionDate);
-                    ps.setString(3, status);
-                    ps.setString(4, startDate);
-                    ps.setString(5, endDate);
-                    ps.setString(6, reason);
-                    ps.setString(7, courseCode);
-                    ps.setString(8, studentId);
-                    ps.setString(9, toId);
+                        // Set the parameters for the query
+                        ps.setString(1, medicalId);
+                        ps.setString(2, submissionDate);
+                        ps.setString(3, status);
+                        ps.setString(4, startDate);
+                        ps.setString(5, endDate);
+                        ps.setString(6, reason);
+                        ps.setString(7, courseCode);
+                        ps.setString(8, studentId);
+                        ps.setString(9, toId);
 
-                    // Execute the query
-                    int rowsAffected = ps.executeUpdate();
+                        // Execute the query
+                        int rowsAffected = ps.executeUpdate();
 
-                    // Check if the record was inserted successfully
-                    if (rowsAffected > 0) {
-                        textArea1.setText("Medical record added successfully.");
+                        // Check if the record was inserted successfully
+                        if (rowsAffected > 0) {
+                            textArea1.setText("Medical record added successfully.");
+                        } else {
+                            textArea1.setText("Failed to add medical record.");
+                        }
+
+                        // Close the statement and connection
+                        ps.close();
+                        con.close();
                     } else {
-                        textArea1.setText("Failed to add medical record.");
+                        textArea1.setText("Database connection failed.");
                     }
-
-                    // Close the statement and connection
-                    ps.close();
-                    con.close();
 
                 } catch (SQLException ex) {
                     // Handle SQL exceptions
@@ -105,13 +110,12 @@ public class TO_Medical_Add {
             @Override
             public void actionPerformed(ActionEvent e) {
                 frame.dispose(); // Close current window
-                new TO_Medical();
+                new TO_Medical(); // Assuming this opens another window for TO_Medical
             }
         });
     }
 
     public static void main(String[] args) {
-
         new TO_Medical_Add();
     }
 }

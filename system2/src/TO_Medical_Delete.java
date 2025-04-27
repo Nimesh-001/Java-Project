@@ -51,8 +51,9 @@ public class TO_Medical_Delete {
                 String query = "SELECT * FROM medical WHERE Medical_id = ? AND Student_id = ? AND Course_code = ?";
 
                 try {
-                    // Get database connection
-                    Connection con = DB.getConnection();
+                    // Get database connection using your Dbconnector class
+                    Dbconnector dbc = new Dbconnector();
+                    Connection con = dbc.getConnection();  // Correct connection usage
                     PreparedStatement ps = con.prepareStatement(query);
                     ps.setString(1, medicalId);
                     ps.setString(2, studentId);
@@ -75,9 +76,6 @@ public class TO_Medical_Delete {
                                 "\nStart Date: " + startDate +
                                 "\nEnd Date: " + endDate +
                                 "\nReason: " + reason);
-
-                        // Enable editing the 'Status' in the textField4
-                        //textField4.setText(status); // Pre-fill the status field with the current value
                     } else {
                         textArea1.setText("No medical record found.");
                     }
@@ -92,6 +90,7 @@ public class TO_Medical_Delete {
                 }
             }
         });
+
         deleteButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -110,8 +109,9 @@ public class TO_Medical_Delete {
                 String deleteQuery = "DELETE FROM medical WHERE Medical_id = ? AND Student_id = ? AND Course_code = ?";
 
                 try {
-                    // Get database connection
-                    Connection con = DB.getConnection();
+                    // Get database connection using your Dbconnector class
+                    Dbconnector dbc = new Dbconnector();
+                    Connection con = dbc.getConnection();  // Correct connection usage
                     PreparedStatement ps = con.prepareStatement(deleteQuery);
 
                     // Set query parameters

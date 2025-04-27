@@ -1,5 +1,4 @@
 import javax.swing.*;
-import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.io.BufferedReader;
@@ -10,7 +9,7 @@ import java.io.IOException;
 public class Student_Course {
     public JPanel panal1;
     private JButton attendenceButton;
-    private JButton logoutButton;
+    private JButton backButton;
     private JButton noticeButton;
     private JButton timetableButton;
     private JButton gradeGPAButton;
@@ -29,8 +28,9 @@ public class Student_Course {
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.pack();
         frame.setLocationRelativeTo(null);
+        frame.setVisible(true);
         frame.setResizable(false);
-        frame.setSize(1000, 500);
+        frame.setSize(1000, 700);
 
         DSAButton.addActionListener(new ActionListener() {
             @Override
@@ -219,6 +219,13 @@ public class Student_Course {
                 frame.setLocationRelativeTo(null);
                 frame.setSize(1000, 500);
                 frame.setResizable(false);
+            }
+        });
+        backButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                frame.dispose();
+                new Studentdashboard();
             }
         });
     }

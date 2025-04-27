@@ -62,7 +62,7 @@ public class TO_Timetable {
             public void actionPerformed(ActionEvent e) {
                 frame.dispose();
                  // Close current window
-                new Todashboard();
+                //new Todashboard();
                 
                 
             }

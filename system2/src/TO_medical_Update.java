@@ -30,7 +30,7 @@ public class TO_medical_Update {
         frame.setResizable(false);
         frame.setSize(1000, 500);
 
-
+        // ActionListener for the "viewButton"
         viewButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -50,7 +50,8 @@ public class TO_medical_Update {
 
                 try {
                     // Get database connection
-                    Connection con = DB.getConnection();
+                    Dbconnector dbc = new Dbconnector(); // Use your Dbconnector class
+                    Connection con = dbc.getConnection();
                     PreparedStatement ps = con.prepareStatement(query);
                     ps.setString(1, medicalId);
                     ps.setString(2, studentId);
@@ -90,6 +91,8 @@ public class TO_medical_Update {
                 }
             }
         });
+
+        // ActionListener for the "updateButton"
         updateButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -117,7 +120,8 @@ public class TO_medical_Update {
 
                 try {
                     // Get database connection
-                    Connection con = DB.getConnection();
+                    Dbconnector dbc = new Dbconnector(); // Use your Dbconnector class
+                    Connection con = dbc.getConnection();
                     PreparedStatement ps = con.prepareStatement(query);
                     ps.setString(1, newStatus);
                     ps.setString(2, medicalId);
@@ -142,11 +146,13 @@ public class TO_medical_Update {
                 }
             }
         });
+
+        // ActionListener for the "Back" button
         Back.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
                 frame.dispose(); // Close current window
-                new TO_Medical();
+                new TO_Medical(); // Open the TO_Medical window
             }
         });
     }

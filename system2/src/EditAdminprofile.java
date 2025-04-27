@@ -6,12 +6,15 @@ import java.sql.PreparedStatement;
 import java.sql.SQLException;
 
 public class EditAdminprofile {
+
+    Dbconnector dbc = new Dbconnector();
+    Connection con = dbc.getConnection();
+
     private JPanel panel1;
     private JTextField textField1;
     private JTextField textField2;
     private JTextField textField3;
     private JTextField textField4;
-    private JPasswordField passwordField2;
     private JTextField textField5;
     private JButton updateButton;
     private JButton resetButton;
@@ -19,86 +22,18 @@ public class EditAdminprofile {
     private JButton backButton;
     private JButton logoutButton;
 
+
     public EditAdminprofile() {
+
         JFrame frame = new JFrame("EditAdminprofile");
         frame.setContentPane(this.panel1);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.pack();
         frame.setVisible(true);
-        frame.setSize(1000,500);
         frame.setLocationRelativeTo(null);
         frame.setResizable(false);
+        frame.setSize(1000,500);
 
-        updateButton.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                String firstname = textField1.getText();
-                String lastname = textField2.getText();
-                String designation = textField3.getText();
-                String phone = textField4.getText();
-                String email = textField5.getText();
-                String password = String.valueOf(passwordField2.getPassword());
-                String pic_path = textField6.getText();
-
-                if (firstname.isEmpty() || lastname.isEmpty() || designation.isEmpty() || phone.isEmpty() ||
-                        email.isEmpty() || password.isEmpty() || pic_path.isEmpty()) {
-                    JOptionPane.showMessageDialog(null, "All fields must be filled out.");
-                    return;
-                }
-
-                Dbconnector db = new Dbconnector();
-                Connection con = db.getConnection();
-
-                String sql = "UPDATE USER SET First_Name=?, Last_Name=?, Designation=?, Phone_Number=?, Profile_Pic_Path=?, Password=?, Email=? WHERE Username='AD0001'";
-
-
-                try {
-                    PreparedStatement pst = con.prepareStatement(sql);
-                    pst.setString(1, firstname);
-                    pst.setString(2, lastname);
-                    pst.setString(3, designation);
-                    pst.setString(4, phone);
-                    pst.setString(5, email);
-                    pst.setString(6, password);
-                    pst.setString(7, pic_path);
-
-                    int result = pst.executeUpdate();
-                    if(result > 0) {
-                        JOptionPane.showMessageDialog(null, "Admin Profile Updated");
-                    }
-                    else {
-                        JOptionPane.showMessageDialog(null, "Admin Profile Not Updated");
-                    }
-
-
-
-                } catch (SQLException ex) {
-                    JOptionPane.showMessageDialog(null, "Error updating profile: " + ex.getMessage());
-                }
-                finally {
-                    if (con != null) {
-                        try {
-                            con.close();
-                        } catch (SQLException ex) {
-                            ex.printStackTrace();
-                        }
-                    }
-                }
-            }
-        });
-        resetButton.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                textField1.setText("");
-                textField2.setText("");
-                textField3.setText("");
-                textField4.setText("");
-                passwordField2.setText("");
-                textField5.setText("");
-                textField6.setText("");
-
-            }
-        });
         backButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -115,9 +50,70 @@ public class EditAdminprofile {
 
             }
         });
+        updateButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                String username = textField1.getText();
+
+                if (username.isEmpty()) {
+                    JOptionPane.showMessageDialog(null, "Please enter the Username to update.");
+                    return;
+                }
+
+                if (!textField2.getText().isEmpty()) {
+                    updateField("First_Name", textField2.getText(), username);
+                }
+                if (!textField3.getText().isEmpty()) {
+                    updateField("Last_Name", textField3.getText(), username);
+                }
+                if (!textField4.getText().isEmpty()) {
+                    updateField("Phone_Number", textField4.getText(), username);
+                }
+                if (!textField5.getText().isEmpty()) {
+                    updateField("Profile_Pic_Path", textField5.getText(), username);
+
+                }
+                if (!textField6.getText().isEmpty()) {
+                    updateField("Email", textField6.getText(), username);
+                }
+
+                JOptionPane.showMessageDialog(null, "User details updated successfully.");
+                clearFields();
+
+            }
+        });
+        resetButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                clearFields();
+            }
+        });
+    }
+    private void clearFields() {
+        textField1.setText("");
+        textField2.setText("");
+        textField3.setText("");
+        textField4.setText("");
+        textField5.setText("");
+        textField6.setText("");
+    }
+
+    public void updateField(String column, String value, String username) {
+        String sql = "UPDATE USER SET " + column + " = ? WHERE Username = ?";
+
+        try {
+            PreparedStatement pst = con.prepareStatement(sql);
+            pst.setString(1, value);
+            pst.setString(2, username);
+            pst.executeUpdate();
+            pst.close();
+        } catch (Exception ex) {
+            JOptionPane.showMessageDialog(null, "Update failed for " + column + ": " + ex.getMessage());
+        }
     }
 
     public static void main(String[] args) {
         new EditAdminprofile();
+
     }
 }

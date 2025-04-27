@@ -28,7 +28,6 @@ public class View_Marks {
         frame.setVisible(true);
 
         // View full table (for course and mark type)
-        // View full table (for course and mark type)
         viewButtonwhole.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -40,7 +39,7 @@ public class View_Marks {
                 // Check the selected Mark Type
                 if (selectedType.equals("CA Marks")) {
                     try {
-                        DB db = new DB();
+                        Dbconnector db = new Dbconnector();
                         try (Connection con = db.getConnection()) {
                             if (con == null) {
                                 JOptionPane.showMessageDialog(null, "Failed to connect to the database.");
@@ -108,7 +107,7 @@ public class View_Marks {
                     }
                 } else if (selectedType.equals("Final Marks")) {
                     try {
-                        DB db = new DB();
+                        Dbconnector db = new Dbconnector();
                         try (Connection con = db.getConnection()) {
                             if (con == null) {
                                 JOptionPane.showMessageDialog(null, "Failed to connect to the database.");
@@ -179,8 +178,6 @@ public class View_Marks {
             }
         });
 
-
-
         // View single student result
         viewButton.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
@@ -193,7 +190,7 @@ public class View_Marks {
                 }
 
                 try {
-                    DB db = new DB();
+                    Dbconnector db = new Dbconnector();
                     try (Connection con = db.getConnection()) {
                         if (con == null) {
                             JOptionPane.showMessageDialog(null, "Failed to connect to the database.");
@@ -233,7 +230,20 @@ public class View_Marks {
             }
         });
 
-
+        backButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                frame.dispose();
+                new Studentdashboard();
+            }
+        });
+        logoutButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                frame.dispose();
+                new form();
+            }
+        });
     }
 
     public static void main(String[] args) {
