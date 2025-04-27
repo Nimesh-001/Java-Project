@@ -48,6 +48,7 @@ public class ViewLectureMaterials {
             @Override
             public void actionPerformed(ActionEvent e) {
                 frame.dispose();
+                new Studentdashboard();
               //  new LecCourses();
             }
         });
@@ -136,6 +137,7 @@ public class ViewLectureMaterials {
     }
 
     public static void main(String[] args) {
+
         new ViewLectureMaterials();
     }
 }
