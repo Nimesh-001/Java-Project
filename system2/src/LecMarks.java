@@ -7,26 +7,26 @@ import java.sql.ResultSet;
 
 public class LecMarks {
     private JPanel panel1;
-    private JTextField textField1; // Student_Username (manually entered)
-    private JComboBox comboBox1; // Lecturer_Username
-    private JComboBox comboBox2; // Course_code
-    private JTextField textField2; // Quiz1
-    private JTextField textField3; // Quiz2
-    private JTextField textField4; // Quiz3
-    private JTextField textField5; // Quiz4
-    private JTextField textField6; // Assessment_01
-    private JTextField textField7; // Assessment_02
-    private JTextField textField8; // Mid_Practical
-    private JTextField textField9; // Mid_Theory
-    private JTextField textField10; // End_Practical
-    private JTextField textField11; // End_Theory
+    private JTextField textField1;
+    private JComboBox comboBox1;
+    private JComboBox comboBox2;
+    private JTextField textField2;
+    private JTextField textField3;
+    private JTextField textField4;
+    private JTextField textField5;
+    private JTextField textField6;
+    private JTextField textField7;
+    private JTextField textField8;
+    private JTextField textField9;
+    private JTextField textField10;
+    private JTextField textField11;
     private JButton addMarksButton;
     private JButton backButton;
     private JButton logOutButton;
-    private JComboBox comboBox3; // For selecting Student_Username to delete
-    private JComboBox comboBox4; // For selecting Course_code to delete
+    private JComboBox comboBox3;
+    private JComboBox comboBox4;
     private JButton DELETEButton;
-    private JTextField textField12; // (not used in the provided code)
+    private JTextField textField12;
 
     public LecMarks() {
         JFrame frame = new JFrame("LecMarks");
@@ -88,7 +88,7 @@ public class LecMarks {
 
     private void addMarks() {
         String studentUsername = textField1.getText().trim();
-        String lecturerUsername = comboBox1.getSelectedItem().toString(); // lecturer is still selected from comboBox1
+        String lecturerUsername = comboBox1.getSelectedItem().toString();
         String courseCode = comboBox2.getSelectedItem().toString();
 
         if (studentUsername.isEmpty() || lecturerUsername.isEmpty() || courseCode.isEmpty() ||
