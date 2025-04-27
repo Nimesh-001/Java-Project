@@ -24,8 +24,8 @@ public class Student_Timetable {
 
         // Database connection and data fetching
         try {
-            DB db = new DB(); // Assuming Dbconnector is your connection class
-            Connection con = db.getConnection(); // Get connection from Dbconnector
+            Dbconnector dbc = new Dbconnector(); // Use your custom Dbconnector class
+            Connection con = dbc.getConnection(); // Get connection from Dbconnector
 
             if (con != null) {
                 String sql = "SELECT Content FROM timetable";  // Modify the SQL query as needed
@@ -47,7 +47,7 @@ public class Student_Timetable {
                 table1.setModel(model);
 
                 // Optional: Adjust column widths for better display
-                table1.getColumnModel().getColumn(2).setPreferredWidth(100); // Content column width
+                table1.getColumnModel().getColumn(0).setPreferredWidth(300); // Adjust column width for "Content"
             } else {
                 JOptionPane.showMessageDialog(null, "Database connection failed.");
             }
@@ -67,7 +67,6 @@ public class Student_Timetable {
     }
 
     public static void main(String[] args) {
-
         new Student_Timetable();
     }
 }

@@ -8,6 +8,7 @@ import java.util.HashSet;
 import java.util.Set;
 
 public class Student_Attendance {
+
     public JPanel panal1;
     private JTextField textField1;
     private JTextField textField2;
@@ -26,9 +27,11 @@ public class Student_Attendance {
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.pack();
         frame.setLocationRelativeTo(null);
+        frame.setVisible(true);
         frame.setResizable(false);
         frame.setSize(1000, 500);
 
+        // For Whole Course Selection
         viewButtonwhole.addActionListener(e -> {
             String selectedCourse = (String) comboBox3.getSelectedItem();
             String selectedMarkType = (String) comboBox1.getSelectedItem();
@@ -43,8 +46,8 @@ public class Student_Attendance {
                 return;
             }
 
-            DB db = new DB();
-            try (Connection con = db.getConnection()) {
+            Dbconnector dbc = new Dbconnector();
+            try (Connection con = dbc.getConnection()) {
                 if (con == null) {
                     JOptionPane.showMessageDialog(null, "Failed to connect to the database.");
                     return;
@@ -88,7 +91,7 @@ public class Student_Attendance {
             }
         });
 
-
+        // For Course and Semester Selection
         viewButton.addActionListener(e -> {
             String selectedCourse = (String) comboBox1.getSelectedItem();
             String selectedSemester = (String) comboBox2.getSelectedItem();
@@ -102,8 +105,8 @@ public class Student_Attendance {
                 return;
             }
 
-            DB db = new DB();
-            try (Connection con = db.getConnection()) {
+            Dbconnector dbc = new Dbconnector();
+            try (Connection con = dbc.getConnection()) {
                 if (con == null) {
                     JOptionPane.showMessageDialog(null, "Failed to connect to the database.");
                     return;
@@ -157,6 +160,20 @@ public class Student_Attendance {
                 }
             } catch (SQLException ex) {
                 JOptionPane.showMessageDialog(null, "Failed to connect to the database: " + ex.getMessage());
+            }
+        });
+        backButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                frame.dispose();
+                new Studentdashboard();
+            }
+        });
+        logoutButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                frame.dispose();
+                new form();
             }
         });
     }

@@ -196,7 +196,7 @@ public class TO_Notice_Add {
             @Override
             public void actionPerformed(ActionEvent e) {
                 frame.dispose();
-                new Todashboard();
+                //new Todashboard();
             }
         });
     }

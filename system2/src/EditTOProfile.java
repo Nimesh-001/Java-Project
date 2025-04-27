@@ -36,7 +36,7 @@ public class EditTOProfile {
             @Override
             public void actionPerformed(ActionEvent e) {
                 frame.dispose();
-                new Todashboard();
+                //new Todashboard();
 
 
             }

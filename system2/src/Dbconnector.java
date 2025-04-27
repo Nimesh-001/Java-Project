@@ -10,6 +10,12 @@ public class Dbconnector {
 
         try {
             //String url = "jdbc:mysql://localhost:3306/TecMIS_DB";
+            try {
+                Class.forName("com.mysql.cj.jdbc.Driver");
+            } catch (ClassNotFoundException e) {
+                throw new RuntimeException(e);
+            }
+
             String url = "jdbc:mysql://localhost:3306/TecMIS_DBB";
             String user = "root";
             String password = "1234";

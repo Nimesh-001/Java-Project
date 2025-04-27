@@ -1,4 +1,5 @@
 import java.sql.*;
+/*
 
 public class DB {
     public static Connection getConnection() {
@@ -14,3 +15,5 @@ public class DB {
         return con;
     }
 }
+
+ */

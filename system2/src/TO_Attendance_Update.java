@@ -21,7 +21,6 @@ public class TO_Attendance_Update {
     private JButton updateButton;
     private JButton backButton;
 
-
     public TO_Attendance_Update() {
         JFrame frame = new JFrame("TO_Attendance_Update");
         frame.setContentPane(this.panel1);
@@ -31,6 +30,8 @@ public class TO_Attendance_Update {
         frame.setLocationRelativeTo(null);
         frame.setResizable(false);
         frame.setSize(1000, 500);
+
+        Dbconnector dbc = new Dbconnector();  // Using your custom database connector
 
         viewButton.addActionListener(new ActionListener() {
             @Override
@@ -46,7 +47,7 @@ public class TO_Attendance_Update {
                 }
 
                 try {
-                    Connection con = DB.getConnection();
+                    Connection con = dbc.getConnection(); // Use Dbconnector to get the connection
                     String query = "SELECT * FROM attendance WHERE Course_code = ? AND Student_id = ? AND Session_Type = ? AND Session_date = ?";
                     PreparedStatement ps = con.prepareStatement(query);
                     ps.setString(1, courseCode);
@@ -69,7 +70,7 @@ public class TO_Attendance_Update {
                                 "\nTO ID: " + toId +
                                 "\nMedical ID: " + medicalId);
 
-                        textField5.setText(status); // show current status in editable field
+                        textField5.setText(status); // Show current status in editable field
                     } else {
                         textArea1.setText("No record found.");
                         textField5.setText("");
@@ -99,7 +100,7 @@ public class TO_Attendance_Update {
                 }
 
                 try {
-                    Connection con = DB.getConnection();
+                    Connection con = dbc.getConnection(); // Use Dbconnector to get the connection
                     String updateQuery = "UPDATE attendance SET Status = ? WHERE Course_code = ? AND Student_id = ? AND Session_Type = ? AND Session_date = ?";
                     PreparedStatement ps = con.prepareStatement(updateQuery);
                     ps.setString(1, newStatus);
@@ -123,18 +124,11 @@ public class TO_Attendance_Update {
             }
         });
 
-        updateButton.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-
-            }
-        });
         backButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
                 frame.dispose();
-                new TO_Attendance();
-
+                new TO_Attendance(); // This assumes you have a TO_Attendance class to navigate to
             }
         });
     }

@@ -32,7 +32,7 @@ public class StudentViewTimetable {
             @Override
             public void actionPerformed(ActionEvent e) {
                 frame.dispose();
-                //chavindya dashbord here.......
+                new Studentdashboard();//chavindya dashbord here.......
 
             }
         });

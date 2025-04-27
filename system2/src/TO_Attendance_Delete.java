@@ -4,6 +4,7 @@ import java.awt.event.ActionListener;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
+import java.sql.ResultSet;
 
 public class TO_Attendance_Delete {
     public JPanel panal1;
@@ -30,6 +31,7 @@ public class TO_Attendance_Delete {
         frame.setResizable(false);
         frame.setSize(1000, 500);
 
+        // Button to view attendance record
         viewButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -43,8 +45,15 @@ public class TO_Attendance_Delete {
                     return;
                 }
 
-                try {
-                    Connection con = DB.getConnection();
+                // Using your Dbconnector to get the connection
+                Dbconnector dbc = new Dbconnector();
+                try (Connection con = dbc.getConnection()) {
+                    if (con == null) {
+                        textArea1.setText("Failed to connect to the database.");
+                        return;
+                    }
+
+                    // Query to fetch record
                     String query = "SELECT * FROM attendance WHERE Course_code = ? AND Student_id = ? AND Session_Type = ? AND Session_date = ?";
                     PreparedStatement ps = con.prepareStatement(query);
                     ps.setString(1, courseCode);
@@ -52,7 +61,7 @@ public class TO_Attendance_Delete {
                     ps.setString(3, sessionType);
                     ps.setString(4, sessionDate);
 
-                    java.sql.ResultSet rs = ps.executeQuery();
+                    ResultSet rs = ps.executeQuery();
 
                     if (rs.next()) {
                         String status = rs.getString("Status");
@@ -66,21 +75,19 @@ public class TO_Attendance_Delete {
                                 "\nStatus: " + status +
                                 "\nTO ID: " + toId +
                                 "\nMedical ID: " + medicalId);
-
-                        // show current status in editable field
                     } else {
                         textArea1.setText("No record found.");
-
                     }
 
                     rs.close();
                     ps.close();
-                    con.close();
                 } catch (SQLException ex) {
                     textArea1.setText("Error: " + ex.getMessage());
                 }
             }
         });
+
+        // Button to delete attendance record
         deleteButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -94,16 +101,15 @@ public class TO_Attendance_Delete {
                     return;
                 }
 
-                /*int confirm = JOptionPane.showConfirmDialog(null,
-                        "Are you sure you want to delete this attendance record?",
-                        "Confirm Delete", JOptionPane.YES_NO_OPTION);
+                // Using your Dbconnector to get the connection
+                Dbconnector dbc = new Dbconnector();
+                try (Connection con = dbc.getConnection()) {
+                    if (con == null) {
+                        textArea1.setText("Failed to connect to the database.");
+                        return;
+                    }
 
-                if (confirm != JOptionPane.YES_OPTION) {
-                    return;
-                }*/
-
-                try {
-                    Connection con = DB.getConnection();
+                    // Query to delete record
                     String deleteQuery = "DELETE FROM attendance WHERE Course_code = ? AND Student_id = ? AND Session_Type = ? AND Session_date = ?";
                     PreparedStatement ps = con.prepareStatement(deleteQuery);
                     ps.setString(1, courseCode);
@@ -119,19 +125,18 @@ public class TO_Attendance_Delete {
                     }
 
                     ps.close();
-                    con.close();
                 } catch (SQLException ex) {
                     textArea1.setText("Error: " + ex.getMessage());
                 }
             }
         });
 
-
+        // Back button to return to previous window
         backButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
                 frame.dispose();
-                new TO_Attendance();
+                new TO_Attendance();  // This will open the previous screen.
             }
         });
     }
