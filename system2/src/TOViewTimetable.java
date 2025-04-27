@@ -32,7 +32,7 @@ public class TOViewTimetable {
             @Override
             public void actionPerformed(ActionEvent e) {
                 frame.dispose();
-                //technical oficer dashbord here......
+                new ToDashbord();//technical oficer dashbord here......
 
             }
         });

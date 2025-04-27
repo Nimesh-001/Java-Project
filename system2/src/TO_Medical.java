@@ -59,7 +59,7 @@ public class TO_Medical {
             @Override
             public void actionPerformed(ActionEvent e) {
                 frame.dispose(); // Close current window
-                //new Todashboard();
+                new ToDashbord();
             }
         });
         editProfileButton.addActionListener(new ActionListener() {

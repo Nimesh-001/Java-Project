@@ -27,7 +27,7 @@ public class TOViewNotice {
             @Override
             public void actionPerformed(ActionEvent e) {
                 frame.dispose();
-                //new Todashboard();//nitya interface should call
+                new ToDashbord();//nitya interface should call
 
 
             }

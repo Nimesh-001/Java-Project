@@ -103,7 +103,7 @@ public class Edit_TO_Profile {
             @Override
             public void actionPerformed(ActionEvent e) {
                 frame.dispose();
-                //new Todashboard();
+                new TO_Attendance();
 
             }
         });

@@ -73,7 +73,14 @@ public class TO_Attendance {
             @Override
             public void actionPerformed(ActionEvent e) {
                 frame.dispose(); // Close current window
-                //new Todashboard();
+                new ToDashbord();
+            }
+        });
+        editProfileButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                frame.dispose();
+                new Edit_TO_Profile();
             }
         });
     }

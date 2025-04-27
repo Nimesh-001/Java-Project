@@ -18,7 +18,6 @@ public class Studentdashboard {
     private JButton courseButton1;
     private JButton gradeGPAButton1;
     private JButton timetableButton1;
-    private JButton button13;
     private JButton button14;
     private JPanel panel2;
     //private JLabel adminUsernameLabel;
@@ -30,7 +29,7 @@ public class Studentdashboard {
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.pack();
         frame.setVisible(true);
-        frame.setSize(1000,500);
+        frame.setSize(1100,500);
         frame.setLocationRelativeTo(null);
         frame.setResizable(false);
 
