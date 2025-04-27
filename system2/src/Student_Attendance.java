@@ -159,6 +159,20 @@ public class Student_Attendance {
                 JOptionPane.showMessageDialog(null, "Failed to connect to the database: " + ex.getMessage());
             }
         });
+        backButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                frame.dispose();
+                new Studentdashboard();
+            }
+        });
+        logoutButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                frame.dispose();
+                new form();
+            }
+        });
     }
 
     public static void main(String[] args) {

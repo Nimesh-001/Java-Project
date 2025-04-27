@@ -1,5 +1,4 @@
 import javax.swing.*;
-import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.io.BufferedReader;
@@ -22,6 +21,8 @@ public class Student_Course {
     private JButton OOPButton;
     private JButton OOADButton;
     private JButton OOPpracticumButton;
+    private JButton backButton;
+    private JButton logbutton;
 
     public Student_Course() {
         JFrame frame = new JFrame("Student_Course");
@@ -36,7 +37,7 @@ public class Student_Course {
             @Override
             public void actionPerformed(ActionEvent e) {
                 // Create Course_Details form
-                Course_Details courseDetails = new Course_Details();
+                Student_Course_Details courseDetails = new Student_Course_Details();
 
                 // Set course name in textArea1
                 courseDetails.textArea1.setEditable(false);
@@ -82,7 +83,7 @@ public class Student_Course {
             @Override
             public void actionPerformed(ActionEvent e) {
                 // Create Course_Details form
-                Course_Details courseDetails = new Course_Details();
+                Student_Course_Details courseDetails = new Student_Course_Details();
 
                 // Set course name in textArea1 (optional)
                 courseDetails.textArea1.setEditable(false);
@@ -119,7 +120,7 @@ public class Student_Course {
         OOPButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                Course_Details courseDetails = new Course_Details();
+                Student_Course_Details courseDetails = new Student_Course_Details();
 
                 // Set course name in textArea1 (optional)
                 courseDetails.textArea1.setEditable(false);
@@ -154,7 +155,7 @@ public class Student_Course {
         OOADButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                Course_Details courseDetails = new Course_Details();
+                Student_Course_Details courseDetails = new Student_Course_Details();
 
                 // Set course name in textArea1 (optional)
                 courseDetails.textArea1.setEditable(false);
@@ -189,7 +190,7 @@ public class Student_Course {
         OOPpracticumButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                Course_Details courseDetails = new Course_Details();
+                Student_Course_Details courseDetails = new Student_Course_Details();
 
                 // Set course name in textArea1 (optional)
                 courseDetails.textArea1.setEditable(false);
@@ -219,6 +220,20 @@ public class Student_Course {
                 frame.setLocationRelativeTo(null);
                 frame.setSize(1000, 500);
                 frame.setResizable(false);
+            }
+        });
+        backButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                frame.dispose();
+                new Studentdashboard();
+            }
+        });
+        logbutton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                frame.dispose();
+                new form();
             }
         });
     }

@@ -4,7 +4,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.sql.*;
 
-public class View_Marks {
+public class Student_View_Marks {
     public JPanel panal1;
     private JPanel panal2;
     private JButton backButton;
@@ -17,7 +17,7 @@ public class View_Marks {
     private JTable table1;
     private JComboBox<String> comboBox4; // Student ID
 
-    public View_Marks() {
+    public Student_View_Marks() {
         JFrame frame = new JFrame("View Marks");
         frame.setContentPane(this.panal1);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -234,9 +234,23 @@ public class View_Marks {
         });
 
 
+        backButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                frame.dispose();
+                new Studentdashboard();
+            }
+        });
+        logoutButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                frame.dispose();
+                new form();
+            }
+        });
     }
 
     public static void main(String[] args) {
-        new View_Marks();
+        new Student_View_Marks();
     }
 }

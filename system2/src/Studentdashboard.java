@@ -82,7 +82,7 @@ public class Studentdashboard {
             @Override
             public void actionPerformed(ActionEvent e) {
                 JFrame frame = new JFrame("Student_GPA");
-                frame.setContentPane(new View_Marks().panal1);
+                frame.setContentPane(new Student_View_Marks().panal1);
                 frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
                 frame.pack();
                 frame.setVisible(true);

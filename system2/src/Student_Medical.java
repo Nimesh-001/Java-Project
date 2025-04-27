@@ -1,5 +1,7 @@
 import javax.swing.*;
 import javax.swing.table.DefaultTableModel;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.sql.*;
 
 public class Student_Medical {
@@ -67,6 +69,20 @@ public class Student_Medical {
         } catch (SQLException ex) {
             JOptionPane.showMessageDialog(null, "Database error: " + ex.getMessage());
         }
+        backButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                frame.dispose();
+                new Studentdashboard();
+            }
+        });
+        logoutButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                frame.dispose();
+                new form();
+            }
+        });
     }
 
     public static void main(String[] args) {
