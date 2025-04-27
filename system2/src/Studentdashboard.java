@@ -95,7 +95,9 @@ public class Studentdashboard {
             @Override
             public void actionPerformed(ActionEvent e) {
                 frame.dispose();
-                new Student_Course();
+               // new Student_Course();
+                new ViewLectureMaterials();
+
                 /*
                 JFrame frame = new JFrame("Student_Course");
                 frame.setContentPane(new Student_Course().panal1);
