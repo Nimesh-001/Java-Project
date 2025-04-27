@@ -105,7 +105,7 @@ public class LecCourses {
         DELETEButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                String titleToDelete = textField1.getText(); // Get the title entered in the text field
+                String titleToDelete = textField1.getText();
 
                 if (titleToDelete.isEmpty()) {
                     JOptionPane.showMessageDialog(null, "Please enter the Title of the material to delete.");
@@ -148,7 +148,7 @@ public class LecCourses {
                                     }
                                 }
                                 JOptionPane.showMessageDialog(null, "Material deleted successfully!");
-                                textField1.setText(""); // Clear the text field
+                                textField1.setText("");
                                 textArea1.setText("");
                             } else {
                                 JOptionPane.showMessageDialog(null, "Material not found!");
@@ -168,6 +168,7 @@ public class LecCourses {
         logoutButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
+                frame.dispose();
                 new form();
             }
         });
@@ -199,10 +200,10 @@ public class LecCourses {
                 pst.close();
                 conn.close();
 
-                return rowsAffected > 0; // Insert success
+                return rowsAffected > 0;
             } catch (Exception ex) {
                 ex.printStackTrace();
-                return false; // Insert fail
+                return false;
             }
         } else {
             JOptionPane.showMessageDialog(null, "Database connection failed.");
