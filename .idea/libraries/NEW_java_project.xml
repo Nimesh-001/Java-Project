@@ -1,0 +1,11 @@
+<component name="libraryTable">
+  <library name="NEW java project">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/TO.zip!/" />
+      <root url="jar://$PROJECT_DIR$/system2.zip!/" />
+      <root url="jar://$PROJECT_DIR$/New.zip!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

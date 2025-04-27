@@ -16,7 +16,7 @@ public class Dbconnector {
                 throw new RuntimeException(e);
             }
 
-            String url = "jdbc:mysql://localhost:3306/TecMIS_DBB";
+            String url = "jdbc:mysql://localhost:3308/TecMIS_DB";
             String user = "root";
             String password = "1234";
 
