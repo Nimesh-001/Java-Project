@@ -8,14 +8,14 @@ public class Student_View_Marks {
     public JPanel panal1;
     private JPanel panal2;
     private JButton backButton;
-    private JComboBox<String> comboBox1; // Mark Type (CA Marks / Final Marks)
-    private JComboBox<String> comboBox2; // Course Code
+    private JComboBox<String> comboBox1;
+    private JComboBox<String> comboBox2;
     private JButton viewButton;
     private JButton logoutButton;
-    private JComboBox<String> comboBox3; // Course Code for whole table view
+    private JComboBox<String> comboBox3;
     private JButton viewButtonwhole;
     private JTable table1;
-    private JComboBox<String> comboBox4; // Student ID
+    private JComboBox<String> comboBox4;
 
     public Student_View_Marks() {
         JFrame frame = new JFrame("View Marks");
@@ -27,15 +27,13 @@ public class Student_View_Marks {
         frame.setSize(1000, 500);
         frame.setVisible(true);
 
-        // View full table (for course and mark type)
-        // View full table (for course and mark type)
         viewButtonwhole.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
                 String selectedCourse = comboBox3.getSelectedItem().toString();
-                String selectedType = comboBox4.getSelectedItem().toString(); // Mark Type
+                String selectedType = comboBox4.getSelectedItem().toString();
 
-                System.out.println("Selected Type: " + selectedType);  // Debugging to confirm the selected value
+                System.out.println("Selected Type: " + selectedType);
 
                 if (selectedType.equals("CA Marks")) {
                     try {
@@ -169,7 +167,6 @@ public class Student_View_Marks {
             }
         });
 
-        // View single student result
         viewButton.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
                 String studentId = comboBox1.getSelectedItem() != null ? comboBox1.getSelectedItem().toString() : "";
@@ -213,8 +210,6 @@ public class Student_View_Marks {
                 }
             }
         });
-
-
 
         backButton.addActionListener(new ActionListener() {
             @Override

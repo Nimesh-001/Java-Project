@@ -36,17 +36,14 @@ public class Student_Course {
         DSAButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                // Create Course_Details form
+
                 Student_Course_Details courseDetails = new Student_Course_Details();
 
-                // Set course name in textArea1
                 courseDetails.textArea1.setEditable(false);
                 courseDetails.textArea1.setText("Data Structures and Algorithms");
 
-                // Define the file path to read
                 String filePath = "C:\\Users\\asus\\Desktop\\Java Mini Project\\java code\\Java-Project\\system2\\DSA.txt";
 
-                // Read from the file and display in textArea2
                 try {
                     BufferedReader reader = new BufferedReader(new FileReader(filePath));
                     StringBuilder content = new StringBuilder();
@@ -58,14 +55,12 @@ public class Student_Course {
 
                     reader.close();
 
-                    // Set content to textArea2
                     courseDetails.textArea2.setText(content.toString());
 
                 } catch (Exception ex) {
                     courseDetails.textArea2.setText("Error reading file: " + ex.getMessage());
                 }
 
-                // Display the form
                 JFrame frame = new JFrame("Course Details - DSA");
                 frame.setContentPane(courseDetails.panal1);
                 frame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
@@ -82,14 +77,12 @@ public class Student_Course {
         EcommerceButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                // Create Course_Details form
+
                 Student_Course_Details courseDetails = new Student_Course_Details();
 
-                // Set course name in textArea1 (optional)
                 courseDetails.textArea1.setEditable(false);
                 courseDetails.textArea1.setText("E-Commerce Implementation Managment and Security");
 
-                // Read from the file
                 String filePath = "C:\\Users\\asus\\Desktop\\Java Mini Project\\java code\\Java-Project\\system2\\Ecom.txt";
                 StringBuilder content = new StringBuilder();
 
@@ -98,7 +91,6 @@ public class Student_Course {
                     while ((line = reader.readLine()) != null) {
                         content.append(line).append("\n");
                     }
-                    // Display file content in textArea2
                     courseDetails.textArea2.setText(content.toString());
                 } catch (IOException ex) {
                     courseDetails.textArea2.setText("Error reading file: " + ex.getMessage());
@@ -122,11 +114,9 @@ public class Student_Course {
             public void actionPerformed(ActionEvent e) {
                 Student_Course_Details courseDetails = new Student_Course_Details();
 
-                // Set course name in textArea1 (optional)
                 courseDetails.textArea1.setEditable(false);
                 courseDetails.textArea1.setText("Object Orianted Programming");
 
-                // Read from the file
                 String filePath = "C:\\Users\\asus\\Desktop\\Java Mini Project\\java code\\Java-Project\\system2\\Ecom.txt";
                 StringBuilder content = new StringBuilder();
 
@@ -135,13 +125,11 @@ public class Student_Course {
                     while ((line = reader.readLine()) != null) {
                         content.append(line).append("\n");
                     }
-                    // Display file content in textArea2
                     courseDetails.textArea2.setText(content.toString());
                 } catch (IOException ex) {
                     courseDetails.textArea2.setText("Error reading file: " + ex.getMessage());
                 }
 
-                // Show the form
                 JFrame frame = new JFrame("Course Details - E-Commerce");
                 frame.setContentPane(courseDetails.panal1);
                 frame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
@@ -157,11 +145,9 @@ public class Student_Course {
             public void actionPerformed(ActionEvent e) {
                 Student_Course_Details courseDetails = new Student_Course_Details();
 
-                // Set course name in textArea1 (optional)
                 courseDetails.textArea1.setEditable(false);
                 courseDetails.textArea1.setText("Object Oriented Analisis and Design");
 
-                // Read from the file
                 String filePath = "C:\\Users\\asus\\Desktop\\Java Mini Project\\java code\\Java-Project\\system2\\Ecom.txt";
                 StringBuilder content = new StringBuilder();
 
@@ -170,13 +156,12 @@ public class Student_Course {
                     while ((line = reader.readLine()) != null) {
                         content.append(line).append("\n");
                     }
-                    // Display file content in textArea2
+
                     courseDetails.textArea2.setText(content.toString());
                 } catch (IOException ex) {
                     courseDetails.textArea2.setText("Error reading file: " + ex.getMessage());
                 }
 
-                // Show the form
                 JFrame frame = new JFrame("Course Details - E-Commerce");
                 frame.setContentPane(courseDetails.panal1);
                 frame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
@@ -192,11 +177,9 @@ public class Student_Course {
             public void actionPerformed(ActionEvent e) {
                 Student_Course_Details courseDetails = new Student_Course_Details();
 
-                // Set course name in textArea1 (optional)
                 courseDetails.textArea1.setEditable(false);
                 courseDetails.textArea1.setText("Object Oriented Programming Practicum");
 
-                // Read from the file
                 String filePath = "C:\\Users\\asus\\Desktop\\Java Mini Project\\java code\\Java-Project\\system2\\Ecom.txt";
                 StringBuilder content = new StringBuilder();
 
@@ -205,13 +188,11 @@ public class Student_Course {
                     while ((line = reader.readLine()) != null) {
                         content.append(line).append("\n");
                     }
-                    // Display file content in textArea2
                     courseDetails.textArea2.setText(content.toString());
                 } catch (IOException ex) {
                     courseDetails.textArea2.setText("Error reading file: " + ex.getMessage());
                 }
 
-                // Show the form
                 JFrame frame = new JFrame("Course Details - E-Commerce");
                 frame.setContentPane(courseDetails.panal1);
                 frame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
@@ -239,6 +220,7 @@ public class Student_Course {
     }
 
     public static void main(String[] args) {
+
         new Student_Course();
     }
 }

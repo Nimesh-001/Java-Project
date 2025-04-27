@@ -1,6 +1,5 @@
 import javax.swing.*;
 import javax.swing.table.DefaultTableModel;
-import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.sql.*;
@@ -25,7 +24,6 @@ public class Student_Timetable {
         frame.setSize(1000, 500);
 
         try {
-            // Database connection and data fetching
             Dbconnector db = new Dbconnector();
             Connection con = db.getConnection();
 
@@ -33,27 +31,21 @@ public class Student_Timetable {
             PreparedStatement pst = con.prepareStatement(sql);
             ResultSet rs = pst.executeQuery();
 
-            // Create DefaultTableModel and add columns
             DefaultTableModel model = new DefaultTableModel();
             model.addColumn("Content");
 
-            // Loop through the result set and add rows to the model
             while (rs.next()) {
                 String content = rs.getString("Content");
                 model.addRow(new Object[]{content});
             }
 
-            // Set the model to the JTable
             table1.setModel(model);
-
-            // Adjust column width (use 0, not 2)
             table1.getColumnModel().getColumn(0).setPreferredWidth(100);
 
         } catch (SQLException e) {
-            e.printStackTrace(); // Good for debugging
+            e.printStackTrace();
         }
 
-        // Back Button action
         backButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -62,7 +54,6 @@ public class Student_Timetable {
             }
         });
 
-        // Logout Button action
         logoutButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {

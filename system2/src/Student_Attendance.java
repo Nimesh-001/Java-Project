@@ -12,11 +12,11 @@ public class Student_Attendance {
     private JTextField textField1;
     private JTextField textField2;
     private JButton backButton;
-    private JComboBox comboBox1; // For Course Selection
-    private JComboBox comboBox2; // For Other Selection (e.g., Semester)
+    private JComboBox comboBox1;
+    private JComboBox comboBox2;
     private JButton viewButton;
     private JButton logoutButton;
-    private JComboBox comboBox3; // For Whole Course Selection
+    private JComboBox comboBox3;
     private JButton viewButtonwhole;
     private JTable table1;
 
@@ -88,7 +88,6 @@ public class Student_Attendance {
             }
         });
 
-
         viewButton.addActionListener(e -> {
             String selectedCourse = (String) comboBox1.getSelectedItem();
             String selectedSemester = (String) comboBox2.getSelectedItem();
@@ -159,6 +158,7 @@ public class Student_Attendance {
                 JOptionPane.showMessageDialog(null, "Failed to connect to the database: " + ex.getMessage());
             }
         });
+
         backButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -166,6 +166,7 @@ public class Student_Attendance {
                 new Studentdashboard();
             }
         });
+
         logoutButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -176,6 +177,7 @@ public class Student_Attendance {
     }
 
     public static void main(String[] args) {
+
         new Student_Attendance();
     }
 }
