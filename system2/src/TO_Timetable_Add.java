@@ -44,7 +44,7 @@ public class TO_Timetable_Add {
                     return;
                 }
 
-                String filePath = "C:\\Users\\asus\\Desktop\\Java Mini Project\\java code\\Java-Project\\system2\\timetable_data.txt";
+                String filePath = "C:\\Users\\Dell PC\\Desktop\\java project\\Java-Project\\system2\\notice_data.txt.txt";
 
                 try {
                     BufferedWriter writer = new BufferedWriter(new FileWriter(filePath, true));
@@ -97,7 +97,7 @@ public class TO_Timetable_Add {
 
                 String newDescription = editedText.replaceFirst("Description:", "").trim();
 
-                File file = new File("C:\\Users\\asus\\Desktop\\Java Mini Project\\java code\\Java-Project\\system2\\timetable_data.txt");
+                File file = new File("C:\\Users\\Dell PC\\Desktop\\java project\\Java-Project\\system2\\notice_data.txt.txt");
                 List<String> updatedLines = new ArrayList<>();
                 boolean updated = false;
 
@@ -141,7 +141,7 @@ public class TO_Timetable_Add {
 
     // Method to find timetable by ID
     private String[] findTimeTableById(String timetableID) {
-        String filePath = "C:\\Users\\asus\\Desktop\\Java Mini Project\\java code\\Java-Project\\system2\\timetable_data.txt";
+        String filePath = "C:\\Users\\Dell PC\\Desktop\\java project\\Java-Project\\system2\\notice_data.txt.txt";
 
         try (BufferedReader reader = new BufferedReader(new FileReader(filePath))) {
             String line;

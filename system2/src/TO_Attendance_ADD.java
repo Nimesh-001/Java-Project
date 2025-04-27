@@ -53,8 +53,10 @@ public class TO_Attendance_ADD {
                     return;
                 }
 
-                Dbconnector db = new Dbconnector();
-                Connection con = db.getConnection();
+               // Dbconnector db = new Dbconnector();
+               // Connection con = db.getConnection();
+
+                Connection con = DB.getConnection();
 
                 String query = "INSERT INTO attendance (Course_code, Student_id, Session_Type, Session_date, Status, TO_id, Medical_id) " +
                         "VALUES (?, ?, ?, ?, ?, ?, ?)";

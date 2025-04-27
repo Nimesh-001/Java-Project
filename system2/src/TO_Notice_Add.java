@@ -49,7 +49,7 @@ public class TO_Notice_Add {
                 }
 
                 // Define file path where data will be saved
-                String filePath = "C:\\Users\\asus\\Desktop\\Java Mini Project\\java code\\Java-Project\\system2\\notice_data.txt";
+                String filePath = "C:\\Users\\Dell PC\\Desktop\\java project\\Java-Project\\system2\\notice_data.txt.txt";
 
                 try {
                     // Create BufferedWriter to write data to the file
@@ -107,7 +107,7 @@ public class TO_Notice_Add {
                 String newDate = parts[0].replaceFirst("Date: ", "").trim();
                 String newContent = parts[1].replaceFirst("Content: ", "").trim();
 
-                File file = new File("C:\\Users\\asus\\Desktop\\Java Mini Project\\java code\\Java-Project\\system2\\notice_data.txt");
+                File file = new File("C:\\Users\\Dell PC\\Desktop\\java project\\Java-Project\\system2\\notice_data.txt.txt");
                 List<String> updatedLines = new ArrayList<>();
 
                 boolean updated = false;
@@ -148,7 +148,7 @@ public class TO_Notice_Add {
             public void actionPerformed(ActionEvent e) {
                 String inputId = textField4.getText().trim();
 
-                File file = new File("C:\\Users\\asus\\Desktop\\Java Mini Project\\java code\\Java-Project\\system2\\notice_data.txt");
+                File file = new File("C:\\Users\\Dell PC\\Desktop\\java project\\Java-Project\\system2\\notice_data.txt.txt");
 
                 try {
                     // Read the content of the original file
@@ -204,7 +204,7 @@ public class TO_Notice_Add {
 
 
     private String[] findNoticeById(String noticeId) {
-        try (BufferedReader reader = new BufferedReader(new FileReader("C:\\Users\\asus\\Desktop\\Java Mini Project\\java code\\Java-Project\\system2\\notice_data.txt"))) {
+        try (BufferedReader reader = new BufferedReader(new FileReader("C:\\Users\\Dell PC\\Desktop\\java project\\Java-Project\\system2\\notice_data.txt.txt"))) {
             String line;
             while ((line = reader.readLine()) != null) {
                 String[] notice = line.split(",");  // Assuming each line is comma-separated (ID, Content, Description)

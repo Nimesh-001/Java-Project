@@ -235,15 +235,6 @@
                   <text value=""/>
                 </properties>
               </component>
-              <component id="1844b" class="javax.swing.JButton" binding="button10" default-binding="true">
-                <constraints>
-                  <grid row="0" column="4" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="5" fill="0" indent="0" use-parent-layout="false"/>
-                </constraints>
-                <properties>
-                  <icon value="image/2.png"/>
-                  <text value=""/>
-                </properties>
-              </component>
             </children>
           </grid>
         </children>
